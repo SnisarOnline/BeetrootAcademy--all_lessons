@@ -1,0 +1,117 @@
+/* Было
+*/
+header {
+    display: block;
+    width: 100%;
+    padding: 0 100px;
+    box-sizing: border-box;
+}
+
+header .header-logo {
+    font-size: 40px;
+    text-decoration: none;
+}
+
+header nav {
+    width: 400px;
+    display: inline-block;
+    float: right;
+}
+
+header nav .header-sing-btn {
+    display: inline-block;
+}
+
+main section, footer {
+    padding: 100px;
+}
+
+
+
+/* Готовы стили *
+header {
+    display: block;
+    width: 100%;
+    padding: 0 100px;
+    box-sizing: border-box;
+}
+
+header .header--logo {
+    font-size: 40px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+header nav {
+    display: inline-block;
+    float: right;
+    line-height: 40px;
+    font-size: 0;
+}
+
+header nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+header nav .header--btn {
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 30px;
+}
+
+header nav .header--btn .header-sing-in,
+header nav .header--btn .header-sing-up {
+    font-size: 16px;
+    padding: 10px 15px;
+    text-transform: capitalize;
+    font-weight: bold;
+    background: transparent;
+    border-radius: 5px;
+    border: 1px solid #BCD0E5;
+}
+
+header nav .header--btn .active {
+    background: orange;
+    color: white;
+}
+
+main section, footer {
+    padding: 0 100px;
+    box-sizing: border-box;
+}
+
+main .home {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+main .home svg {
+    width: 50%;
+}
+
+main .home .home--left {
+    font-family: 'Poppins';
+    width: 50%;
+}
+
+main .home .home--left .title {
+    font-weight: bold;
+    font-size: 44px;
+    line-height: 54px;
+    color: #2F281E;
+}
+
+main .home .home--left .description {
+    font-size: 25px;
+    line-height: 28px;
+    color: #544837;
+}
+
+main .home .home--left .btn {
+}
