@@ -1,34 +1,5 @@
-/* Было
-*/
-header {
-    display: block;
-    width: 100%;
-    padding: 0 100px;
-    box-sizing: border-box;
-}
 
-header .header-logo {
-    font-size: 40px;
-    text-decoration: none;
-}
-
-header nav {
-    width: 400px;
-    display: inline-block;
-    float: right;
-}
-
-header nav .header-sing-btn {
-    display: inline-block;
-}
-
-main section, footer {
-    padding: 100px;
-}
-
-
-
-/* Готовы стили *
+/* Готовы стили */
 header {
     display: block;
     width: 100%;
@@ -114,4 +85,36 @@ main .home .home--left .description {
 }
 
 main .home .home--left .btn {
+
+}
+
+main .home .home--left .btn button{
+    font-size: 16px;
+    padding: 10px 15px;
+    text-transform: capitalize;
+    font-weight: bold;
+    background: transparent;
+    border-radius: 5px;
+    border: 1px solid #BCD0E5;
+}
+
+main .home .home--left .btn a {
+    display: inline-block;
+    position: relative;
+}
+/*main .home .home--left .btn a:after {}*/
+
+.arrow {
+    display: inline-block;
+
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    padding: 3px;
+    /*transform: rotate(-45deg);*/
+    /*-webkit-transform: rotate(-45deg);*/
+
+
+    position: absolute;
+    top: 0;
+    left: 0;
 }
