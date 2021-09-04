@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        :root {
+            --main-color: green;
+            --pane-padding: 5px 42px;
+        }
+
         main > section {
             margin: 20px auto;
             border: 1px solid #000000;
@@ -13,11 +18,10 @@
         }
 
 
-        /* ---------- #1 Приоритеты стилей ---------- */
+/* ---------- #1 Приоритеты стилей ----------*/
         .style_priorities {
             display: block;
         }
-
         .style_priorities .example > div {
             width: 100%;
             height: 20px;
@@ -30,7 +34,7 @@
 
         /*базовый вопрос 1. Какой будет цвет*/
         h2 {
-            color: green;
+            color: var(--main-color);
         }
         h2.title {
             color: red;
@@ -44,11 +48,10 @@
 
         /*базовый вопрос 2*/
         p {
-            /*display: none;*/
-            color: #000;
+            color: #000!important;
         }
         .sub_title {
-            color: green;
+            color: var(--main-color);
         }
         #sub_title_id {
             /*как перебтить стиль*/
@@ -58,10 +61,10 @@
 
         /* test_1 */
         .test_1 {
-            display: none;
+            display: block;
         }
         .style_priorities .example .test_1 {
-            background: #0fff0e;
+            background: var(--main-color);
         }
         .style_priorities .example .test_1 {
             background: #ff4100;
@@ -72,43 +75,32 @@
 
 
         /* test_2 */
-        .test_2 {
-            display: none;
-        }
+        .test_2 {}
         .style_priorities .example .test_2 {
             /* up to 53st */
             background: #ff4100;
         }
 
-
         /* test_3 */
-        #test_3 {
-            display: none;
-        }
+        #test_3 {}
         .style_priorities .example #test_3 {
             /* up to 53st */
-            background: #0fff0e;
+            background: var(--main-color);
         }
-
 
         /* test_4 */
-        #test_4 {
-            display: none;
-        }
+        #test_4 {}
         .style_priorities .example #test_4 {
-            /* up to 53st */
-            background: #0fff0e;
+            background: var(--main-color)!important;
         }
 
 
 
 
-
-        /* ---------- #2 Псевдоклассы + Псевдоэлементы ---------- */
+        /* ---------- #2 ---------- */
         .selectors_and_combinations{
-            /*display: block;*/
+            display: block;
         }
-
         .selectors_and_combinations a[target="_blank"] {
             background-image:  url(https://www.indivstock.com/static34/preview2/stock-vector-light-bulb-icon-illustrated-in-vector-on-white-background-495852.jpg);
             background-repeat: no-repeat;
@@ -120,7 +112,10 @@
             padding: 20px;
             color: red;
         }
-        a[href*="http"] {
+        a + span + div {
+            background: #000;
+        }
+        a[href="http://asdasd"] {
             background: #000;
             pointer-events:none;
         }
@@ -131,7 +126,7 @@
 
         /* ---------- #3 Псевдоклассы + Псевдоэлементы ---------- */
         .psevdo_class_element {
-            /*display: none;*/
+            display: block;
         }
         .psevdo_class_element .example {
             margin: 40px auto;
@@ -144,7 +139,7 @@
             background: red;
         }
         .psevdo_class_element .ps_class .btn_2:active {
-            background: green;
+            background: var(--main-color);
         }
         .psevdo_class_element .ps_class .btn_3:focus {
             background: grey;
@@ -156,12 +151,23 @@
         }
 
         .psevdo_class_element .ps_class table {}
-        .psevdo_class_element .ps_class table tr:first-child {}
-        .psevdo_class_element .ps_class table tr:last-child {}
+        .psevdo_class_element .ps_class table tr:first-child {
+            background: red;
+        }
+        .psevdo_class_element .ps_class table tr:last-child {
+            background: red;
+        }
+        .psevdo_class_element .ps_class table tr td:nth-child(2n + 1){
+            background: #000;
+        } 
+        .psevdo_class_element .ps_class table tr:last-child td:nth-child(2n ) {
+            background: #baf7f5;
+        }
+
         .psevdo_class_element .ps_class table tr:nth-child(2n) {
             background: #baf7f5;
         }
-        .psevdo_class_element .ps_class table tr:nth-child(2n)  td:nth-child(2n) {
+        .psevdo_class_element .ps_class table tr:nth-child(2n) td:nth-child(2n) {
             background: #fdffd5;
         }
 
@@ -189,7 +195,6 @@
 
         /* ---------- #4 Ппеременные в CSS ---------- */
         .variables {
-            display: none;
          /* @Info
              1) https://developer.mozilla.org/en-US/docs/Web/CSS/var()
              2) https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties
@@ -210,8 +215,8 @@
             width: 30px;
             height: 30px;
         }
-        .variables .pallet>div:nth-child(0) {
-            background: #000;
+        .variables .pallet>div:nth-child(1) {
+            background: var(--main-color);
         }
     </style>
 </head>
@@ -220,18 +225,16 @@
 <main>
     <section class="style_priorities">
         <h2 class="title" id="title_id">
-            #1 Приоритеты стилей
-            <!--            <a href="https://idg.net.ua/blog/uchebnik-css/azy-css/kaskadnost">#1 Приоритеты стилей</a>-->
+            <a href="https://idg.net.ua/blog/uchebnik-css/azy-css/kaskadnost">#1 Приоритеты стилей</a>
         </h2>
-
-        <p class="sub_title" id="sub_title_id">какой применится цвет?</p>
+        <p class="sub_title" id="sub_title_id" style="color: purple">какой применится цвет?</p>
 
 
         <div class="example">
             <div class="test_1">test_1</div>
             <div class="test_1 test_2">test_2</div>
             <div class="test_1" id="test_3">test_3</div>
-            <div class="test_1" id="test_4" style="background: blueviolet">test_4</div>
+            <div class="test_1" id="test_4" style="background: purple">test_4</div>
         </div>
     </section>
 
@@ -239,8 +242,8 @@
     <section class="selectors_and_combinations">
         <h2 class="title">#2 Селекторы и их комбинации</h2>
         <ul class="example">
-            <li><a href="/" target="_blank">_blank</a></li>
-            <li><a href="/" type="button">A Button</a></li>
+            <li><a href="/asdasd/https/asdasd" target="_blank">_blank</a></li>
+            <li><a href="http://asdasd" type="button">A Button</a></li>
         </ul>
     </section>
 
@@ -254,8 +257,8 @@
             <button type="reset" class="btn_3">reset btn_3</button>
             <button type="submit" class="btn_4" disabled>disabled btn_3</button>
 
-            <input type="text" required>
-            <input type="password" required>
+            <input type="text" >
+            <input type="password">
             <input type="number">
             <input type="color" >
             <input type="date" >
@@ -279,7 +282,9 @@
         </div>
         <div class="example ps_elem">
             <h3 class="title"><a href="http://htmlbook.ru/samcss/psevdoelementy">Псевдоэлементы</a></h3>
-            <button type="button" class="ps_elem_1">button ps_elem_1</button>
+            <button type="button" class="ps_elem_1">
+                button ps_elem_1
+            </button>
             <button type="submit" class="ps_elem_2">submit ps_elem_2</button>
             <textarea class="ps_elem_3" cols="30" rows="10">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, quo.
@@ -312,7 +317,7 @@
     </section>
 
 
-    <section style="display: none">
+    <section style="display: block">
         h2.title{text}^.example
     </section>
 </main>
