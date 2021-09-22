@@ -154,6 +154,12 @@ main .feature {
 main .feature .title {
 }
 
+main .feature .description {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
 main .feature .description figure {
     display: inline-block;
     width: 24%;
