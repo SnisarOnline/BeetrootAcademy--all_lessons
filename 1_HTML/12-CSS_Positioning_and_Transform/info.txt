@@ -1,0 +1,5 @@
+﻿1) CSS3-трансформации - https://html5book.ru/css3-transform/
+2) Использование CSS переходов  - https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions
+3) Использование CSS-анимации -  https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Animations/Using_CSS_animations
+4) CSS правила - https://basicweb.ru/css/css_rules.php
+5) CSS функции - https://basicweb.ru/css/css_functions.php

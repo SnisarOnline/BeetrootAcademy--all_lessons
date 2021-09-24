@@ -1,8 +1,0 @@
-1) Абсолютные и относительные пути
-http://htmlbook.ru/samhtml/ssylki/absolyutnye-i-otnositelnye-ssylki
-2) мета теги
-http://htmlbook.ru/html/meta
-https://timeweb.com/ru/community/articles/metateg-viewport-pochemu-on-vazhen-i-kak-ego-pravilno-ispolzovat
-3) Авто создание дефолтной разметки - EMMET
-4) гит доступы к ДЗ
-5) 
