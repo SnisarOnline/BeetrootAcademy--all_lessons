@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --main-color: green;
+            --pane-padding: 5px 42px;
+        }
+
+        main > section {
+            margin: 20px auto;
+            border: 1px solid #000000;
+            padding: 15px;
+        }
+
+
+/* ---------- #1 Приоритеты стилей ----------*/
+        .style_priorities {
+            display: block;
+        }
+        .style_priorities .example > div {
+            width: 100%;
+            height: 20px;
+            text-align: center;
+            font-weight: bolder;
+            border: 1px solid #000000;
+            background: #000;
+            /*margin: 10px; !* Почему блоки вылазят за радителя ?*!*/
+        }
+
+        /*базовый вопрос 1. Какой будет цвет*/
+        h2 {
+            color: var(--main-color);
+        }
+        h2.title {
+            color: red;
+        }
+        .title {
+            color: #0afff3;
+        }
+        #title_id {
+            color: #000;
+        }
+
+        /*базовый вопрос 2*/
+        p {
+            color: #000!important;
+        }
+        .sub_title {
+            color: var(--main-color);
+        }
+        #sub_title_id {
+            /*как перебтить стиль*/
+            color: red;
+        }
+
+
+        /* test_1 */
+        .test_1 {
+            display: block;
+        }
+        .style_priorities .example .test_1 {
+            background: var(--main-color);
+        }
+        .style_priorities .example .test_1 {
+            background: #ff4100;
+        }
+        .style_priorities .example .test_1 {
+            background: #fff714;
+        }
+
+
+        /* test_2 */
+        .test_2 {}
+        .style_priorities .example .test_2 {
+            /* up to 53st */
+            background: #ff4100;
+        }
+
+        /* test_3 */
+        #test_3 {}
+        .style_priorities .example #test_3 {
+            /* up to 53st */
+            background: var(--main-color);
+        }
+
+        /* test_4 */
+        #test_4 {}
+        .style_priorities .example #test_4 {
+            background: var(--main-color)!important;
+        }
+
+
+
+
+        /* ---------- #2 ---------- */
+        .selectors_and_combinations{
+            display: block;
+        }
+        .selectors_and_combinations a[target="_blank"] {
+            background-image:  url(https://www.indivstock.com/static34/preview2/stock-vector-light-bulb-icon-illustrated-in-vector-on-white-background-495852.jpg);
+            background-repeat: no-repeat;
+            background-position: -3px 3px;
+            background-size: contain;
+            padding-left: 15px; /* Смещаем текст вправо */
+        }
+        .selectors_and_combinations a[type="button"] {
+            padding: 20px;
+            color: red;
+        }
+        a + span + div {
+            background: #000;
+        }
+        a[href="http://asdasd"] {
+            background: #000;
+            pointer-events:none;
+        }
+
+
+
+
+
+        /* ---------- #3 Псевдоклассы + Псевдоэлементы ---------- */
+        .psevdo_class_element {
+            display: block;
+        }
+        .psevdo_class_element .example {
+            margin: 40px auto;
+            border: 1px dotted red;
+            padding: 5px;
+        }
+
+        /* Псевдоклассы */
+        .psevdo_class_element .ps_class .btn_1:hover {
+            background: red;
+        }
+        .psevdo_class_element .ps_class .btn_2:active {
+            background: var(--main-color);
+        }
+        .psevdo_class_element .ps_class .btn_3:focus {
+            background: grey;
+            border: 5px dotted red;
+        }
+        .psevdo_class_element .ps_class .btn_4:disabled {
+            color: red;
+            background: aquamarine;
+        }
+
+        .psevdo_class_element .ps_class table {}
+        .psevdo_class_element .ps_class table tr:first-child {
+            background: red;
+        }
+        .psevdo_class_element .ps_class table tr:last-child {
+            background: red;
+        }
+        .psevdo_class_element .ps_class table tr td:nth-child(2n + 1){
+            background: #000;
+        } 
+        .psevdo_class_element .ps_class table tr:last-child td:nth-child(2n ) {
+            background: #baf7f5;
+        }
+
+        .psevdo_class_element .ps_class table tr:nth-child(2n) {
+            background: #baf7f5;
+        }
+        .psevdo_class_element .ps_class table tr:nth-child(2n) td:nth-child(2n) {
+            background: #fdffd5;
+        }
+
+        /* Псевдоэлементы */
+        .psevdo_class_element .ps_elem .ps_elem_1:before {
+            display: block;
+            content: '<before content>';
+        }
+        .psevdo_class_element .ps_elem .ps_elem_1:after {
+            display: block;
+            content: '<after content>';
+        }
+        .psevdo_class_element .ps_elem .ps_elem_2:first-letter {
+            font-size: 3rem;
+            color: red;
+        }
+        .psevdo_class_element .ps_elem .ps_elem_3::selection {
+            color: red;
+            background: #000;
+        }
+
+
+
+
+
+        /* ---------- #4 Ппеременные в CSS ---------- */
+        .variables {
+         /* @Info
+             1) https://developer.mozilla.org/en-US/docs/Web/CSS/var()
+             2) https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties
+             3) https://developer.mozilla.org/ru/docs/Web/CSS/:root
+         */
+        }
+        .variables .pallet {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            max-width: 120px;
+            border: 5px double #000000;
+            padding: 5px;
+            background: #d5d5d5;
+        }
+        .variables .pallet>div{
+            width: 30px;
+            height: 30px;
+        }
+        .variables .pallet>div:nth-child(1) {
+            background: var(--main-color);
+        }
+    </style>
+</head>
+<body>
+
+<main>
+    <section class="style_priorities">
+        <h2 class="title" id="title_id">
+            <a href="https://idg.net.ua/blog/uchebnik-css/azy-css/kaskadnost">#1 Приоритеты стилей</a>
+        </h2>
+        <p class="sub_title" id="sub_title_id" style="color: purple">какой применится цвет?</p>
+
+
+        <div class="example">
+            <div class="test_1">test_1</div>
+            <div class="test_1 test_2">test_2</div>
+            <div class="test_1" id="test_3">test_3</div>
+            <div class="test_1" id="test_4" style="background: purple">test_4</div>
+        </div>
+    </section>
+
+
+    <section class="selectors_and_combinations">
+        <h2 class="title">#2 Селекторы и их комбинации</h2>
+        <ul class="example">
+            <li><a href="/asdasd/https/asdasd" target="_blank">_blank</a></li>
+            <li><a href="http://asdasd" type="button">A Button</a></li>
+        </ul>
+    </section>
+
+
+    <section class="psevdo_class_element">
+        <h2 class="title">#3 Псевдоклассы + Псевдоэлементы</h2>
+        <div class="example ps_class">
+            <h3 class="title"><a href="http://htmlbook.ru/samcss/psevdoklassy">Псевдоклассы</a></h3>
+            <button type="button" class="btn_1">button btn_1</button>
+            <button type="submit" class="btn_2">submit btn_2</button>
+            <button type="reset" class="btn_3">reset btn_3</button>
+            <button type="submit" class="btn_4" disabled>disabled btn_3</button>
+
+            <input type="text" >
+            <input type="password">
+            <input type="number">
+            <input type="color" >
+            <input type="date" >
+            <input type="range" >
+            <input type="time" >
+
+            <table border="5">
+                <caption>Таблица размеров обуви</caption>
+                <tr>
+                    <th>Россия</th>
+                    <th>Великобритания</th>
+                    <th>Европа</th>
+                    <th>Длина ступни, см</th>
+                </tr>
+                <tr><td>34,5</td><td>3,5</td><td>36</td><td>23</td></tr>
+                <tr><td>35,5</td><td>4</td><td>36⅔</td><td>23–23,5</td></tr>
+                <tr><td>36</td><td>4,5</td><td>37⅓</td><td>23,5</td></tr>
+                <tr><td>36,5</td><td>5</td><td>38</td><td>24</td></tr>
+                <tr><td>37</td><td>5,5</td><td>38⅔</td><td>24,5</td></tr>
+            </table>
+        </div>
+        <div class="example ps_elem">
+            <h3 class="title"><a href="http://htmlbook.ru/samcss/psevdoelementy">Псевдоэлементы</a></h3>
+            <button type="button" class="ps_elem_1">
+                button ps_elem_1
+            </button>
+            <button type="submit" class="ps_elem_2">submit ps_elem_2</button>
+            <textarea class="ps_elem_3" cols="30" rows="10">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, quo.
+            </textarea>
+        </div>
+    </section>
+
+
+    <section class="variables" >
+        <h2 class="title">#4 Переменные в CSS</h2>
+        <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/var()">var()</a></li>
+            <li> <a href="https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties">Переменные</a> </li>
+            <li><a href="https://developer.mozilla.org/ru/docs/Web/CSS/:root">:root</a></li>
+        </ul>
+        <div class="example pallet">
+            <div>01</div>
+            <div>02</div>
+            <div>03</div>
+            <div>04</div>
+            <div>05</div>
+            <div>06</div>
+            <div>07</div>
+            <div>08</div>
+            <div>09</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+        </div>
+    </section>
+
+
+    <section style="display: block">
+        h2.title{text}^.example
+    </section>
+</main>
+
+</body>
+</html>
