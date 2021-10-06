@@ -8,193 +8,184 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./css/_reset.css">
-    <link rel="stylesheet" href="./css/_normalize.css"> <!-- Что ето :
-    reset.css — как и видно по названию файла, сбрасывает большинство стилей браузера, которые в нем заданы по
-     умолчанию (а такие действительно есть, просто откройте голый HTML).
-
-    normalize.css — этот файл не только задает стили по умолчанию там где это необходимо, но и исправляет некоторые
-     недостатки старых браузеров (привет IE).
-
-     @info https://github.com/necolas/normalize.css/blob/master/normalize.css
-     @info all = https://developer.mozilla.org/ru/docs/Web/CSS/all
-     @info unset = https://developer.mozilla.org/en-US/docs/Web/CSS/unset
-     -->
-    <link rel="stylesheet" href="./css/_main.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
-<body>
-<header>
-    <!-- @INFO https://html.spec.whatwg.org/multipage/sections.html#the-header-element
-     @info http://htmlbook.ru/index.php/html/header
-    Тег <header> задает «шапку» сайта или раздела, в которой обычно располагается заголовок.
-    -->
-    <div class="header--icon">
-        <img src="" alt="картинка">
-    </div>
-    <nav class="header--nav-list">
-        <!-- @INFO https://html.spec.whatwg.org/multipage/sections.html#the-nav-element
-        @info http://htmlbook.ru/index.php/html/nav
-        Тег <nav> задает навигацию по сайту. Если на странице несколько блоков ссылок, то в <nav> обычно помещают приоритетные ссылки. Также допустимо использовать несколько тегов <nav> в документе. Запрещается вкладывать <nav> внутрь <address>.
+<body class="page">
+    <header class="page__header header">
+        <!-- @INFO https://html.spec.whatwg.org/multipage/sections.html#the-header-element
+         @info http://htmlbook.ru/index.php/html/header
+        Тег <header> задает «шапку» сайта или раздела, в которой обычно располагается заголовок.
         -->
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-    </nav>
-    <div class="header--authorisation"></div>
-</header>
+        <div class="header__logo">
+            <img src="" alt="картинка">
+        </div>
+        <nav class="header__nav nav">
+            <!-- @INFO https://html.spec.whatwg.org/multipage/sections.html#the-nav-element
+            @info http://htmlbook.ru/index.php/html/nav
+            Тег <nav> задает навигацию по сайту. Если на странице несколько блоков ссылок, то в <nav> обычно помещают приоритетные ссылки. Также допустимо использовать несколько тегов <nav> в документе. Запрещается вкладывать <nav> внутрь <address>.
+            -->
 
-<main>
-    <!-- @INFO https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element
-     @info http://htmlbook.ru/html/main
-     Элемент <main> предназначен для основного содержимого документа. Содержимое должно быть уникальным и не включать типовые блоки вроде шапки сайта, подвала, навигации, боковой панели, формы поиска и т. п.
-     -->
+            <span class="nav__link"></span>
+            <span class="nav__link"></span>
+            <span class="nav__link"></span>
+            <span class="nav__link"></span>
+            <span class="nav__link"></span>
+        </nav>
+        <div class="header__authorisation"></div>
+    </header>
 
-    <aside class="main--sidebar">
-        <!-- @INFO https://html.spec.whatwg.org/multipage/sections.html#the-aside-element
-         @info http://htmlbook.ru/html/aside
-        Определяет блок сбоку от контента для размещения рубрик, ссылок на архив, меток и другой информации. Такой блок, как правило, называется «sidebar/боковая панель».
-        он может как входить в блок каждой скрин-секции  или быть одним общим на всю страницу.
-        -->
-        <ul >
-            <li>Русская кухня. Уха бурлацкая</li>
-            <li>Украинская кухня. Вареники</li>
-            <li>Молдавская кухня. Паприкаш</li>
-            <li>Кавказская кухня. Суп-харчо</li>
-            <li>Прибалтийская кухня. Вертиняй</li>
-        </ul>
-        <cite>Текст</cite>
-    </aside>
 
-    <div class="main--content"><!-- Используется исключительно для групировки -->
-        <section class="first_section">
-            <!-- @INFO https://html.spec.whatwg.org/multipage/sections.html#the-section-element
-                @info http://htmlbook.ru/html/section
-                Задаёт раздел документа, может применяться для блока новостей, контактной информации, глав текста,
-                 вкладок в диалоговом окне и др. Раздел обычно содержит заголовок. Допускается вкладывать один тег <section> внутрь другого.
-           -->
-            <div class="first_section__left_block">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut deleniti ducimus ea eligendi enim error,
-                impedit itaque laborum porro quaerat repellat, similique ut! Ad, cum dicta distinctio doloribus expedita
-                fugit, id laudantium magni maiores maxime modi nemo nisi, quibusdam quis totam ut vero? Adipisci aperiam
-                dignissimos eaque ex labore mollitia praesentium quia sequi ullam. A aliquid culpa debitis dolorum eos
-                expedita,
-                facere, iusto neque non odit quae quas rerum totam ullam, voluptate. Aut autem ex itaque quaerat repellat
-                tempore
-                voluptatum. Adipisci animi, at consequuntur cumque distinctio dolores molestias porro veniam voluptates.
-                Ab consequatur, ex? Aliquam distinctio sed voluptatum. Odit, sed.
-            </div>
-            <div class="first_section--block_img">
-                <img src="#" alt="img">
-            </div>
-        </section>
+    <main class="main">
+        <!-- @INFO https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element
+         @info http://htmlbook.ru/html/main
+         Элемент <main> предназначен для основного содержимого документа. Содержимое должно быть уникальным и не включать типовые блоки вроде шапки сайта, подвала, навигации, боковой панели, формы поиска и т. п.
+         -->
 
-        <section class="second_section">
-            <figure class="second_section--figure_one_img">
-                <!--
-                @INFO https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element
-                 @info http://htmlbook.ru/html/figcaption
-                Содержит описание для тега <figure>. Тег <figcaption> должен быть первым или последним элементом в группе.
-                 элемент можно использовать для аннотирования иллюстраций, диаграмм, фотографий, списков кодов и т. Д.
+        <aside class="main__sidebar">
+            <!-- @INFO https://html.spec.whatwg.org/multipage/sections.html#the-aside-element
+             @info http://htmlbook.ru/html/aside
+            Определяет блок сбоку от контента для размещения рубрик, ссылок на архив, меток и другой информации. Такой блок, как правило, называется «sidebar/боковая панель».
+            он может как входить в блок каждой скрин-секции  или быть одним общим на всю страницу.
+            -->
+            <ul >
+                <li>Русская кухня. Уха бурлацкая</li>
+                <li>Украинская кухня. Вареники</li>
+                <li>Молдавская кухня. Паприкаш</li>
+                <li>Кавказская кухня. Суп-харчо</li>
+                <li>Прибалтийская кухня. Вертиняй</li>
+            </ul>
+            <cite>Текст</cite>
+        </aside>
+
+        <div class="main__content"><!-- Обертка используется исключительно для групировки и разметки -->
+            <div class="first_section">
+                <!-- @INFO https://html.spec.whatwg.org/multipage/sections.html#the-section-element
+                    @info http://htmlbook.ru/html/section
+                    Задаёт раздел документа, может применяться для блока новостей, контактной информации, глав текста,
+                     вкладок в диалоговом окне и др. Раздел обычно содержит заголовок. Допускается вкладывать один тег <section> внутрь другого.
                -->
-                <img src="#" alt="img">
-                <figcaption>
-                    <!-- @INFO https://html.spec.whatwg.org/multipage/grouping-content.html#the-figcaption-element
-                    @info
+                <div class="first_section__left_block">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut deleniti ducimus ea eligendi enim error,
+                        impedit itaque laborum porro quaerat repellat, similique ut! Ad, cum dicta distinctio doloribus expedita
+                        fugit, id laudantium magni maiores maxime modi nemo nisi, quibusdam quis totam ut vero? Adipisci aperiam
+                        dignissimos eaque ex labore mollitia praesentium quia sequi ullam. A aliquid culpa debitis dolorum eos
+                        expedita,
+                        facere, iusto neque non odit quae quas rerum totam ullam, voluptate. Aut autem ex itaque quaerat repellat
+                        tempore
+                        voluptatum. Adipisci animi, at consequuntur cumque distinctio dolores molestias porro veniam voluptates.
+                        Ab consequatur, ex? Aliquam distinctio sed voluptatum. Odit, sed.
+                    </p>
+                </div>
+                <div class="first_section__right_block">
+                    <img src="#" alt="img">
+                </div>
+            </div>
+
+            <div class="second_section">
+                <figure class="second_section__figure_one_img">
+                    <!--
+                    @INFO https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element
+                     @info http://htmlbook.ru/html/figcaption
                     Содержит описание для тега <figure>. Тег <figcaption> должен быть первым или последним элементом в группе.
+                     элемент можно использовать для аннотирования иллюстраций, диаграмм, фотографий, списков кодов и т. Д.
+                   -->
+                    <img src="#" alt="img" class="second_section__img">
+                    <figcaption>
+                        <!-- @INFO https://html.spec.whatwg.org/multipage/grouping-content.html#the-figcaption-element
+                        @info
+                        Содержит описание для тега <figure>. Тег <figcaption> должен быть первым или последним элементом в группе.
+                        -->
+                        Описание img
+                    </figcaption>
+                </figure>
+                <figure class="second_section__figure_group_img">
+                    <img src="castle1423.jpeg" title="Etching. Anonymous, ca. 1423."
+                         alt="The castle has one tower, and a tall wall around it.">
+                    <img src="castle1858.jpeg" title="Oil-based paint on canvas. Maria Towle, 1858."
+                         alt="The castle now has two towers and two walls.">
+                    <img src="castle1999.jpeg" title="Film photograph. Peter Jankle, 1999."
+                         alt="The castle lies in ruins, the original tower all that remains in one piece.">
+                    <figcaption>Описание для всей группы img</figcaption>
+                </figure>
+                <figure class="second_section__figure_video">
+                    <video src="#"></video>
+                    <figcaption>Описание video</figcaption>
+                </figure>
+                <figure class="second_section__figure_quote">
+                    <blockquote><p>Twas brillig, and the slithy toves
+                        Did gyre and gimble in the wabe;
+                        All mimsy were the borogoves,
+                        And the mome raths outgrabe.
+                    </p></blockquote>
+                    <figcaption>Описание blockquote</figcaption>
+                </figure>
+            </div>
+
+            <div class="third_section">
+                <article class="third_section__block_news">
+                    <!-- @INFO https://html.spec.whatwg.org/multipage/sections.html#the-article-element
+                        @info http://htmlbook.ru/html/article
+                        Тег <article> задает содержание сайта вроде новости, статьи, записи блога, форума или др.
                     -->
-                    Описание img
-                </figcaption>
-            </figure>
-            <figure class="second_section--figure_group_img">
-                <img src="castle1423.jpeg" title="Etching. Anonymous, ca. 1423."
-                     alt="The castle has one tower, and a tall wall around it.">
-                <img src="castle1858.jpeg" title="Oil-based paint on canvas. Maria Towle, 1858."
-                     alt="The castle now has two towers and two walls.">
-                <img src="castle1999.jpeg" title="Film photograph. Peter Jankle, 1999."
-                     alt="The castle lies in ruins, the original tower all that remains in one piece.">
-                <figcaption>Описание для всей группы img</figcaption>
-            </figure>
-            <figure class="second_section--figure_video">
-                <video src="#"></video>
-                <figcaption>Описание video</figcaption>
-            </figure>
-            <figure class="second_section--figure_quote">
-                <blockquote><p>Twas brillig, and the slithy toves
-                    Did gyre and gimble in the wabe;
-                    All mimsy were the borogoves,
-                    And the mome raths outgrabe.
-                </p></blockquote>
-                <figcaption>Описание blockquote</figcaption>
-            </figure>
-        </section>
+                    <span>Lorem ipsum dolor sit amet, consectetur.</span>
+                    <h3>Lorem ipsum dolor sit amet.</h3>
+                    <p>
+                        История о том, как возле столовой появились загадочные розовые
+                        следы с
+                        <mark>
+                            <!-- @INFO https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-mark-element
+                             @info http://htmlbook.ru/html/mark
+                            Тег <mark> помечает текст как выделенный. Такой текст ничем не отличается от обычного, но его вид может быть изменен с помощью стилей. В браузере Chrome и Firefox фоновый цвет текста внутри <mark> выделяется желтым цветом. -->
+                            шестью пальцами
+                        </mark>
+                        , и почему это случилось.
+                    </p>
+                </article>
+                <aside class="third_section__block_info">
+                    <!-- @INFO https://html.spec.whatwg.org/multipage/sections.html#the-aside-element
+                        @info http://htmlbook.ru/html/aside
+                        Определяет блок сбоку от контента для размещения рубрик, ссылок на архив, меток и другой информации.
+                         Такой блок, как правило, называется «sidebar/боковая панель».
+                        он может как входить в блок каждой скрин-секции  или быть одним общим на всю страницу.
+                    -->
+                    <blockquote><p>Twas brillig, and the slithy toves
+                        Did gyre and gimble in the wabe;
+                        All mimsy were the borogoves,
+                        And the mome raths outgrabe.
+                    </p></blockquote>
+                    <p>Lorem ipsum dolor sit.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+                </aside>
+            </div>
+        </div>
+    </main>
 
-        <section class="third_section">
-            <article class="third_section__block_news">
-                <!-- @INFO https://html.spec.whatwg.org/multipage/sections.html#the-article-element
-                    @info http://htmlbook.ru/html/article
-                    Тег <article> задает содержание сайта вроде новости, статьи, записи блога, форума или др.
-                -->
-                <span>Lorem ipsum dolor sit amet, consectetur.</span>
-                <h3>Lorem ipsum dolor sit amet.</h3>
-                <p>
-                    История о том, как возле столовой появились загадочные розовые
-                    следы с
-                    <mark>
-                        <!-- @INFO https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-mark-element
-                         @info http://htmlbook.ru/html/mark
-                        Тег <mark> помечает текст как выделенный. Такой текст ничем не отличается от обычного, но его вид может быть изменен с помощью стилей. В браузере Chrome и Firefox фоновый цвет текста внутри <mark> выделяется желтым цветом. -->
-                        шестью пальцами
-                    </mark>
-                    , и почему это случилось.
-                </p>
-            </article>
-            <aside class="third_section__block_info">
-                <!-- @INFO https://html.spec.whatwg.org/multipage/sections.html#the-aside-element
-                    @info http://htmlbook.ru/html/aside
-                    Определяет блок сбоку от контента для размещения рубрик, ссылок на архив, меток и другой информации.
-                     Такой блок, как правило, называется «sidebar/боковая панель».
-                    он может как входить в блок каждой скрин-секции  или быть одним общим на всю страницу.
-                -->
-                <blockquote><p>Twas brillig, and the slithy toves
-                    Did gyre and gimble in the wabe;
-                    All mimsy were the borogoves,
-                    And the mome raths outgrabe.
-                </p></blockquote>
-                <p>Lorem ipsum dolor sit.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-            </aside>
-        </section>
-    </div>
-</main>
+    <footer class="page__footer footer">
+        <!-- @INFO https://html.spec.whatwg.org/multipage/sections.html#the-footer-element
+         @info http://htmlbook.ru/index.php/html/footer
+        Тег <footer> задаёт «подвал» сайта или раздела, в нём может располагаться имя автора, дата документа, контактная и правовая информация.
+        -->
 
-<footer>
-    <!-- @INFO https://html.spec.whatwg.org/multipage/sections.html#the-footer-element
-     @info http://htmlbook.ru/index.php/html/footer
-    Тег <footer> задаёт «подвал» сайта или раздела, в нём может располагаться имя автора, дата документа, контактная и правовая информация.
-    -->
-
-    <form action="https-URL" method="get" id="email-form">
-        <fieldset form="email-form" title="воодим только email">
-            <!--
-            @info http://htmlbook.ru/html/fieldset
-            Элемент <fieldset> предназначен для группирования элементов формы. Такая группировка облегчает работу с формами,
-             содержащими большое число данных. Например, один блок может быть предназначен для ввода текстовой информации, а другой — для флажков.
-            Браузеры для повышения наглядности отображают результат использования тега <fieldset> в виде рамки. Ее вид зависит
-             от операционной системы, а также используемого браузера
-             -->
-            <legend>
+        <form action="https-URL" method="get" id="email-form">
+            <fieldset form="email-form" title="воодим только email">
                 <!--
-                @info http://htmlbook.ru/html/legend
-                Тег <legend> применяется для создания заголовка группы элементов формы, которая определяется с помощью тега <fieldset>.
-                 Группа элементов обозначается в браузере с помощью рамки, а текст, который располагается внутри контейнера <legend>, встраивается в эту рамку.
-                -->
-                Введи email
-            </legend>
-            <input type="email" name="email">
-        </fieldset>
-    </form>
-</footer>
+                @info http://htmlbook.ru/html/fieldset
+                Элемент <fieldset> предназначен для группирования элементов формы. Такая группировка облегчает работу с формами,
+                 содержащими большое число данных. Например, один блок может быть предназначен для ввода текстовой информации, а другой — для флажков.
+                Браузеры для повышения наглядности отображают результат использования тега <fieldset> в виде рамки. Ее вид зависит
+                 от операционной системы, а также используемого браузера
+                 -->
+                <legend>
+                    <!--
+                    @info http://htmlbook.ru/html/legend
+                    Тег <legend> применяется для создания заголовка группы элементов формы, которая определяется с помощью тега <fieldset>.
+                     Группа элементов обозначается в браузере с помощью рамки, а текст, который располагается внутри контейнера <legend>, встраивается в эту рамку.
+                    -->
+                    Введи email
+                </legend>
+                <input type="email" name="email">
+            </fieldset>
+        </form>
+    </footer>
 </body>
 </html>
