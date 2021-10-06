@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test</title>
+</head>
+<body>
+<section id="35">
+    <h2>Пробуем в бою</h2>
+    <span class="DFA-test example-form example-form_inline">
+        <input style="font-family: PT Mono, monospace" class="DFA-test__input" type="text" id="DFA-test" placeholder="a*b*c*">
+        <span style="font-size: 3rem; margin: 1rem" class="DFA-test__error ">
+                        ^ <br>
+                        Здеся ошибка
+                        </span>
+    </span>
+
+    <script>
+        const DFA = (TRANSITIONS) => (input) => {
+            let i = 0
+            let state = 0;
+
+            while (input[i]) {
+                state = TRANSITIONS[state][input[i++]];
+                if (state === undefined || state === -1) return i
+            }
+            return true
+        }
+
+        const TRANSITIONS = [
+            {a: 0, b: 1, c: 2},
+            {b: 1, c: 2},
+            {c: 2}
+        ];
+
+        const verify = DFA(TRANSITIONS);
+
+        document
+            .querySelector(".DFA-test__input")
+            .addEventListener("input", (ev) => {
+                const errorMessage = document.querySelector(".DFA-test__error");
+                const {value} = ev.target;
+
+                const result = verify(value);
+                if (typeof result === "number") {
+                    errorMessage.innerHTML = `
+                        ${Array(result - 1).fill("&nbsp;").join("")}^ <br/>
+                        Здеся ошибка
+                        `
+                } else {
+                    errorMessage.innerHTML = ``
+                }
+            })
+
+    </script>
+</section>
+</body>
+</html>

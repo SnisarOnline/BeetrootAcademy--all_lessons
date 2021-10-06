@@ -1,0 +1,260 @@
+/*
+Общая инфа!
+@info Единицы измерения в CSS = https://techrocks.ru/2019/08/07/units-in-css-for-beginners/
+@info :
+ - Краткая запись CSS как антипаттерн = http://prgssr.ru/development/kratkaya-zapis-css-kak-antipattern.html
+ - CSS Shorthand Syntax Considered an Anti-Pattern = https://csswizardry.com/2016/12/css-shorthand-syntax-considered-an-anti-pattern/
+@info Шрифты : http://htmlbook.ru/blog/svoi-shrift-na-stranitse
+ 1) https://habr.com/ru/company/htmlacademy/blog/552388/
+ 2) https://snipp.ru/html-css/font-face
+@info
+@info
+*/
+
+:root {
+    /* @Info
+     1) https://developer.mozilla.org/en-US/docs/Web/CSS/var()
+     2) https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties
+     */
+    --color-Red: Red;
+    --color-Brown: Brown;
+    --color-Orange: Orange;
+    --color-Yellow: Yellow;
+    --color-Lime: Lime;
+    --color-Green: Green;
+    --color-cadetblue: cadetblue;
+    --color-Cyan: Cyan;
+    --color-Blue: Blue;
+    --color-Pink: Pink;
+    --color-Violet: Violet;
+    --color-Purple: Purple;
+    --color-Indigo: rgb(148 0 255 / 70%); /* Indigo + transparent 60% */
+    --color-Black: Black;
+    --color-White: White;
+}
+
+/* ======================================== Разделение на области ======================================== */
+/* -------- Сбособ на FLEX-ах -------- */
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+header, footer {
+    background-color: var(--color-Indigo);
+}
+main{
+    flex-grow: 1;
+    background-color: var(--color-White);
+}
+
+
+/* -------- Сбособ на GRID-ах -------- */
+/* @Info https://www.digitalocean.com/community/tutorials/css-css-grid-holy-grail-layout */
+/*
+body {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: minmax(989px, auto) minmax(270px, auto);
+    grid-template-areas:
+            "header header"
+            "main sidebar"
+            "footer footer";
+    !*grid-template-areas: "header" "main" "footer";*!
+    grid-template-rows: 100px 1fr 80px;
+    min-height: 100vh;
+}
+body header {
+    background-color: var(--color-Indigo);
+    grid-area: header;
+}
+body .body--sidebar{
+    grid-area: sidebar;
+}
+body main {
+    background-color: var(--color-cadetblue);
+    grid-area: main;
+}
+body footer {
+    background-color: var(--color-Indigo);
+    grid-area: footer;
+}
+
+*/
+
+
+
+
+/* ================================================ ДИЗАЙН ================================================ */
+/* -------------- MAIN BLOCK -------------- */
+body header,
+body footer {
+    background-color: var(--color-Indigo);
+    display: flex;
+    align-items: center;
+    padding: 20px 5%;
+}
+
+body header {
+    /* просто чтоб было веселей */
+    position: sticky;
+    top: 0;
+}
+body main{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: minmax(789px, auto) minmax(270px, auto);
+    grid-template-areas: "main sidebar";
+    padding: 20px 5%;
+}
+body main .main--sidebar{
+    grid-area: sidebar;
+    background-color: var(--color-cadetblue);
+    padding: 20px;
+
+    /* просто чтоб было веселей */
+    position: sticky;
+    height: 200px;
+    top: 100px; /* потому что у хедера высота тоже есть */
+}
+body main .main--content {
+    grid-area: main;
+    background-color: var(--color-cadetblue);
+}
+
+/* ---------------------------- HEADER CONTENT ---------------------------- */
+header .header--icon{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: var(--color-White);
+    padding: 5px;
+    box-sizing: border-box;
+}
+header .header--nav-list{
+    display: flex;
+    justify-content: flex-start;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 0 15px;
+}
+header .header--nav-list span{
+    display: inline-block;
+    width: 70px;
+    height: 15px;
+    background-color: var(--color-White);
+    margin: 0 2%;
+}
+header .header--nav-list span:first-child {
+    margin-left: 0;
+}
+header .header--nav-list span:last-child {
+    margin-right: 0;
+}
+header .header--authorisation{
+    width: 250px;
+    min-width: 150px;
+    max-width: 250px;
+    height: 50px;
+    flex-grow: 1;
+    background-color: var(--color-White);
+    padding: 0 15px;
+}
+
+
+/* ---------------------------- MAIN CONTENT ---------------------------- */
+.main--content section{
+    margin: 40px 0;
+    padding: 20px;
+    background-color: var(--color-Pink);
+}
+
+/* ------- first_section ------- */
+.main--content .first_section{
+    display: flex;
+    flex-direction: row;
+}
+.main--content .first_section .first_section__left_block,
+.main--content .first_section .first_section--block_img{
+    width: 50%;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+.main--content .first_section .first_section--block_img img{
+    width: 80%;
+    min-width: 300px;
+    height: 200px;
+    display: block;
+    margin: 0 auto;
+    background-color: var(--color-White);
+}
+
+/* ------- second_section ------- */
+.main--content .second_section{
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+.main--content .second_section figure {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.main--content .second_section figure img{
+    width: 70px;
+    padding: 10px;
+    margin: 0 auto;
+}
+.main--content .second_section figure figcaption{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.main--content .second_section .second_section--figure_one_img {
+    min-width: 120px;
+}
+.main--content .second_section .second_section--figure_one_img img{
+    background-color: var(--color-White);
+}
+.main--content .second_section .second_section--figure_one_img figcaption{}
+
+.main--content .second_section .second_section--figure_group_img {
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-width: 200px;
+    flex-grow: 1;
+}
+.main--content .second_section .second_section--figure_group_img img{}
+.main--content .second_section .second_section--figure_group_img figcaption{}
+
+.main--content .second_section .second_section--figure_video{
+    min-width: 200px;
+    flex-grow: 1;
+}
+.main--content .second_section .second_section--figure_video video{
+    background-color: var(--color-White);
+}
+.main--content .second_section .second_section--figure_video figcaption{}
+
+.main--content .second_section .second_section--figure_quote {
+    flex-shrink: 1;
+}
+.main--content .second_section .second_section--figure_quote blockquote{
+    background-color: var(--color-White);
+    width: 300px;
+    padding: 10px;
+}
+.main--content .second_section .second_section--figure_quote figcaption{}
+
+
+
+/* ------- third_section ------- */
+.main--content .third_section{
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+/* ---------------------------- FOOTER CONTENT ---------------------------- */
+footer{}
