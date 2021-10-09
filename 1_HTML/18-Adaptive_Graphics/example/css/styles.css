@@ -901,13 +901,10 @@ template {
       -ms-flex-positive: 1;
           flex-grow: 1;
 }
-.main__content > div {
-  margin: 25px 0;
-  background-color: var(--color-cadetblue);
-}
-
-.retina, .split_screen, .pictures_in_text, .alignment_of_pictures, .picture_as_background, .pictures_in_text_object {
+.main__content > section {
   padding: 20px;
+  margin: 0 0 50px;
+  background-color: var(--color-cadetblue);
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -918,7 +915,7 @@ h2 {
   padding: 15px;
   font-size: 35px;
   font-weight: bolder;
-  background-color: var(--color-White);
+  background-color: rgba(95, 158, 160, 0.54);
 }
 
 /* ------- Retina IMG ------- */
@@ -990,7 +987,7 @@ h2 {
 }
 
 /* ------- выравнивание картинок пропорционально ------- */
-.alignment_of_pictures {
+.horizontal_alignment {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1003,11 +1000,10 @@ h2 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 20px;
   border-left: 5px solid var(--color-Orange);
   border-right: 5px solid var(--color-Orange);
 }
-.alignment_of_pictures figure {
+.horizontal_alignment figure {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1022,7 +1018,7 @@ h2 {
           align-items: center;
   background-color: var(--color-White);
 }
-.alignment_of_pictures figure img {
+.horizontal_alignment figure img {
   height: auto;
   width: auto;
   max-width: 100%;
@@ -1030,11 +1026,58 @@ h2 {
   display: block;
   margin: auto;
 }
-.alignment_of_pictures figure figcaption {
+.horizontal_alignment figure figcaption {
   display: block;
   width: 100%;
   font-size: 20px;
   text-align: center;
+}
+
+.vertical_alignment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-left: 5px solid var(--color-Orange);
+  border-right: 5px solid var(--color-Orange);
+}
+.vertical_alignment figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  background-color: var(--color-White);
+  margin: 20px 0;
+}
+.vertical_alignment figure .img_wrap {
+  -ms-flex-preferred-size: 33.333%;
+      flex-basis: 33.333%;
+  position: relative;
+  overflow: hidden;
+}
+.vertical_alignment figure .img_wrap img, .vertical_alignment figure .img_wrap svg {
+  width: 100%;
+  /* супер-лайвхак выравнивания */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.vertical_alignment figure figcaption {
+  -ms-flex-preferred-size: 67.777%;
+      flex-basis: 67.777%;
+  font-size: 25px;
+  text-align: left;
 }
 
 /* ------- картинка как фоновое изображение ------- */
@@ -1077,19 +1120,19 @@ h2 {
 }
 .pictures_in_text__left_img {
   float: left;
-  width: 400px;
+  width: 20%;
   height: 200px;
   overflow: hidden;
 }
 .pictures_in_text__left_img img {
-  width: auto;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   margin: auto;
   display: block;
 }
 .pictures_in_text__right_img {
   float: right;
-  width: 500px;
+  width: 40%;
   height: 150px;
   overflow: hidden;
   position: relative;
@@ -1105,7 +1148,7 @@ h2 {
           transform: translate(-50%, -50%);
 }
 .pictures_in_text__text {
-  font-size: 40px;
+  font-size: 25px;
   color: rgba(0, 0, 0, 0.3);
 }
 .pictures_in_text:after {
@@ -1117,13 +1160,14 @@ h2 {
   display: block;
   clear: both;
 }
+
 .pictures_in_text_object {
   border-left: 5px solid var(--color-Brown);
   border-right: 5px solid var(--color-Brown);
 }
 .pictures_in_text_object__left_img {
   float: left;
-  width: 400px;
+  width: 20%;
   height: 200px;
 }
 .pictures_in_text_object__left_img img {
@@ -1136,7 +1180,7 @@ h2 {
 }
 .pictures_in_text_object__right_img {
   float: right;
-  width: 500px;
+  width: 40%;
   height: 150px;
 }
 .pictures_in_text_object__right_img img {
@@ -1148,7 +1192,7 @@ h2 {
   width: 100%;
 }
 .pictures_in_text_object__text {
-  font-size: 40px;
+  font-size: 25px;
   color: rgba(0, 0, 0, 0.3);
 }
 .pictures_in_text_object:after {
