@@ -1,0 +1,427 @@
+/*
+Общая инфа!
+@info Единицы измерения в CSS = https://techrocks.ru/2019/08/07/units-in-css-for-beginners/
+@info :
+ - Краткая запись CSS как антипаттерн = http://prgssr.ru/development/kratkaya-zapis-css-kak-antipattern.html
+ - CSS Shorthand Syntax Considered an Anti-Pattern = https://csswizardry.com/2016/12/css-shorthand-syntax-considered-an-anti-pattern/
+@info Шрифты : http://htmlbook.ru/blog/svoi-shrift-na-stranitse
+ 1) https://habr.com/ru/company/htmlacademy/blog/552388/
+ 2) https://snipp.ru/html-css/font-face
+@info
+@info
+*/
+
+:root {
+  /* @Info
+   1) https://developer.mozilla.org/en-US/docs/Web/CSS/var()
+   2) https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties
+   */
+  --color-Red: Red;
+  --color-Brown: Brown;
+  --color-Orange: Orange;
+  --color-Yellow: Yellow;
+  --color-Lime: Lime;
+  --color-Green: Green;
+  --color-cadetblue: cadetblue;
+  --color-Cyan: Cyan;
+  --color-Blue: Blue;
+  --color-Pink: Pink;
+  --color-Violet: Violet;
+  --color-Purple: Purple;
+  --color-Indigo: rgb(148 0 255 / 70%); /* Indigo + transparent 60% */
+  --color-Black: Black;
+  --color-White: White;
+}
+
+.page {
+  /* блок - у "блока" недолжно быть стилей влияюших на окружающие блоки или елементы - для возможности переноса блока.
+   При перемещении блока в другую часть страници. Разметка и стили для "елементов блока" должна остается прежними Без изменений.
+  */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__header,
+  &__footer {
+    /* елемент блока - у "елемента блока" могут быть стили влияюших на окружающие елементы внутри родительского блока.
+    "елементом блока" - может быть другой блок.
+     */
+    background-color: var(--color-Indigo);
+  }
+
+  &__main {
+    /* елемент блока */
+    flex-grow: 1;
+    background-color: var(--color-White);
+  }
+}
+
+.header {
+  /* блок - у "блока" недолжно быть стилей влияюших на окружающие елементы для возможности переноса блока.
+   При перемещении блока в другую часть страници. Разметка и стили для "елементов блока" должна остается прежними Без изменений.
+  */
+  display: flex;
+  align-items: center;
+  padding: 20px 5%;
+  position: sticky; /* просто чтоб было веселей */
+  top: 0;
+  z-index: 9999;
+
+  &__logo {
+    /* елемент блока - у "елемента блока" могут быть стили влияюших на окружающие елементы внутри родительского блока.
+      "елементом блока" - может быть другой блок.
+       */
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+
+    &_img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background-color: var(--color-White);
+      padding: 5px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    &_text {
+      font-family: "Ephesis", cursive;
+      font-weight: bolder;
+      font-size: 34px;
+      padding: 0 5px;
+      margin: 0 15px;
+      box-sizing: border-box;
+      background-color: var(--color-White);
+    }
+  }
+
+  &__nav {
+    /* елемент блока */
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+}
+
+.nav {
+  /* блок */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  padding: 0 15px;
+
+  &__link {
+    /* елемент блока */
+    display: inline-block;
+    width: 70px;
+    height: 15px;
+    background-color: var(--color-White);
+    margin: 0 2%;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.main {
+  /* блок */
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: minmax(789px, auto) minmax(270px, auto);
+  grid-template-areas: "main sidebar";
+  padding: 0 5%;
+
+  &__sidebar {
+    /* елемент блока */
+    grid-area: sidebar;
+    background-color: var(--color-cadetblue);
+    padding: 20px;
+
+    /* просто чтоб было веселей */
+    position: sticky;
+    height: 200px;
+    top: 115px; /* потому что у хедера высота тоже есть */
+  }
+
+  &__content {
+    /* елемент блока */
+    grid-area: main;
+    background-color: var(--color-White);
+    flex-grow: 1;
+    & > div {
+      margin: 25px 0;
+      background-color: var(--color-cadetblue);
+    }
+  }
+}
+
+.retina, .split_screen, .pictures_in_text, .alignment_of_pictures, .picture_as_background, .pictures_in_text_object {
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+h2 {
+  text-align: center;
+  padding: 15px;
+  font-size: 35px;
+  font-weight: bolder;
+  background-color: var(--color-White);
+}
+
+
+/* ------- Retina IMG ------- */
+.retina {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-left: 5px solid var(--color-cadetblue);
+  border-right: 5px solid var(--color-cadetblue);
+
+  &__title {
+    text-align: center;
+    margin: 15px;
+    font-size: 35px;
+    font-weight: bolder;
+  }
+
+  &__bg,
+  &__img,
+  picture {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+/* медиа запросы под плотность пикселей */
+@media screen and (min-resolution: 2dppx) {
+  /*
+   @info https://developer.mozilla.org/en-US/docs/Web/CSS/@media/resolution
+   @info https://developer.mozilla.org/en-US/docs/Web/CSS/resolution
+  */
+  .retina {
+    &__bg {
+      background-image: url("../img/main_bg@2.png");
+    }
+  }
+}
+
+@media screen and (-webkit-device-pixel-ratio: 3) {
+  .retina {
+    &__bg {
+      background-image: url("../img/main_bg@3.png");
+    }
+  }
+}
+
+
+/* ------- разделение экрана ------- */
+.split_screen {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  border-left: 5px solid var(--color-Green);
+  border-right: 5px solid var(--color-Green);
+
+  &__left_block,
+  &__right_block {
+    width: 50%;
+    flex-grow: 1;
+    flex-shrink: 1;
+
+    img, svg {
+      width: 100%;
+      height: auto; /* дать возможность браузеру расчитывать пропорции*/
+    }
+  }
+}
+
+
+/* ------- выравнивание картинок пропорционально ------- */
+.alignment_of_pictures {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 20px;
+
+  border-left: 5px solid var(--color-Orange);
+  border-right: 5px solid var(--color-Orange);
+
+  figure {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: var(--color-White);
+
+    img {
+      height: auto;
+      width: auto;
+      max-width: 100%;
+      max-height: 250px;
+      display: block;
+      margin: auto;
+    }
+
+    figcaption {
+      display: block;
+      width: 100%;
+      font-size: 20px;
+      text-align: center;
+    }
+  }
+}
+
+
+/* ------- картинка как фоновое изображение ------- */
+.picture_as_background {
+  border-left: 5px solid var(--color-Brown);
+  border-right: 5px solid var(--color-Brown);
+  position: relative;
+  z-index: 0;
+
+  &__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: auto;
+
+      /* супер-лайвхак выравнивания */
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__text {
+    font-size: 40px;
+    color: rgb(0 0 0 /30%);
+
+  }
+}
+
+
+/* ------- картинки в тексте ------- */
+.pictures_in_text {
+  border-left: 5px solid var(--color-Red);
+  border-right: 5px solid var(--color-Red);
+
+  &__left_img {
+    float: left;
+    width: 400px;
+    height: 200px;
+    overflow: hidden;
+
+    img {
+      width: auto;
+      height: 100%;
+      margin: auto;
+      display: block;
+    }
+  }
+
+  &__right_img {
+    float: right;
+    width: 500px;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: auto;
+
+      /* супер-лайвхак выравнивания */
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__text {
+    font-size: 40px;
+    color: rgb(0 0 0 /30%);
+  }
+
+  &:after {
+    /*
+    @info https://developer.mozilla.org/ru/docs/Web/CSS/::after
+    @info https://developer.mozilla.org/ru/docs/Web/CSS/content
+    */
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  &_object {
+    border-left: 5px solid var(--color-Brown);
+    border-right: 5px solid var(--color-Brown);
+
+    &__left_img {
+      float: left;
+      width: 400px;
+      height: 200px;
+
+      img {
+        object-fit: contain;
+        object-position: center;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    &__right_img {
+      float: right;
+      width: 500px;
+      height: 150px;
+
+      img {
+        object-fit: cover;
+        object-position: center;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    &__text {
+      font-size: 40px;
+      color: rgb(0 0 0 /30%);
+    }
+
+    &:after {
+      /*
+      @info https://developer.mozilla.org/ru/docs/Web/CSS/::after
+      @info https://developer.mozilla.org/ru/docs/Web/CSS/content
+      */
+      content: '';
+      display: block;
+      clear: both;
+    }
+  }
+}
+
+
+footer {
+  display: flex;
+  align-items: center;
+  padding: 20px 5%;
+}
