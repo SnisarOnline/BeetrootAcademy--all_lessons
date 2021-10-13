@@ -1,0 +1,14 @@
+:root {
+    /* @Info
+     1) https://developer.mozilla.org/en-US/docs/Web/CSS/var()
+     2) https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties
+     */
+    --btn-active-color-bg: #FF9900;
+    --btn-active-color-text: #fff;
+    --btn-default-color-border: #BCD0E5;
+    --btn-default-color-text: #000;
+}
+body{
+    font-family: 'Dancing Script';
+    font-size: 3em;
+}
