@@ -12,217 +12,232 @@
 */
 
 :root {
-    /* @Info
-     1) https://developer.mozilla.org/en-US/docs/Web/CSS/var()
-     2) https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties
+  /* @Info
+   1) https://developer.mozilla.org/en-US/docs/Web/CSS/var()
+   2) https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties
+   */
+  --color-Red: Red;
+  --color-Brown: Brown;
+  --color-Orange: Orange;
+  --color-Yellow: Yellow;
+  --color-Lime: Lime;
+  --color-Green: Green;
+  --color-cadetblue: cadetblue;
+  --color-Cyan: Cyan;
+  --color-Blue: Blue;
+  --color-Pink: Pink;
+  --color-Violet: Violet;
+  --color-Purple: Purple;
+  --color-Indigo: rgb(148 0 255 / 70%); /* Indigo + transparent 60% */
+  --color-Black: Black;
+  --color-White: White;
+}
+
+.page {
+  /* блок - у "блока" недолжно быть стилей влияюших на окружающие блоки или елементы - для возможности переноса блока.
+   При перемещении блока в другую часть страници. Разметка и стили для "елементов блока" должна остается прежними Без изменений.
+  */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__header,
+  &__footer {
+    /* елемент блока - у "елемента блока" могут быть стили влияюших на окружающие елементы внутри родительского блока.
+    "елементом блока" - может быть другой блок.
      */
-    --color-Red: Red;
-    --color-Brown: Brown;
-    --color-Orange: Orange;
-    --color-Yellow: Yellow;
-    --color-Lime: Lime;
-    --color-Green: Green;
-    --color-cadetblue: cadetblue;
-    --color-Cyan: Cyan;
-    --color-Blue: Blue;
-    --color-Pink: Pink;
-    --color-Violet: Violet;
-    --color-Purple: Purple;
-    --color-Indigo: rgb(148 0 255 / 70%); /* Indigo + transparent 60% */
-    --color-Black: Black;
-    --color-White: White;
+    background-color: var(--color-Indigo);
+  }
+
+  &__main {
+    /* елемент блока */
+    flex-grow: 1;
+    background-color: var(--color-White);
+  }
 }
 
-.page{
-    /* блок - у "блока" недолжно быть стилей влияюших на окружающие блоки или елементы - для возможности переноса блока.
-     При перемещении блока в другую часть страници. Разметка и стили для "елементов блока" должна остается прежними Без изменений.
-    */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+.header {
+  /* блок - у "блока" недолжно быть стилей влияюших на окружающие елементы для возможности переноса блока.
+   При перемещении блока в другую часть страници. Разметка и стили для "елементов блока" должна остается прежними Без изменений.
+  */
+  display: flex;
+  align-items: center;
+  padding: 20px 5%;
+  position: sticky; /* просто чтоб было веселей */
+  top: 0;
+  z-index: 9999;
 
-    &__header,
-    &__footer {
-        /* елемент блока - у "елемента блока" могут быть стили влияюших на окружающие елементы внутри родительского блока.
-        "елементом блока" - может быть другой блок.
-         */
-        background-color: var(--color-Indigo);
-    }
-    &__main{
-        /* елемент блока */
-        flex-grow: 1;
-        background-color: var(--color-White);
-    }
-}
+  &__logo {
+    /* елемент блока - у "елемента блока" могут быть стили влияюших на окружающие елементы внутри родительского блока.
+      "елементом блока" - может быть другой блок.
+       */
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: var(--color-White);
+    padding: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
 
-.header{
-    /* блок - у "блока" недолжно быть стилей влияюших на окружающие елементы для возможности переноса блока.
-     При перемещении блока в другую часть страници. Разметка и стили для "елементов блока" должна остается прежними Без изменений.
-    */
-    display: flex;
-    align-items: center;
-    padding: 20px 5%;
-    position: sticky; /* просто чтоб было веселей */
-    top: 0;
-    z-index: 9999;
+  &__nav {
+    /* елемент блока */
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
 
-    &__logo{
-        /* елемент блока - у "елемента блока" могут быть стили влияюших на окружающие елементы внутри родительского блока.
-          "елементом блока" - может быть другой блок.
-           */
-        height: 50px;
-        width: 50px;
-        border-radius: 50%;
-        background-color: var(--color-White);
-        padding: 5px;
-        box-sizing: border-box;
-        overflow: hidden;
-    }
-    &__nav{
-        /* елемент блока */
-        flex-grow: 1;
-        flex-shrink: 1;
-    }
-    &__authorisation{
-        /* елемент блока */
-        width: 250px;
-        min-width: 150px;
-        max-width: 250px;
-        height: 50px;
-        flex-grow: 1;
-        background-color: var(--color-White);
-        padding: 0 15px;
-    }
-}
-
-.nav{
-    /* блок */
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
+  &__authorisation {
+    /* елемент блока */
+    width: 250px;
+    min-width: 150px;
+    max-width: 250px;
+    height: 50px;
+    flex-grow: 1;
+    background-color: var(--color-White);
     padding: 0 15px;
-
-    &__link{
-        /* елемент блока */
-        display: inline-block;
-        width: 70px;
-        height: 15px;
-        background-color: var(--color-White);
-        margin: 0 2%;
-        &:first-child {
-            margin-left: 0;
-        }
-        &:last-child {
-            margin-right: 0;
-        }
-    }
+  }
 }
 
-.main{
-    /* блок */
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: minmax(789px, auto) minmax(270px, auto);
-    grid-template-areas: "main sidebar";
-    padding: 0 5%;
+.nav {
+  /* блок */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 
-    &__sidebar{
-        /* елемент блока */
-        grid-area: sidebar;
-        background-color: var(--color-cadetblue);
-        padding: 20px;
+  padding: 0 15px;
 
-        /* просто чтоб было веселей */
-        position: sticky;
-        height: 200px;
-        top: 115px; /* потому что у хедера высота тоже есть */
+  &__link {
+    /* елемент блока */
+    display: inline-block;
+    width: 70px;
+    height: 15px;
+    background-color: var(--color-White);
+    margin: 0 2%;
+
+    &:first-child {
+      margin-left: 0;
     }
-    &__content {
-        /* елемент блока */
-        grid-area: main;
-        background-color: var(--color-Pink);
 
-        &>div{
-            margin: 25px 0;
-            background-color: var(--color-cadetblue);
-        }
+    &:last-child {
+      margin-right: 0;
     }
+  }
+}
+
+.main {
+  /* блок */
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: minmax(789px, auto) minmax(270px, auto);
+  grid-template-areas: "main sidebar";
+  padding: 0 5%;
+
+  &__sidebar {
+    /* елемент блока */
+    grid-area: sidebar;
+    background-color: var(--color-cadetblue);
+    padding: 20px;
+
+    /* просто чтоб было веселей */
+    position: sticky;
+    height: 200px;
+    top: 115px; /* потому что у хедера высота тоже есть */
+  }
+
+  &__content {
+    /* елемент блока */
+    grid-area: main;
+    background-color: var(--color-Pink);
+
+    & > div {
+      margin: 25px 0;
+      background-color: var(--color-cadetblue);
+    }
+  }
 }
 
 /* ------- first_section ------- */
-.first_section{
-    display: flex;
-    flex-direction: row;
-    padding: 20px;
+.first_section {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
 
-    &__left_block,
-    &__right_block{
-        min-width: 50%;
-        flex-grow: 1;
-        flex-shrink: 1;
-        img{
-            width: 80%;
-            min-width: 300px;
-            height: 200px;
-            display: block;
-            margin: 0 auto;
-            background-color: var(--color-White);
-        }
+  &__left_block,
+  &__right_block {
+    min-width: 50%;
+    flex-grow: 1;
+    flex-shrink: 1;
+
+    img {
+      width: 80%;
+      min-width: 300px;
+      height: 200px;
+      display: block;
+      margin: 0 auto;
+      background-color: var(--color-White);
     }
+  }
 
 }
 
 
 /* ------- second_section ------- */
-.second_section{
-    /* блок - у "блока" недолжно быть стилей влияюших на окружающие блоки или елементы - для возможности переноса блока.
-     При перемещении блока в другую часть страници. Разметка и стили для "елементов блока" должна остается прежними Без изменений.
-    */
-    display: flex;
-    align-items: stretch;
-    flex-wrap: wrap;
-    padding: 20px;
+.second_section {
+  /* блок - у "блока" недолжно быть стилей влияюших на окружающие блоки или елементы - для возможности переноса блока.
+   При перемещении блока в другую часть страници. Разметка и стили для "елементов блока" должна остается прежними Без изменений.
+  */
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  padding: 20px;
 
-    /* todo: еще в работе */
-    figure {
-        padding: 15px;
-        display: flex;
-        flex-direction: column;
-        img, video, blockquote{
-            background-color: var(--color-White);
-        }
-        img{
-            width: 70px;
-            padding: 10px;
-            margin: 0 auto;
-        }
-        figcaption{
-            display: block;
-            width: 100%;
-            text-align: center;
-        }
+  /* todo: еще в работе */
+  figure {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+
+    img, video, blockquote {
+      background-color: var(--color-White);
     }
-    &__figure_one_img {
-        min-width: 120px;
+
+    img {
+      width: 70px;
+      padding: 10px;
+      margin: 0 auto;
     }
-    &__figure_group_img{
-        flex-direction: row;
-        flex-wrap: wrap;
-        min-width: 200px;
-        flex-grow: 1;
+
+    figcaption {
+      display: block;
+      width: 100%;
+      text-align: center;
     }
-    &__figure_video{
-        min-width: 200px;
-        flex-grow: 1;
+  }
+
+  &__figure_one_img {
+    min-width: 120px;
+  }
+
+  &__figure_group_img {
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-width: 200px;
+    flex-grow: 1;
+  }
+
+  &__figure_video {
+    min-width: 200px;
+    flex-grow: 1;
+  }
+
+  &__figure_quote {
+    flex-shrink: 1;
+
+    blockquote {
+      width: 300px;
+      padding: 10px;
     }
-    &__figure_quote {
-        flex-shrink: 1;
-        blockquote{
-            width: 300px;
-            padding: 10px;
-        }
-    }
+  }
 }
 
 /*
@@ -293,16 +308,16 @@
 
 
 /* ------- third_section ------- */
-.third_section{
-    display: flex;
-    align-items: stretch;
-    flex-wrap: wrap;
-    padding: 20px;
+.third_section {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  padding: 20px;
 }
 
 /* ---------------------------- FOOTER CONTENT ---------------------------- */
-footer{
-    display: flex;
-    align-items: center;
-    padding: 20px 5%;
+footer {
+  display: flex;
+  align-items: center;
+  padding: 20px 5%;
 }

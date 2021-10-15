@@ -116,9 +116,6 @@ const a = 5;
 // console.log(BigInt(1) == 1n)
 
 
-
-
-
 // ---------- Условное ветвдение if, ? ----------
 // let language = 'JavaScript'
 // if (language) {

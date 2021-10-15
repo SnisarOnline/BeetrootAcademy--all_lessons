@@ -1,12 +1,13 @@
 body {
   margin: 40px;
 }
+
 .circle {
   background: green;
   border-radius: 100%;
   width: 100px;
   height: 100px;
-  
+
   -webkit-animation: pulsing 2s infinite;
   animation: pulsing 2s infinite;
 }

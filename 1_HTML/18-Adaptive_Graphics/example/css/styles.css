@@ -265,7 +265,7 @@ html input[disabled] {
 input[type=checkbox],
 input[type=radio] {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -411,7 +411,7 @@ h1 {
  */
 hr {
   -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   /* 1 */
   height: 0;
   /* 1 */
@@ -449,7 +449,7 @@ abbr[title] {
   text-decoration: underline;
   /* 2 */
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
   /* 2 */
 }
 
@@ -597,7 +597,7 @@ fieldset {
  */
 legend {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   color: inherit;
   /* 2 */
@@ -632,7 +632,7 @@ textarea {
 [type=checkbox],
 [type=radio] {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -763,21 +763,23 @@ template {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   min-height: 100vh;
 }
+
 .page__header, .page__footer {
   /* елемент блока - у "елемента блока" могут быть стили влияюших на окружающие елементы внутри родительского блока.
   "елементом блока" - может быть другой блок.
    */
   background-color: var(--color-Indigo);
 }
+
 .page__main {
   /* елемент блока */
   -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
   background-color: var(--color-White);
 }
 
@@ -789,28 +791,30 @@ template {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 20px 5%;
   position: sticky;
   /* просто чтоб было веселей */
   top: 0;
   z-index: 9999;
 }
+
 .header__logo {
   /* елемент блока - у "елемента блока" могут быть стили влияюших на окружающие елементы внутри родительского блока.
     "елементом блока" - может быть другой блок.
      */
   padding: 5px;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
+
 .header__logo_img {
   height: 50px;
   width: 50px;
@@ -818,9 +822,10 @@ template {
   background-color: var(--color-White);
   padding: 5px;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   overflow: hidden;
 }
+
 .header__logo_text {
   font-family: "Ephesis", cursive;
   font-weight: bolder;
@@ -828,16 +833,17 @@ template {
   padding: 0 5px;
   margin: 0 15px;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   background-color: var(--color-White);
 }
+
 .header__nav {
   /* елемент блока */
   -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
   -ms-flex-negative: 1;
-      flex-shrink: 1;
+  flex-shrink: 1;
 }
 
 .nav {
@@ -846,13 +852,14 @@ template {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 0 15px;
 }
+
 .nav__link {
   /* елемент блока */
   display: inline-block;
@@ -861,9 +868,11 @@ template {
   background-color: var(--color-White);
   margin: 0 2%;
 }
+
 .nav__link:first-child {
   margin-left: 0;
 }
+
 .nav__link:last-child {
   margin-right: 0;
 }
@@ -875,9 +884,10 @@ template {
   grid-gap: 10px;
   -ms-grid-columns: minmax(789px, auto) 10px minmax(270px, auto);
   grid-template-columns: minmax(789px, auto) minmax(270px, auto);
-      grid-template-areas: "main sidebar";
+  grid-template-areas: "main sidebar";
   padding: 0 5%;
 }
+
 .main__sidebar {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
@@ -891,6 +901,7 @@ template {
   top: 115px;
   /* потому что у хедера высота тоже есть */
 }
+
 .main__content {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
@@ -898,16 +909,17 @@ template {
   grid-area: main;
   background-color: var(--color-White);
   -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
 }
+
 .main__content > section {
   padding: 20px;
   margin: 0 0 50px;
   background-color: var(--color-cadetblue);
   width: 100%;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 h2 {
@@ -925,18 +937,20 @@ h2 {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   overflow: hidden;
   border-left: 5px solid var(--color-cadetblue);
   border-right: 5px solid var(--color-cadetblue);
 }
+
 .retina__title {
   text-align: center;
   margin: 15px;
   font-size: 35px;
   font-weight: bolder;
 }
+
 .retina__bg, .retina__img,
 .retina picture {
   width: 100%;
@@ -953,11 +967,13 @@ h2 {
     background-image: url("../img/main_bg@2.png");
   }
 }
+
 @media screen and (-webkit-device-pixel-ratio: 3) {
   .retina__bg {
     background-image: url("../img/main_bg@3.png");
   }
 }
+
 /* ------- разделение экрана ------- */
 .split_screen {
   display: -webkit-box;
@@ -965,21 +981,23 @@ h2 {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   border-left: 5px solid var(--color-Green);
   border-right: 5px solid var(--color-Green);
 }
+
 .split_screen__left_block, .split_screen__right_block {
   width: 50%;
   -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
   -ms-flex-negative: 1;
-      flex-shrink: 1;
+  flex-shrink: 1;
 }
+
 .split_screen__left_block img, .split_screen__left_block svg, .split_screen__right_block img, .split_screen__right_block svg {
   width: 100%;
   height: auto;
@@ -993,31 +1011,33 @@ h2 {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-wrap: nowrap;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   border-left: 5px solid var(--color-Orange);
   border-right: 5px solid var(--color-Orange);
 }
+
 .horizontal_alignment figure {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   background-color: var(--color-White);
 }
+
 .horizontal_alignment figure img {
   height: auto;
   width: auto;
@@ -1026,6 +1046,7 @@ h2 {
   display: block;
   margin: auto;
 }
+
 .horizontal_alignment figure figcaption {
   display: block;
   width: 100%;
@@ -1039,31 +1060,34 @@ h2 {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   border-left: 5px solid var(--color-Orange);
   border-right: 5px solid var(--color-Orange);
 }
+
 .vertical_alignment figure {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
   background-color: var(--color-White);
   margin: 20px 0;
 }
+
 .vertical_alignment figure .img_wrap {
   -ms-flex-preferred-size: 33.333%;
-      flex-basis: 33.333%;
+  flex-basis: 33.333%;
   position: relative;
   overflow: hidden;
 }
+
 .vertical_alignment figure .img_wrap img, .vertical_alignment figure .img_wrap svg {
   width: 100%;
   /* супер-лайвхак выравнивания */
@@ -1071,11 +1095,12 @@ h2 {
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
+
 .vertical_alignment figure figcaption {
   -ms-flex-preferred-size: 67.777%;
-      flex-basis: 67.777%;
+  flex-basis: 67.777%;
   font-size: 25px;
   text-align: left;
 }
@@ -1087,6 +1112,7 @@ h2 {
   position: relative;
   z-index: 0;
 }
+
 .picture_as_background__img {
   position: absolute;
   width: 100%;
@@ -1096,6 +1122,7 @@ h2 {
   left: 0;
   z-index: -1;
 }
+
 .picture_as_background__img img {
   width: 100%;
   height: auto;
@@ -1106,8 +1133,9 @@ h2 {
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
+
 .picture_as_background__text {
   font-size: 40px;
   color: rgba(0, 0, 0, 0.3);
@@ -1118,18 +1146,21 @@ h2 {
   border-left: 5px solid var(--color-Red);
   border-right: 5px solid var(--color-Red);
 }
+
 .pictures_in_text__left_img {
   float: left;
   width: 20%;
   height: 200px;
   overflow: hidden;
 }
+
 .pictures_in_text__left_img img {
   max-width: 100%;
   max-height: 100%;
   margin: auto;
   display: block;
 }
+
 .pictures_in_text__right_img {
   float: right;
   width: 40%;
@@ -1137,6 +1168,7 @@ h2 {
   overflow: hidden;
   position: relative;
 }
+
 .pictures_in_text__right_img img {
   width: 100%;
   height: auto;
@@ -1145,12 +1177,14 @@ h2 {
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
+
 .pictures_in_text__text {
   font-size: 25px;
   color: rgba(0, 0, 0, 0.3);
 }
+
 .pictures_in_text:after {
   /*
   @info https://developer.mozilla.org/ru/docs/Web/CSS/::after
@@ -1165,36 +1199,42 @@ h2 {
   border-left: 5px solid var(--color-Brown);
   border-right: 5px solid var(--color-Brown);
 }
+
 .pictures_in_text_object__left_img {
   float: left;
   width: 20%;
   height: 200px;
 }
+
 .pictures_in_text_object__left_img img {
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   -o-object-position: center;
-     object-position: center;
+  object-position: center;
   height: 100%;
   width: 100%;
 }
+
 .pictures_in_text_object__right_img {
   float: right;
   width: 40%;
   height: 150px;
 }
+
 .pictures_in_text_object__right_img img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: center;
-     object-position: center;
+  object-position: center;
   height: 100%;
   width: 100%;
 }
+
 .pictures_in_text_object__text {
   font-size: 25px;
   color: rgba(0, 0, 0, 0.3);
 }
+
 .pictures_in_text_object:after {
   /*
   @info https://developer.mozilla.org/ru/docs/Web/CSS/::after
@@ -1210,7 +1250,7 @@ footer {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   padding: 20px 5%;
 }
