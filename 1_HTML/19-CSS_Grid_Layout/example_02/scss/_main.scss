@@ -113,13 +113,30 @@ header__logo / header__icon / header__menu  --- Елементы блока "hea
     /* елемент блока - у "елемента блока" могут быть стили влияюших на окружающие елементы внутри родительского блока.
       "елементом блока" - может быть другой блок.
        */
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    background-color: var(--color-White);
     padding: 5px;
     box-sizing: border-box;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    &_img {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background-color: var(--color-White);
+      padding: 5px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    &_text {
+      font-family: "Ephesis", cursive;
+      font-weight: bolder;
+      font-size: 34px;
+      padding: 0 5px;
+      margin: 0 15px;
+      box-sizing: border-box;
+      background-color: var(--color-White);
+    }
   }
 
   &__nav {
@@ -127,23 +144,12 @@ header__logo / header__icon / header__menu  --- Елементы блока "hea
     flex-grow: 1;
     flex-shrink: 1;
   }
-
-  &__authorisation {
-    /* елемент блока */
-    width: 250px;
-    min-width: 150px;
-    max-width: 250px;
-    height: 50px;
-    flex-grow: 1;
-    background-color: var(--color-White);
-    padding: 0 15px;
-  }
 }
 
 .nav {
   /* блок */
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
 
   padding: 0 15px;
@@ -164,6 +170,12 @@ header__logo / header__icon / header__menu  --- Елементы блока "hea
       margin-right: 0;
     }
   }
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  padding: 20px 5%;
 }
 
 .main {
@@ -189,177 +201,22 @@ header__logo / header__icon / header__menu  --- Елементы блока "hea
   &__content {
     /* елемент блока */
     grid-area: main;
-    background-color: var(--color-Pink);
+    background-color: var(--color-White);
+    flex-grow: 1;
 
-    & > div {
-      margin: 25px 0;
+    & > section {
+      padding: 20px;
+      margin: 0 0 50px;
       background-color: var(--color-cadetblue);
-    }
-  }
-}
-
-/* ------- first_section ------- */
-.first_section {
-  display: flex;
-  flex-direction: row;
-  padding: 20px;
-
-  &__left_block,
-  &__right_block {
-    min-width: 50%;
-    flex-grow: 1;
-    flex-shrink: 1;
-
-    img {
-      width: 80%;
-      min-width: 300px;
-      height: 200px;
-      display: block;
-      margin: 0 auto;
-      background-color: var(--color-White);
-    }
-  }
-
-}
-
-
-/* ------- second_section ------- */
-.second_section {
-  /* блок - у "блока" недолжно быть стилей влияюших на окружающие блоки или елементы - для возможности переноса блока.
-   При перемещении блока в другую часть страници. Разметка и стили для "елементов блока" должна остается прежними Без изменений.
-  */
-  display: flex;
-  align-items: stretch;
-  flex-wrap: wrap;
-  padding: 20px;
-
-  /* todo: еще в работе */
-  figure {
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-
-    img, video, blockquote {
-      background-color: var(--color-White);
-    }
-
-    img {
-      width: 70px;
-      padding: 10px;
-      margin: 0 auto;
-    }
-
-    figcaption {
-      display: block;
       width: 100%;
-      text-align: center;
-    }
-  }
-
-  &__figure_one_img {
-    min-width: 120px;
-  }
-
-  &__figure_group_img {
-    flex-direction: row;
-    flex-wrap: wrap;
-    min-width: 200px;
-    flex-grow: 1;
-  }
-
-  &__figure_video {
-    min-width: 200px;
-    flex-grow: 1;
-  }
-
-  &__figure_quote {
-    flex-shrink: 1;
-
-    blockquote {
-      width: 300px;
-      padding: 10px;
+      box-sizing: border-box;
     }
   }
 }
 
-/*
 
-!* ------- second_section ------- *!
-.second_section{
-    !* блок - у "блока" недолжно быть стилей влияюших на окружающие блоки или елементы - для возможности переноса блока.
-     При перемещении блока в другую часть страници. Разметка и стили для "елементов блока" должна остается прежними Без изменений.
-    *!
-    display: flex;
-    align-items: stretch;
-    flex-wrap: wrap;
-    padding: 20px;
-}
-.second_section figure {
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-}
-.second_section figure img{
-    width: 70px;
-    padding: 10px;
-    margin: 0 auto;
-}
-.second_section figure figcaption{
-    display: block;
-    width: 100%;
-    text-align: center;
-}
+.grid_example_1{}
 
-.second_section .second_section--figure_one_img {
-    min-width: 120px;
-}
-.second_section .second_section--figure_one_img img{
-    background-color: var(--color-White);
-}
-.second_section .second_section--figure_one_img figcaption{}
+.grid_example_2{}
 
-.second_section .second_section--figure_group_img {
-    flex-direction: row;
-    flex-wrap: wrap;
-    min-width: 200px;
-    flex-grow: 1;
-}
-.second_section .second_section--figure_group_img img{}
-.second_section .second_section--figure_group_img figcaption{}
-
-.second_section .second_section--figure_video{
-    min-width: 200px;
-    flex-grow: 1;
-}
-.second_section .second_section--figure_video video{
-    background-color: var(--color-White);
-}
-.second_section .second_section--figure_video figcaption{}
-
-.second_section .second_section--figure_quote {
-    flex-shrink: 1;
-}
-.second_section .second_section--figure_quote blockquote{
-    background-color: var(--color-White);
-    width: 300px;
-    padding: 10px;
-}
-.second_section .second_section--figure_quote figcaption{}
-
-*/
-
-
-/* ------- third_section ------- */
-.third_section {
-  display: flex;
-  align-items: stretch;
-  flex-wrap: wrap;
-  padding: 20px;
-}
-
-/* ---------------------------- FOOTER CONTENT ---------------------------- */
-footer {
-  display: flex;
-  align-items: center;
-  padding: 20px 5%;
-}
+.grid_example_3{}

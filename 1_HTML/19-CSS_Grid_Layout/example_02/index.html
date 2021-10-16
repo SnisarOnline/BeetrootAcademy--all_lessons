@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive-Semantic HTML5</title>
+
+    <!-- @info Responsive Meta Tag = https://css-tricks.com/snippets/html/responsive-meta-tag/ -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="page">
+
+    <header class="page__header header">
+        <!-- @INFO https://html.spec.whatwg.org/multipage/sections.html#the-header-element
+         @info http://htmlbook.ru/index.php/html/header
+        Тег <header> задает «шапку» сайта или раздела, в которой обычно располагается заголовок.
+        -->
+        <div class="header__logo">
+            <img class="header__logo_img" src="" alt="AG">
+            <span class="header__logo_text">Grid_Layout</span>
+        </div>
+        <nav class="header__nav nav">
+            <!-- @INFO https://html.spec.whatwg.org/multipage/sections.html#the-nav-element
+            @info http://htmlbook.ru/index.php/html/nav
+            Тег <nav> задает навигацию по сайту. Если на странице несколько блоков ссылок, то в <nav> обычно помещают приоритетные ссылки. Также допустимо использовать несколько тегов <nav> в документе. Запрещается вкладывать <nav> внутрь <address>.
+            -->
+
+            <span class="nav__link"></span>
+            <span class="nav__link"></span>
+            <span class="nav__link"></span>
+            <span class="nav__link"></span>
+            <span class="nav__link"></span>
+        </nav>
+    </header>
+
+
+    <main class="main__content">
+        <!-- @INFO https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element
+         @info http://htmlbook.ru/html/main
+         Элемент <main> предназначен для основного содержимого документа. Содержимое должно быть уникальным и не включать типовые блоки вроде шапки сайта, подвала, навигации, боковой панели, формы поиска и т. п.
+         -->
+
+        <section class="grid_example_1">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+        </section>
+
+
+    </main>
+
+    <footer class="page__footer footer">
+        <!-- @INFO https://html.spec.whatwg.org/multipage/sections.html#the-footer-element
+         @info http://htmlbook.ru/index.php/html/footer
+        Тег <footer> задаёт «подвал» сайта или раздела, в нём может располагаться имя автора, дата документа, контактная и правовая информация.
+        -->
+
+        <form action="https-URL" method="get" id="email-form">
+            <fieldset form="email-form" title="воодим только email">
+                <!--
+                @info http://htmlbook.ru/html/fieldset
+                Элемент <fieldset> предназначен для группирования элементов формы. Такая группировка облегчает работу с формами,
+                 содержащими большое число данных. Например, один блок может быть предназначен для ввода текстовой информации, а другой — для флажков.
+                Браузеры для повышения наглядности отображают результат использования тега <fieldset> в виде рамки. Ее вид зависит
+                 от операционной системы, а также используемого браузера
+                 -->
+                <legend>
+                    <!--
+                    @info http://htmlbook.ru/html/legend
+                    Тег <legend> применяется для создания заголовка группы элементов формы, которая определяется с помощью тега <fieldset>.
+                     Группа элементов обозначается в браузере с помощью рамки, а текст, который располагается внутри контейнера <legend>, встраивается в эту рамку.
+                    -->
+                    Введи email
+                </legend>
+                <input type="email" name="email">
+            </fieldset>
+        </form>
+    </footer>
+
+</body>
+</html>
