@@ -1,3 +1,10 @@
-﻿1)
-2) 
-3)
+﻿1) @suports = 
+- https://developer.mozilla.org/ru/docs/Web/CSS/@supports
+- https://hcdev.ru/css/supports/
+2) analytics.google.com = https://analytics.google.com/analytics/web/provision/?authuser=0#/provision/create
+3) can_i_use = https://caniuse.com/
+4) browserstack = https://www.browserstack.com/
+5) bluetree = https://bluetree.ai/screenfly/
+6) validator = https://validator.w3.org/
+7) pagespeed = https://developers.google.com/speed/pagespeed/insights/?hl=ru
+8) Проверка оптимизации для мобильных = https://search.google.com/test/mobile-friendly
