@@ -1,3 +1,0 @@
-﻿1) flex-box - https://tproger.ru/translations/how-css-flexbox-works/
-2)
-3)

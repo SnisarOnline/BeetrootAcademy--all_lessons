@@ -1,8 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -23,17 +22,20 @@
             height: 183px;
             background-color: #8cffa0;
         }
-        .supports--mask-image .masked img{
+
+        .supports--mask-image .masked img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center;
         }
+
         @supports (-webkit-mask-image: url(https://mdn.github.io/css-examples/masking/star.svg)) {
             .supports--mask-image .yes {
                 display: block;
             }
-            .supports--mask-image .masked{
+
+            .supports--mask-image .masked {
                 -webkit-mask-image: url(https://mdn.github.io/css-examples/masking/star.svg);
                 mask-image: url(https://mdn.github.io/css-examples/masking/star.svg);
                 -webkit-mask-position: center;
@@ -41,11 +43,13 @@
                 -webkit-mask-size: cover;
             }
         }
+
         @supports (-moz-mask-image: url(https://mdn.github.io/css-examples/masking/star.svg)) {
             .supports--mask-image .yes {
                 display: block;
             }
-            .supports--mask-image .masked{
+
+            .supports--mask-image .masked {
                 -moz-mask-image: url(https://mdn.github.io/css-examples/masking/star.svg);
                 mask-image: url(https://mdn.github.io/css-examples/masking/star.svg);
                 -moz-mask-position: center;
@@ -53,11 +57,13 @@
                 -moz-mask-size: cover;
             }
         }
+
         @supports (-ms-mask-image: url(https://mdn.github.io/css-examples/masking/star.svg)) {
             .supports--mask-image .yes {
                 display: block;
             }
-            .supports--mask-image .masked{
+
+            .supports--mask-image .masked {
                 -ms-mask-image: url(https://mdn.github.io/css-examples/masking/star.svg);
                 mask-image: url(https://mdn.github.io/css-examples/masking/star.svg);
                 -ms-mask-position: center;
@@ -75,6 +81,7 @@
                 display: block;
             }
         }
+
         @supports not (display: flex) {
             .supports-flex .no {
                 display: block;
@@ -85,7 +92,7 @@
 
     <style>
         /* @supports object-fit */
-        @supports (object-fit: contain) and (object-position: 50% 50%)  {
+        @supports (object-fit: contain) and (object-position: 50% 50%) {
             .supports-object_fit .yes {
                 display: block;
             }
@@ -93,46 +100,44 @@
     </style>
 </head>
 <body>
-    <section class="supports--mask-image">
-        <h3>@supports mask-image;</h3>
-        <p class="yes">
-            Ваш браузер поддерживает -webkit-mask-image; -moz-mask-image; -ms-mask-image;
-            <span class="masked"></span>
-            <span class="masked">
+<section class="supports--mask-image">
+    <h3>@supports mask-image;</h3>
+    <p class="yes">
+        Ваш браузер поддерживает -webkit-mask-image; -moz-mask-image; -ms-mask-image;
+        <span class="masked"></span>
+        <span class="masked">
                 <img src="https://mikecane.files.wordpress.com/2007/03/kitten.jpg">
             </span>
-        </p>
-        <p class="no">
-            Ваш браузер НЕ поддерживает -webkit-mask-image; -moz-mask-image; -ms-mask-image;
-            <span class="masked"></span>
-            <span class="masked">
+    </p>
+    <p class="no">
+        Ваш браузер НЕ поддерживает -webkit-mask-image; -moz-mask-image; -ms-mask-image;
+        <span class="masked"></span>
+        <span class="masked">
                 <img src="https://mikecane.files.wordpress.com/2007/03/kitten.jpg">
             </span>
-        </p>
-    </section>
+    </p>
+</section>
 
 
-    <section class="supports-flex">
-        <h3>@supports flex</h3>
-        <p class="yes">
-            Ваш браузер поддерживает display: flex.
-        </p>
-        <p class="no">
-            Ваш браузер не поддерживает display: flex.
-        </p>
-    </section>
+<section class="supports-flex">
+    <h3>@supports flex</h3>
+    <p class="yes">
+        Ваш браузер поддерживает display: flex.
+    </p>
+    <p class="no">
+        Ваш браузер не поддерживает display: flex.
+    </p>
+</section>
 
 
-    <section class="supports-object_fit">
-        <h3>@supports object-fit</h3>
-        <p class="yes">
-            Ваш браузер поддерживает object-fit: contain;
-        </p>
-        <p class="no">
-            Ваш браузер не поддерживает object-fit: contain;
-        </p>
-    </section>
-
-
+<section class="supports-object_fit">
+    <h3>@supports object-fit</h3>
+    <p class="yes">
+        Ваш браузер поддерживает object-fit: contain;
+    </p>
+    <p class="no">
+        Ваш браузер не поддерживает object-fit: contain;
+    </p>
+</section>
 </body>
 </html>

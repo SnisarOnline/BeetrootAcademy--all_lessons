@@ -1,7 +1,0 @@
-﻿1) https://youtu.be/HihYQVuH64U
-2) Методология - https://ru.bem.info/methodology/quick-start/
-3) Соглашения по именованию CSS-сущностей и экономия времени
-- https://habr.com/ru/company/ruvds/blog/347194/
-4) Слова, часто используемые в CSS-классах - https://github.com/yoksel/common-words
-5) Как работать с CSS-препроцессорами и БЭМ - 
-https://nicothin.pro/idiomatic-pre-CSS/

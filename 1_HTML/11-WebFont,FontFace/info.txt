@@ -1,5 +1,0 @@
-﻿1) Как подключить и оптимизировать нестандартные шрифты = https://htmlacademy.ru/blog/boost/tutorial/fonts-loading
-2) MDN @font-face https://developer.mozilla.org/ru/docs/Web/CSS/@font-face
-3) CSS-шрифты = https://html5book.ru/css-shrifty/
-4) _ ___ ______? Вадим Макеев = https://www.youtube.com/watch?v=uI3Q5m9xkkw
-5) масштабирование текста = https://youtu.be/cO2-zYzjyD0

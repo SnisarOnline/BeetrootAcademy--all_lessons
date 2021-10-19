@@ -1,4 +1,0 @@
-﻿1)Растровая и векторная графика
- - https://htmlacademy.ru/blog/boost/frontend/rastr-vector
-2)
-3)
