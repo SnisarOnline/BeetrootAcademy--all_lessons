@@ -1,10 +1,15 @@
-﻿0 -- https://www.youtube.com/watch?v=u2nFV4WJD3s
-1) https://qna.habr.com/q/379265
-2) Что такое модульная сетка и для чего она нужна в веб-дизайне -  https://say-hi.me/design/web-design/modulnaya-setka.html#hcq=cxBCb5qhttp://say-hi.me/design/chto-takoe-modulnaya-setka-i-dlya-chego-ona-nuzhna-v-veb-dizajne.html
-3) Модульная сетка - https://gutdesign.ru/blog/16-modulnaya-setka/
-4) Сетки для адаптивного дизайна - https://habr.com/ru/company/rambler_and_co/blog/261679/
-5) Каркас сайта, или модульная сетка в веб-дизайне -  https://webformyself.com/karkas-sajta-ili-modulnaya-setka-v-veb-dizajne/
+﻿# Photoshop + Figma
+> Работа с графическими редакторами(Photoshop/Figma)
 
-Растровая и векторная графика - https://htmlacademy.ru/blog/boost/frontend/rastr-vector
+Lesson plan:
 
-flex-box - https://tproger.ru/translations/how-css-flexbox-works/
+
+Useful links:
++ [Модульные сетки в веб-дизайне](https://www.youtube.com/watch?v=u2nFV4WJD3s)
++ [Для чего предназначены колонки(сетки) в psd макете?](https://qna.habr.com/q/379265)
++ [Что такое модульная сетка и для чего она нужна в веб-дизайне](https://say-hi.me/design/web-design/modulnaya-setka.html#hcq=cxBCb5qhttp://say-hi.me/design/chto-takoe-modulnaya-setka-i-dlya-chego-ona-nuzhna-v-veb-dizajne.html)
++ [Модульная сетка](https://gutdesign.ru/blog/16-modulnaya-setka/)
++ [Сетки для адаптивного дизайна](https://habr.com/ru/company/rambler_and_co/blog/261679/)
++ [Каркас сайта, или модульная сетка в веб-дизайне](https://webformyself.com/karkas-sajta-ili-modulnaya-setka-v-veb-dizajne/)
++ [Растровая и векторная графика](https://htmlacademy.ru/blog/boost/frontend/rastr-vector)
++ [flex-box](https://tproger.ru/translations/how-css-flexbox-works/)
