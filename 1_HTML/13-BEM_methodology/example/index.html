@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<!--
+Теорию что такое БЕМ :
+БЛОК - ето елемент страници который может быть копирован в любое место страници, без искажения стилей внутри.
+блоки могут вкладыватся друг в друга.
+
+ЕЛЕМЕНТ - строго пренадлежит БЛОКу внутри которого он находится. Елемента за блоком быть не может.
+
+МОДИФИКАТОР - класс который будет изменять повидение ЕЛЕМЕНТов и БЛОКов и неважно где.
+следовательно
+
+СЛЕДОВАТЕЛЬНО нужно строить дерево css классов в HTMLе.
+    К примеру такая структура в HTML :
+    краткая запись (сделана для Emmet плагина. Вставить в HTML и нажать ТАБ):
+     .header>.header__logo>.header__icon+.header__title^+.header__menu.menu>.menu__item*4>.menu__icon+.menu__title
+-->
+
+    <section class="header">
+        <div class="header__logo">
+            <div class="header__icon"></div>
+            <div class="header__title"></div>
+        </div>
+        <div class="header__menu menu">
+            <div class="menu__item">
+                <div class="menu__icon"></div>
+                <div class="menu__title"></div>
+            </div>
+            <div class="menu__item">
+                <div class="menu__icon"></div>
+                <div class="menu__title"></div>
+            </div>
+            <div class="menu__item">
+                <div class="menu__icon"></div>
+                <div class="menu__title"></div>
+            </div>
+            <div class="menu__item">
+                <div class="menu__icon"></div>
+                <div class="menu__title"></div>
+            </div>
+        </div>
+    </section>
+
+<!--
+    В данном примере:
+    header и menu --- Ето Блоки
+    menu__item / menu__title / menu__icon --- Елементы блока "menu"
+    header__logo / header__icon / header__menu  --- Елементы блока "header"
+    МОДИФИКАТОРы - я неприводил в пример, для начала нужно освоить такую структуру.
+-->
+
+</body>
+</html>

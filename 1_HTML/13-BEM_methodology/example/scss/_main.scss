@@ -1,0 +1,29 @@
+/*
+Общая инфа!
+@info: Единицы измерения в CSS = https://techrocks.ru/2019/08/07/units-in-css-for-beginners/
+@info: Краткая запись CSS как антипаттерн = http://prgssr.ru/development/kratkaya-zapis-css-kak-antipattern.html
+@info: Шрифты = http://htmlbook.ru/blog/svoi-shrift-na-stranitse
+ 1) https://habr.com/ru/company/htmlacademy/blog/552388/
+ 2) https://snipp.ru/html-css/font-face
+*/
+
+:root {
+  /* @Info
+   1) https://developer.mozilla.org/en-US/docs/Web/CSS/var()
+   2) https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties
+   */
+  --btn-active-color-bg: #FF9900;
+  --btn-active-color-text: #fff;
+  --btn-default-color-border: #BCD0E5;
+  --btn-default-color-text: #000;
+}
+
+
+
+header {
+  display: block;
+  width: 100%;
+  padding: 0 100px;
+  box-sizing: border-box;
+}
+
