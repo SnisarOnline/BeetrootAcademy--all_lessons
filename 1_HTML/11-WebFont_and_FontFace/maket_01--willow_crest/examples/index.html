@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>#11 WebFont and FontFace</title>
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/fonts.css">
+    <link rel="stylesheet" href="style/main.css">
+
+
+    <!-- Шрифты не правильно подключены
+         Есть 3 спсоба подключения шрифтом. Как правило они сами предоставляют код для вставки в ХТМЛ/CSS
+             также шрифты нужно подключать отдельным файлом
+
+         пример https://fonts.google.com/specimen/Dancing+Script#standard-styles
+
+         1) Самый удобный и распостранненый
+         - Подключение в ХТМЛ по link-ссылке через сервис с шрифтами.
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+         2) подключение через import - CSS
+            @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+         3) Через спец-правило
+            @font-face {
+                font-family: "Dancing Script";
+                font-style: normal;
+                font-weight: 400;
+                src:
+                  local( "Dancing Script" ), Браузер сначала попробует найти шрифт локально
+                  url("./fonts/roboto.woff2") format("woff2"), Если не получилось, загрузит woff2
+                  url("./fonts/roboto.woff") format("woff"), Если браузер не поддерживает woff2, загрузит woff
+                  url("./fonts/Dancing_Script/DancingScript-VariableFont_wght.ttf") format("ttf");
+            }
+
+            А затем применяем в стилях свойство "font-family: 'Dancing Script', cursive;"
+            Незабываем прописывать какието дефолтные семейства шрифтов - На случай если шрифте гдето потерялись
+    -->
+</head>
+<body>
+<a href="https://transfonter.org/">transfonter - сайт трансформации шрифтов в нормальный формат и с подключением </a>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci aliquid consequuntur enim ex fuga harum laudantium
+natus quo voluptate.
+
+</body>
+</html>

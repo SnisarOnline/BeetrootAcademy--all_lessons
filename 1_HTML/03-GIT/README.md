@@ -1,8 +1,8 @@
 # GIT
 > Система контроля версий
- 
 
-#### Lesson plan :
+
+## Lesson plan :
 + Что такое [GIT](https://git-scm.com/book/ru/v2) и Зачем он нужен
 + Как работает [GIT](https://git-scm.com/book/ru/v2)
 + Что такое [GitHub](https://github.com/), [GitLab](https://about.gitlab.com/), [AWS](https://aws.amazon.com/ru/console/)
@@ -10,8 +10,7 @@
 + Практика - добавляем свои работы в [GIT](https://git-scm.com/book/ru/v2)
 
 
-
-#### Useful links:
+## Useful links:
 + [git clone](https://git-scm.com/docs/git-clone)
 + [git status](https://git-scm.com/docs/git-status)
 + [git add .](https://git-scm.com/docs/git-add)

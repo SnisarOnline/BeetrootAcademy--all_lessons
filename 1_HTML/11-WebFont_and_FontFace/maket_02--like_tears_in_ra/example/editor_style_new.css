@@ -1,0 +1,168 @@
+/* reset - отдельным файлом подключай */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* reset */
+
+@font-face {
+    font-family: "Proxima Nova";
+    src: url(./Proxima_Nova/Proxima\ Nova\ Regular.otf); /* обрати внимание как плохо подключаются файлы с пробелами в названиях*/
+}
+
+html {
+     /* на html - никогда ничего не вешай
+     Ето может ссыграть стобой плохую шутку
+     */
+    background-color: #464E53;
+}
+
+header {
+    margin-top: 10px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: -7%;
+    z-index: 1;
+}
+
+header section {
+    background-color: black;
+    width: 75%;
+    padding: 40px 0 40px 40px;
+}
+
+header section p {
+    font-size: 15px;
+    letter-spacing: 5px;
+    color: #767676;
+    font-family: "Proxima Nova";
+    text-transform: uppercase;
+}
+
+header section h2 {
+    font-size: 48px;
+    line-height: 60px;
+    color: #fefefe;
+    font-family: "Playfair Display";
+    border-bottom: 3px solid #303030;
+    position: relative;
+}
+
+header section h2::after {
+    content: " ";
+    background-color: white;
+    width: 1px;
+    position: absolute;
+    height: 100%;
+}
+
+header div {
+    background-color: #FBBF2D;
+    padding: 20px 0 20px 40px;
+    width: 70%;
+    min-width: 570px;
+    display: flex;
+    align-items: flex-end;
+}
+/* исправил */
+header div svg use:hover{
+    opacity: 1 !important;
+    cursor: pointer;
+}
+
+main {
+    background-color: white;
+    width: 80%;
+    padding: 120px;
+    position: relative;
+    margin: 0 auto;
+}
+
+main::before {
+    content: " ";
+    background-color: #818385;
+    width: 2px;
+    position: absolute;
+    display: block;
+    height: 100%;
+    top: 0;
+    left: 60px;
+}
+
+main .author {
+    font-size: 20px;
+    letter-spacing: 4px;
+    color: #b4b4b4;
+    font-family: "Proxima Nova";
+    text-transform: uppercase;
+    padding-bottom: 50px;
+}
+
+main h1 {
+    font-size: 78px;
+    letter-spacing: 4px;
+    color: #2a2a2a;
+    font-family: "Futura PT";  
+    text-transform: uppercase; 
+}
+
+main .epigraph {
+    font-size: 30px;
+    color: #8f8f8f;
+    font-style: italic;
+    font-family: "Georgia";
+    padding-bottom: 60px;
+}
+
+main p {
+    font-size: 27px;
+    color: #000000;
+    font-family: "Georgia";
+    padding-bottom: 40px;
+    line-height: 40px;
+}
+main p span {
+    font-style: italic;
+}

@@ -2,7 +2,7 @@
 > структура уроков и обучения
 
 
-#### Lesson plan :
+## Lesson plan :
 + Знакомимся с структурой дальнейшего обучения
     - сначала чтение теории в ЛМС, а потом идем на урок для закрепления. 
 + Создание git репозитория `BeetrootLessons` для дальнейшего знакомства и работы
@@ -15,7 +15,7 @@
 + незабываем проходить опроссы в ЛМС
 
 
-#### Useful links:
+## Useful links:
 + [htmlbook.ru](http://htmlbook.ru/html)
 + [learn.javascript.ru](https://learn.javascript.ru/first-steps)
 + [metanit.com](https://metanit.com/web/javascript/)

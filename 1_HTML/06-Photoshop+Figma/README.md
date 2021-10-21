@@ -1,10 +1,10 @@
 ﻿# Photoshop + Figma
 > Работа с графическими редакторами(Photoshop/Figma)
 
-Lesson plan:
+## Lesson plan:
 
 
-Useful links:
+## Useful links:
 + [Модульные сетки в веб-дизайне](https://www.youtube.com/watch?v=u2nFV4WJD3s)
 + [Для чего предназначены колонки(сетки) в psd макете?](https://qna.habr.com/q/379265)
 + [Что такое модульная сетка и для чего она нужна в веб-дизайне](https://say-hi.me/design/web-design/modulnaya-setka.html#hcq=cxBCb5qhttp://say-hi.me/design/chto-takoe-modulnaya-setka-i-dlya-chego-ona-nuzhna-v-veb-dizajne.html)

@@ -1,7 +1,7 @@
 ﻿# CSS Positioning and Transform
 > Позиционирование и Трансформация в CSS
 
-Lesson plan:
+## Lesson plan:
 + Геометрия и 3D компас в браузере
 + Что такое Z-index, как ним пользоваться
 + Проблемы абсолютного позиционирования
@@ -9,7 +9,7 @@ Lesson plan:
 + CSS Animations
 
 
-Useful links:
+## Useful links:
 + [CSS3-трансформации](https://html5book.ru/css3-transform/)
 + [Использование CSS переходов](https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
 + [Использование CSS-анимации](https://developer.mozilla.org/ru/docs/Web/CSS/CSS_Animations/Using_CSS_animations)

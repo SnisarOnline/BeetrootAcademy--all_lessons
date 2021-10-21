@@ -1,9 +1,10 @@
 ﻿# Adaptive Graphics 
 > Адаптивность картинок
 
-Lesson plan:
+## Lesson plan:
 
-Useful links:
+
+## Useful links:
 + [Адаптация изображения с помощью CSS](https://vc.ru/dev/162969-kak-sdelat-izobrazheniya-adaptivnymi-s-pomoshchyu-css)
 + [Тег picture](https://developer.mozilla.org/ru/docs/Web/HTML/Element/picture)
 + [source](https://developer.mozilla.org/ru/docs/Web/HTML/Element/source)

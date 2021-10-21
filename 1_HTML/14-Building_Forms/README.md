@@ -1,11 +1,11 @@
 # Building_Forms 
 > Построение форм
 
-Lesson plan:
+
+## ## Lesson plan:
 
 
-
-Useful links:
+## Useful links:
 + [Тег FOR + Атрибуты](http://htmlbook.ru/html/form)
 + [input](http://htmlbook.ru/html/input)
 + [input + type](http://htmlbook.ru/html/input/type)

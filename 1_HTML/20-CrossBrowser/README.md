@@ -1,7 +1,8 @@
 ﻿# CrossBrowser 
 > Кроссбраузерная совместимость
 
-Lesson plan:
+
+## Lesson plan:
 + Что такое «вендорные префиксы» 
 + Откуда это взялось, и зачем нужно 
 + Как использовать префиксы
@@ -9,7 +10,7 @@ Lesson plan:
 + Как проверить поддержку 
 
 
-Useful links:
+## Useful links:
 + @suports [mozilla](https://developer.mozilla.org/ru/docs/Web/CSS/@supports) / [hcdev](https://hcdev.ru/css/supports/)
 + [analytics.google.com](https://analytics.google.com/analytics/web/provision/?authuser=0#/provision/create)
 + [Can i use](https://caniuse.com/)

@@ -9,7 +9,7 @@ Lesson plan :
 - Типы тегов
 
 
-Useful links:
+## Useful links:
 + [что такое W3C спецификация](https://topexpert.digital/wiki/w3c-specification/)
 + [w3.specification](https://html.spec.whatwg.org/multipage/)
 + [w3.validator](https://validator.w3.org/)

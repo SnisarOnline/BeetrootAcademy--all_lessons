@@ -1,8 +1,8 @@
-# CSS
+# Introducing CSS
 > Знакомство з CSS
- 
 
-#### Lesson plan :
+
+## Lesson plan :
 + Что такое и Как работает CSS
 + Где писать CSS
 + [Наследование стилей](https://metanit.com/web/html5/5.9.php)
@@ -11,8 +11,7 @@
 + [Единицы измерения: px, em, rem и другие](https://learn.javascript.ru/css-units)
 
 
-
-#### Useful links:
+## Useful links:
 
 > git commands
 + [git clone](https://git-scm.com/docs/git-clone)
