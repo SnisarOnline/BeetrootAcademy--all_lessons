@@ -1,7 +1,7 @@
 # Lesson zero 
 > структура уроков и обучения
- 
- 
+
+
 #### Lesson plan :
 + Знакомимся с структурой дальнейшего обучения
     - сначала чтение теории в ЛМС, а потом идем на урок для закрепления. 
@@ -16,10 +16,10 @@
 
 
 #### Useful links:
-+ [git status](https://git-scm.com/docs/git-status)
-+ [git add .](https://git-scm.com/docs/git-add)
-+ [git commit](https://git-scm.com/docs/git-commit)
-+ [git branch](https://git-scm.com/docs/git-branch)
-+ [git checkout](https://git-scm.com/docs/git-checkout)
-+ [git pull](https://git-scm.com/docs/git-pull)
-+ [git stash](https://git-scm.com/docs/git-stash)
++ [htmlbook.ru](http://htmlbook.ru/html)
++ [learn.javascript.ru](https://learn.javascript.ru/first-steps)
++ [metanit.com](https://metanit.com/web/javascript/)
++ [MDN](https://developer.mozilla.org/)
++ [figma](https://www.figma.com/)
++ [w3.specification](https://html.spec.whatwg.org/multipage/)
++ [w3.validator](https://validator.w3.org/)
