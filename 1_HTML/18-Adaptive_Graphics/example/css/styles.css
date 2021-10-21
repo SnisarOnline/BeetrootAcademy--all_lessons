@@ -70,6 +70,7 @@ input[type=search] {
   -webkit-appearance: none;
   -moz-appearance: none;
   -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
 
@@ -264,8 +265,7 @@ html input[disabled] {
  */
 input[type=checkbox],
 input[type=radio] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -283,6 +283,7 @@ input[type=radio] {
 input[type=search] {
   -webkit-appearance: textfield;
   /* 1 */
+  -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box;
@@ -410,8 +411,7 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   /* 1 */
   height: 0;
   /* 1 */
@@ -448,8 +448,7 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
   /* 2 */
 }
 
@@ -596,8 +595,7 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   color: inherit;
   /* 2 */
@@ -631,8 +629,7 @@ textarea {
  */
 [type=checkbox],
 [type=radio] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -714,6 +711,9 @@ template {
 
     _normalize.scss — этот файл не только задает стили по умолчанию там где это необходимо, но и исправляет некоторые
      недостатки старых браузеров (привет IE).
+
+    Если не использовать ето - то твои стили/верстка будет заточена только под конкретные особенности (под один браузер)
+    чот бы не фиксать баги для каждого браузера по отдельности нужно сбрасывать дефолтные стили
 
      @info https://github.com/necolas/normalize.css/blob/master/normalize.css
      @info all = https://developer.mozilla.org/ru/docs/Web/CSS/all
@@ -800,13 +800,8 @@ header__logo / header__icon / header__menu  --- Елементы блока "hea
   /* блок - у "блока" недолжно быть стилей влияюших на окружающие блоки или елементы - для возможности переноса блока.
    При перемещении блока в другую часть страници. Разметка и стили для "елементов блока" должна остается прежними Без изменений.
   */
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   min-height: 100vh;
 }
 .page__header, .page__footer {
@@ -817,9 +812,7 @@ header__logo / header__icon / header__menu  --- Елементы блока "hea
 }
 .page__main {
   /* елемент блока */
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-grow: 1;
   background-color: var(--color-White);
 }
 
@@ -827,12 +820,8 @@ header__logo / header__icon / header__menu  --- Елементы блока "hea
   /* блок - у "блока" недолжно быть стилей влияюших на окружающие елементы для возможности переноса блока.
    При перемещении блока в другую часть страници. Разметка и стили для "елементов блока" должна остается прежними Без изменений.
   */
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   padding: 20px 5%;
   position: sticky;
   /* просто чтоб было веселей */
@@ -844,14 +833,9 @@ header__logo / header__icon / header__menu  --- Елементы блока "hea
     "елементом блока" - может быть другой блок.
      */
   padding: 5px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  box-sizing: border-box;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
 }
 .header__logo_img {
   height: 50px;
@@ -859,8 +843,7 @@ header__logo / header__icon / header__menu  --- Елементы блока "hea
   border-radius: 50%;
   background-color: var(--color-White);
   padding: 5px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   overflow: hidden;
 }
 .header__logo_text {
@@ -869,30 +852,20 @@ header__logo / header__icon / header__menu  --- Елементы блока "hea
   font-size: 34px;
   padding: 0 5px;
   margin: 0 15px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   background-color: var(--color-White);
 }
 .header__nav {
   /* елемент блока */
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  -ms-flex-negative: 1;
-      flex-shrink: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
 }
 
 .nav {
   /* блок */
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: flex-end;
+  align-items: center;
   padding: 0 15px;
 }
 .nav__link {
@@ -912,17 +885,13 @@ header__logo / header__icon / header__menu  --- Елементы блока "hea
 
 .main {
   /* блок */
-  display: -ms-grid;
   display: grid;
   grid-gap: 10px;
-  -ms-grid-columns: minmax(789px, auto) 10px minmax(270px, auto);
   grid-template-columns: minmax(789px, auto) minmax(270px, auto);
-      grid-template-areas: "main sidebar";
+  grid-template-areas: "main sidebar";
   padding: 0 5%;
 }
 .main__sidebar {
-  -ms-grid-row: 1;
-  -ms-grid-column: 3;
   /* елемент блока */
   grid-area: sidebar;
   background-color: var(--color-cadetblue);
@@ -934,22 +903,17 @@ header__logo / header__icon / header__menu  --- Елементы блока "hea
   /* потому что у хедера высота тоже есть */
 }
 .main__content {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
   /* елемент блока */
   grid-area: main;
   background-color: var(--color-White);
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-grow: 1;
 }
 .main__content > section {
   padding: 20px;
   margin: 0 0 50px;
   background-color: var(--color-cadetblue);
   width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 h2 {
@@ -962,13 +926,8 @@ h2 {
 
 /* ------- Retina IMG ------- */
 .retina {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   overflow: hidden;
   border-left: 5px solid var(--color-cadetblue);
   border-right: 5px solid var(--color-cadetblue);
@@ -986,7 +945,7 @@ h2 {
 }
 
 /* медиа запросы под плотность пикселей */
-@media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 2dppx) {
+@media screen and (min-resolution: 2dppx) {
   /*
    @info https://developer.mozilla.org/en-US/docs/Web/CSS/@media/resolution
    @info https://developer.mozilla.org/en-US/docs/Web/CSS/resolution
@@ -1002,25 +961,16 @@ h2 {
 }
 /* ------- разделение экрана ------- */
 .split_screen {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  flex-direction: row;
+  box-sizing: border-box;
   border-left: 5px solid var(--color-Green);
   border-right: 5px solid var(--color-Green);
 }
 .split_screen__left_block, .split_screen__right_block {
   width: 50%;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  -ms-flex-negative: 1;
-      flex-shrink: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
 }
 .split_screen__left_block img, .split_screen__left_block svg, .split_screen__right_block img, .split_screen__right_block svg {
   width: 100%;
@@ -1030,34 +980,18 @@ h2 {
 
 /* ------- выравнивание картинок пропорционально ------- */
 .horizontal_alignment {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
   border-left: 5px solid var(--color-Orange);
   border-right: 5px solid var(--color-Orange);
 }
 .horizontal_alignment figure {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
   background-color: var(--color-White);
 }
 .horizontal_alignment figure img {
@@ -1076,33 +1010,20 @@ h2 {
 }
 
 .vertical_alignment {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   border-left: 5px solid var(--color-Orange);
   border-right: 5px solid var(--color-Orange);
 }
 .vertical_alignment figure {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  flex-direction: row;
+  align-items: stretch;
   background-color: var(--color-White);
   margin: 20px 0;
 }
 .vertical_alignment figure .img_wrap {
-  -ms-flex-preferred-size: 33.333%;
-      flex-basis: 33.333%;
+  flex-basis: 33.333%;
   position: relative;
   overflow: hidden;
 }
@@ -1112,12 +1033,10 @@ h2 {
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 .vertical_alignment figure figcaption {
-  -ms-flex-preferred-size: 67.777%;
-      flex-basis: 67.777%;
+  flex-basis: 67.777%;
   font-size: 25px;
   text-align: left;
 }
@@ -1147,8 +1066,7 @@ h2 {
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 .picture_as_background__text {
   font-size: 40px;
@@ -1186,8 +1104,7 @@ h2 {
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 .pictures_in_text__text {
   font-size: 25px;
@@ -1213,10 +1130,8 @@ h2 {
   height: 200px;
 }
 .pictures_in_text_object__left_img img {
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: contain;
+  object-position: center;
   height: 100%;
   width: 100%;
 }
@@ -1226,10 +1141,8 @@ h2 {
   height: 150px;
 }
 .pictures_in_text_object__right_img img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
   height: 100%;
   width: 100%;
 }
@@ -1248,12 +1161,9 @@ h2 {
 }
 
 footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   padding: 20px 5%;
 }
+
 /*# sourceMappingURL=styles.css.map */

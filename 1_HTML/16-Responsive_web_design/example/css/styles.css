@@ -70,6 +70,7 @@ input[type=search] {
   -webkit-appearance: none;
   -moz-appearance: none;
   -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
 
@@ -264,7 +265,6 @@ html input[disabled] {
  */
 input[type=checkbox],
 input[type=radio] {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -283,6 +283,7 @@ input[type=radio] {
 input[type=search] {
   -webkit-appearance: textfield;
   /* 1 */
+  -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box;
@@ -410,7 +411,6 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   /* 1 */
   height: 0;
@@ -448,7 +448,6 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
   /* 2 */
 }
@@ -596,7 +595,6 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   color: inherit;
@@ -631,7 +629,6 @@ textarea {
  */
 [type=checkbox],
 [type=radio] {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -715,21 +712,66 @@ template {
     _normalize.scss — этот файл не только задает стили по умолчанию там где это необходимо, но и исправляет некоторые
      недостатки старых браузеров (привет IE).
 
+    Если не использовать ето - то твои стили/верстка будет заточена только под конкретные особенности (под один браузер)
+    чот бы не фиксать баги для каждого браузера по отдельности нужно сбрасывать дефолтные стили
+
      @info https://github.com/necolas/normalize.css/blob/master/normalize.css
      @info all = https://developer.mozilla.org/ru/docs/Web/CSS/all
      @info unset = https://developer.mozilla.org/en-US/docs/Web/CSS/unset
 */
 /*
 Общая инфа!
-@info Единицы измерения в CSS = https://techrocks.ru/2019/08/07/units-in-css-for-beginners/
-@info :
- - Краткая запись CSS как антипаттерн = http://prgssr.ru/development/kratkaya-zapis-css-kak-antipattern.html
- - CSS Shorthand Syntax Considered an Anti-Pattern = https://csswizardry.com/2016/12/css-shorthand-syntax-considered-an-anti-pattern/
-@info Шрифты : http://htmlbook.ru/blog/svoi-shrift-na-stranitse
+@info: Единицы измерения в CSS = https://techrocks.ru/2019/08/07/units-in-css-for-beginners/
+@info: Краткая запись CSS как антипаттерн = http://prgssr.ru/development/kratkaya-zapis-css-kak-antipattern.html
+@info: Шрифты = http://htmlbook.ru/blog/svoi-shrift-na-stranitse
  1) https://habr.com/ru/company/htmlacademy/blog/552388/
  2) https://snipp.ru/html-css/font-face
-@info
-@info
+
+
+
+Теорию что такое БЕМ :
+БЛОК - ето елемент страници который может быть копирован в любое место страници, без искажения стилей внутри.
+       блоки могут вкладыватся друг в друга.
+ЕЛЕМЕНТ - строго пренадлежит БЛОКу внутри которого он находится. Елемента за блоком быть не может.
+МОДИФИКАТОР - класс который будет изменять повидение ЕЛЕМЕНТов и БЛОКов и неважно где.
+следовательно
+
+СЛЕДОВАТЕЛЬНО нужно строить дерево css классов в HTMLе.
+ К примеру такая структура в HTML :
+краткая запись (сделана для Emmet плагина. Вставить в HTML и нажать ТАБ):
+  ``` .header>.header__logo>.header__icon+.header__title^+.header__menu.menu>.menu__item*4>.menu__icon+.menu__title ```
+развернутая запись : ```
+    <div class="header">
+        <div class="header__logo">
+            <div class="header__icon"></div>
+            <div class="header__title"></div>
+        </div>
+        <div class="header__menu menu">
+            <div class="menu__item">
+                <div class="menu__icon"></div>
+                <div class="menu__title"></div>
+            </div>
+            <div class="menu__item">
+                <div class="menu__icon"></div>
+                <div class="menu__title"></div>
+            </div>
+            <div class="menu__item">
+                <div class="menu__icon"></div>
+                <div class="menu__title"></div>
+            </div>
+            <div class="menu__item">
+                <div class="menu__icon"></div>
+                <div class="menu__title"></div>
+            </div>
+        </div>
+    </div>
+```
+В данном примере:
+header и menu --- Ето Блоки
+menu__item / menu__title / menu__icon --- Елементы блока "menu"
+header__logo / header__icon / header__menu  --- Елементы блока "header"
+МОДИФИКАТОРы - я неприводил в пример, для начала нужно освоить такую структуру.
+
 */
 :root {
   /* @Info
@@ -754,65 +796,22 @@ template {
   --color-White: White;
 }
 
-/* -------- Сбособ на GRID-ах -------- */
-/* @Info https://www.digitalocean.com/community/tutorials/css-css-grid-holy-grail-layout */
-/*
-body {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: minmax(989px, auto) minmax(270px, auto);
-    grid-template-areas:
-            "header header"
-            "main sidebar"
-            "footer footer";
-    !*grid-template-areas: "header" "main" "footer";*!
-    grid-template-rows: 100px 1fr 80px;
-    min-height: 100vh;
-}
-body header {
-    background-color: var(--color-Indigo);
-    grid-area: header;
-}
-body .body--sidebar{
-    grid-area: sidebar;
-}
-body main {
-    background-color: var(--color-cadetblue);
-    grid-area: main;
-}
-body footer {
-    background-color: var(--color-Indigo);
-    grid-area: footer;
-}
-
-*/
-/* ======================================== Разделение на области ======================================== */
-/* -------- Сбособ на FLEX-ах -------- */
 .page {
   /* блок - у "блока" недолжно быть стилей влияюших на окружающие блоки или елементы - для возможности переноса блока.
    При перемещении блока в другую часть страници. Разметка и стили для "елементов блока" должна остается прежними Без изменений.
   */
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
   min-height: 100vh;
 }
-
 .page__header, .page__footer {
   /* елемент блока - у "елемента блока" могут быть стили влияюших на окружающие елементы внутри родительского блока.
   "елементом блока" - может быть другой блок.
    */
   background-color: var(--color-Indigo);
 }
-
 .page__main {
   /* елемент блока */
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
   flex-grow: 1;
   background-color: var(--color-White);
 }
@@ -821,11 +820,7 @@ body footer {
   /* блок - у "блока" недолжно быть стилей влияюших на окружающие елементы для возможности переноса блока.
    При перемещении блока в другую часть страници. Разметка и стили для "елементов блока" должна остается прежними Без изменений.
   */
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   padding: 20px 5%;
   position: sticky;
@@ -833,7 +828,6 @@ body footer {
   top: 0;
   z-index: 9999;
 }
-
 .header__logo {
   /* елемент блока - у "елемента блока" могут быть стили влияюших на окружающие елементы внутри родительского блока.
     "елементом блока" - может быть другой блок.
@@ -843,28 +837,20 @@ body footer {
   border-radius: 50%;
   background-color: var(--color-White);
   padding: 5px;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   overflow: hidden;
 }
-
 .header__nav {
   /* елемент блока */
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
   flex-grow: 1;
-  -ms-flex-negative: 1;
   flex-shrink: 1;
 }
-
 .header__authorisation {
   /* елемент блока */
   width: 250px;
   min-width: 150px;
   max-width: 250px;
   height: 50px;
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
   flex-grow: 1;
   background-color: var(--color-White);
   padding: 0 15px;
@@ -872,18 +858,11 @@ body footer {
 
 .nav {
   /* блок */
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
   justify-content: flex-start;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   padding: 0 15px;
 }
-
 .nav__link {
   /* елемент блока */
   display: inline-block;
@@ -892,29 +871,22 @@ body footer {
   background-color: var(--color-White);
   margin: 0 2%;
 }
-
 .nav__link:first-child {
   margin-left: 0;
 }
-
 .nav__link:last-child {
   margin-right: 0;
 }
 
 .main {
   /* блок */
-  display: -ms-grid;
   display: grid;
   grid-gap: 10px;
-  -ms-grid-columns: minmax(789px, auto) 10px minmax(270px, auto);
   grid-template-columns: minmax(789px, auto) minmax(270px, auto);
   grid-template-areas: "main sidebar";
   padding: 0 5%;
 }
-
 .main__sidebar {
-  -ms-grid-row: 1;
-  -ms-grid-column: 3;
   /* елемент блока */
   grid-area: sidebar;
   background-color: var(--color-cadetblue);
@@ -925,42 +897,27 @@ body footer {
   top: 115px;
   /* потому что у хедера высота тоже есть */
 }
-
 .main__content {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
   /* елемент блока */
   grid-area: main;
   background-color: var(--color-Pink);
 }
-
 .main__content > div {
   margin: 25px 0;
   background-color: var(--color-cadetblue);
 }
 
-/* ---------------------------- MAIN CONTENT ---------------------------- */
 /* ------- first_section ------- */
 .first_section {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
   padding: 20px;
 }
-
 .first_section__left_block, .first_section__right_block {
   min-width: 50%;
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
   flex-grow: 1;
-  -ms-flex-negative: 1;
   flex-shrink: 1;
 }
-
 .first_section__left_block img, .first_section__right_block img {
   width: 80%;
   min-width: 300px;
@@ -975,83 +932,47 @@ body footer {
   /* блок - у "блока" недолжно быть стилей влияюших на окружающие блоки или елементы - для возможности переноса блока.
    При перемещении блока в другую часть страници. Разметка и стили для "елементов блока" должна остается прежними Без изменений.
   */
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
   align-items: stretch;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   padding: 20px;
+  /* todo: еще в работе */
 }
-
 .second_section figure {
   padding: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
-
+.second_section figure img, .second_section figure video, .second_section figure blockquote {
+  background-color: var(--color-White);
+}
 .second_section figure img {
   width: 70px;
   padding: 10px;
   margin: 0 auto;
 }
-
 .second_section figure figcaption {
   display: block;
   width: 100%;
   text-align: center;
 }
-
 .second_section__figure_one_img {
   min-width: 120px;
 }
-
-.second_section__figure_one_img img {
-  background-color: var(--color-White);
-}
-
 .second_section__figure_group_img {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   min-width: 200px;
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
   flex-grow: 1;
 }
-
-.second_section__figure_group_img img {
-  background-color: var(--color-White);
-}
-
 .second_section__figure_video {
   min-width: 200px;
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
   flex-grow: 1;
 }
-
-.second_section__figure_video video {
-  background-color: var(--color-White);
-}
-
 .second_section__figure_quote {
-  -ms-flex-negative: 1;
   flex-shrink: 1;
 }
-
 .second_section__figure_quote blockquote {
-  background-color: var(--color-White);
   width: 300px;
   padding: 10px;
 }
@@ -1123,24 +1044,17 @@ body footer {
 */
 /* ------- third_section ------- */
 .third_section {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
   align-items: stretch;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   padding: 20px;
 }
 
 /* ---------------------------- FOOTER CONTENT ---------------------------- */
 footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   padding: 20px 5%;
 }
+
+/*# sourceMappingURL=styles.css.map */
