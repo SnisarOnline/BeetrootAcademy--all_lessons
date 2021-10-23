@@ -97,7 +97,6 @@ body{
     position: relative;
     margin: 100px; /* просто для резервирования пространства для луны */
     z-index: 1;
-
   }
   .moon{
     width: 100px;
@@ -107,7 +106,6 @@ body{
     transform: translate(-50%, -50%); /* центрирование*/
     animation: 10s linear 0s infinite orbita;
     z-index: 0;
-
   }
 
   @keyframes orbita {
