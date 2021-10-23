@@ -75,7 +75,7 @@ header__logo / header__icon / header__menu  --- Елементы блока "hea
   --color-White: White;
 }
 
-body{
+body {
   background-image: url("../img/cosmos.jpeg");
   background-size: cover;
   position: relative;
@@ -91,11 +91,12 @@ body{
   box-sizing: border-box;
   position: relative;
 
-  .moon{
+  .moon {
     width: 200px;
     z-index: 1;
   }
-  .moon-shadow{
+
+  .moon-shadow {
     /* ограничение области в которой должна появлятся тень */
     display: block;
     width: 88%; /*Подобранный размер под луну*/
@@ -108,7 +109,7 @@ body{
     overflow: hidden; /*спрячем лишние*/
 
 
-    &:after{
+    &:after {
       content: '';
       /* Тень от земли */
       display: block;
@@ -123,21 +124,23 @@ body{
       top: 50%;
       transform: translate(-50%, -50%);
 
-       /* Движение */
+      /* Движение */
       animation: 10s linear 0s infinite orbita;
     }
   }
 
   @keyframes orbita {
-    0%{
+    0% {
       transform: translate(-150%, -50%);
     }
-    25%{}
-    50%{
+    25% {
+    }
+    50% {
       transform: translate(-50%, -50%);
     }
-    75%{}
-    100%{
+    75% {
+    }
+    100% {
       transform: translate(50%, -50%);
     }
   }

@@ -797,28 +797,33 @@ header {
   box-sizing: border-box;
   position: absolute;
 }
+
 header .header--logo {
   font-size: 40px;
   text-decoration: none;
   font-weight: bold;
   color: black;
 }
+
 header nav {
   display: inline-block;
   float: right;
   font-size: 0;
 }
+
 header nav a {
   margin: 0 10px;
   text-decoration: none;
   color: black;
   font-size: 16px;
 }
+
 header nav .header--btn {
   display: inline-block;
   margin-left: 15px;
   font-size: 30px;
 }
+
 header nav .header--btn .header-sing-in, header nav .header--btn .header-sing-up {
   font-size: 16px;
   padding: 10px 15px;
@@ -828,6 +833,7 @@ header nav .header--btn .header-sing-in, header nav .header--btn .header-sing-up
   border-radius: 5px;
   border: 1px solid var(--btn-default-color-border);
 }
+
 header nav .header--btn .active {
   background: var(--btn-active-color-bg);
   color: var(--btn-active-color-text);
@@ -846,12 +852,15 @@ main .home {
   flex-wrap: nowrap;
   padding-top: 50px;
 }
+
 main .home svg {
   width: 50%;
 }
+
 main .home .home--left {
   width: 50%;
 }
+
 main .home .home--left .title {
   font-weight: bold;
   font-size: 44px;
@@ -859,12 +868,14 @@ main .home .home--left .title {
   color: #2F281E;
   margin: 70px 0 40px;
 }
+
 main .home .home--left .description {
   font-size: 25px;
   line-height: 1.9rem;
   color: #544837;
   margin: 25px 0 50px;
 }
+
 main .home .home--left .btn .get-started {
   font-size: 16px;
   padding: 14px 41px;
@@ -875,11 +886,13 @@ main .home .home--left .btn .get-started {
   border: 1px solid var(--btn-default-color-border);
   border-radius: 5px;
 }
+
 main .home .home--left .btn .btn--watch_the_video {
   margin: 0 20px 0;
   display: inline-block;
   position: relative;
 }
+
 main .home .home--left .btn .btn--watch_the_video .arrow {
   display: inline-block;
   width: 0;
@@ -894,6 +907,7 @@ main .home .home--left .btn .btn--watch_the_video .arrow {
   top: -2px;
   left: 0;
 }
+
 main .home .home--left .btn .btn--watch_the_video .name {
   font-size: 16px;
   color: var(--btn-active-color-bg);
@@ -908,6 +922,7 @@ main .feature .description {
   width: 100%;
   text-align: center;
 }
+
 main .feature .description figure {
   display: inline-block;
   width: 24%;

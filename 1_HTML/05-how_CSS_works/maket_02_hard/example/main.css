@@ -1,0 +1,120 @@
+:root {
+  /* @Info
+   1) https://developer.mozilla.org/en-US/docs/Web/CSS/var()
+   2) https://developer.mozilla.org/ru/docs/Web/CSS/Using_CSS_custom_properties
+   */
+  --color-Red: Red;
+  --color-Brown: Brown;
+  --color-Orange: Orange;
+  --color-Yellow: Yellow;
+  --color-Lime: Lime;
+  --color-Green: Green;
+  --color-cadetblue: cadetblue;
+  --color-Cyan: Cyan;
+  --color-Blue: Blue;
+  --color-Pink: Pink;
+  --color-Violet: Violet;
+  --color-Purple: Purple;
+  --color-Indigo: Indigo;
+  --color-Black: Black;
+  --color-White: White;
+  --bg-headre-color: #4a4f56;
+  --bg-body-color: #3b3f45;
+}
+
+.title + .title_small {
+  font-size: 1.6em;
+}
+
+.wrapper {
+  background-color: var(--bg-body-color);
+  border: 20px solid var(--color-White);
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.wrapper header {
+  text-align: center;
+  padding: 35px 0;
+  background-color: var(--bg-headre-color);
+}
+
+.wrapper main {
+  padding-top: 35px;
+  padding-bottom: 150px;
+}
+
+.wrapper main ul.list-items {
+  max-width: 724px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  background-color: #88839e;
+}
+
+.wrapper footer p {
+  background-color: #4a4f56;
+  max-width: 724px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #e27b7c;
+  text-align-last: center;
+  padding: 35px 0;
+  margin-bottom: 4%;
+
+}
+
+
+.container {
+  font-size: 1.1em;
+}
+
+.list-items .item {
+  padding: 15px;
+}
+
+.list-items .item:nth-of-type(even) {
+  background-color: #7a7593;
+}
+
+input[type=checkbox]:checked + label {
+  text-decoration: line-through;
+}
+
+.check:hover {
+  background-color: #625e77;
+}
+
+li:hover {
+  background-color: #625e77;
+  border: 5px solid white;
+}
+
+.first::after {
+  content: " (for the next lessons about CSS)";
+  font-size: 0.6em;
+}
+
+.second::after {
+  content: " (for more CSS manipulations)";
+  font-size: 0.6em;
+}
+
+.third::after {
+  content: " (because they are awesome)";
+  font-size: 0.6em;
+}
+
+.fourth::after {
+  content: " (hm.. they always dissapear)";
+  font-size: 0.6em;
+}
+
+.sixth::after {
+  content: " (for my friends)";
+  font-size: 0.6em;
+}

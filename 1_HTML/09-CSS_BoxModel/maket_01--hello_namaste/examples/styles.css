@@ -36,7 +36,8 @@
 
 
 .content {
-  display: inline-block;
+  /*display: inline-block;*/
+  display: table;
   box-sizing: border-box;
   width: 100%;
   margin: 0 auto;
@@ -45,7 +46,8 @@
 }
 
 .content__item {
-  display: inline-block;
+  /*display: inline-block;*/
+  display: table-cell;
   box-sizing: border-box;
   vertical-align: top;
   width: 25%;

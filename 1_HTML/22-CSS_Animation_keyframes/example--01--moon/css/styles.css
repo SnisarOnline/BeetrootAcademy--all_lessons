@@ -265,7 +265,7 @@ html input[disabled] {
 input[type=checkbox],
 input[type=radio] {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -411,7 +411,7 @@ h1 {
  */
 hr {
   -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   /* 1 */
   height: 0;
   /* 1 */
@@ -449,7 +449,7 @@ abbr[title] {
   text-decoration: underline;
   /* 2 */
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
   /* 2 */
 }
 
@@ -597,7 +597,7 @@ fieldset {
  */
 legend {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   color: inherit;
   /* 2 */
@@ -632,7 +632,7 @@ textarea {
 [type=checkbox],
 [type=radio] {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -803,11 +803,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   height: 100vh;
 }
 
@@ -815,13 +815,15 @@ body {
   display: inline-block;
   border: 1px solid var(--color-Lime);
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   position: relative;
 }
+
 .main .moon {
   width: 200px;
   z-index: 1;
 }
+
 .main .moon-shadow {
   /* ограничение области в которой должна появлятся тень */
   display: block;
@@ -836,6 +838,7 @@ body {
   overflow: hidden;
   /*спрячем лишние*/
 }
+
 .main .moon-shadow:after {
   content: "";
   /* Тень от земли */
@@ -849,36 +852,38 @@ body {
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   /* Движение */
   -webkit-animation: 10s linear 0s infinite orbita;
-          animation: 10s linear 0s infinite orbita;
+  animation: 10s linear 0s infinite orbita;
 }
+
 @-webkit-keyframes orbita {
   0% {
     -webkit-transform: translate(-150%, -50%);
-            transform: translate(-150%, -50%);
+    transform: translate(-150%, -50%);
   }
   50% {
     -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
   100% {
     -webkit-transform: translate(50%, -50%);
-            transform: translate(50%, -50%);
+    transform: translate(50%, -50%);
   }
 }
+
 @keyframes orbita {
   0% {
     -webkit-transform: translate(-150%, -50%);
-            transform: translate(-150%, -50%);
+    transform: translate(-150%, -50%);
   }
   50% {
     -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
   100% {
     -webkit-transform: translate(50%, -50%);
-            transform: translate(50%, -50%);
+    transform: translate(50%, -50%);
   }
 }

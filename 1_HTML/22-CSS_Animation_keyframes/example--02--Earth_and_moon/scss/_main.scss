@@ -75,7 +75,7 @@ header__logo / header__icon / header__menu  --- Елементы блока "hea
   --color-White: White;
 }
 
-body{
+body {
   background-image: url("../img/cosmos.jpeg");
   background-size: cover;
   position: relative;
@@ -91,14 +91,15 @@ body{
   border: 1px solid var(--color-Lime);
   box-sizing: border-box;
 
-  .earth{
+  .earth {
     width: 300px; /* от фанаря кхммм... Звезды */
     //outline: solid 1px var(--color-Pink); // просто контур границ
     position: relative;
     margin: 100px; /* просто для резервирования пространства для луны */
     z-index: 1;
   }
-  .moon{
+
+  .moon {
     width: 100px;
     position: absolute; /* тому что должна смещатся */
     top: 50%;
@@ -109,34 +110,34 @@ body{
   }
 
   @keyframes orbita {
-    0%{
+    0% {
       width: 40px;
       transform: rotate(0deg);
     }
-    24%{
+    24% {
       z-index: 0;
     }
-    25%{
+    25% {
       left: 83%;
       top: 25%;
       z-index: 2;
       width: 70px;
     }
-    50%{
+    50% {
       top: 51%;
       left: 51%;
       width: 180px;
     }
-    74%{
+    74% {
       z-index: 2;
     }
-    75%{
+    75% {
       z-index: 0;
       left: 17%;
       top: 75%;
       width: 70px;
     }
-    100%{
+    100% {
       width: 40px;
       transform: rotate(360deg);
     }

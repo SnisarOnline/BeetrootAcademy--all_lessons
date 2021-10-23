@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 
-body{
+body {
 
 }
 
 /* Layout */
-.ba-container{
+.ba-container {
   padding-left: 20px;
   padding-right: 20px;
   max-width: 1200px;
@@ -15,19 +15,21 @@ body{
 a,
 input[type="submit"],
 input[type="button"],
-button{
+button {
   transition: color .3s ease-in, border-color .3s ease-in, background-color .3s ease-in, opacity .3s ease-in;
 }
+
 input[type="submit"],
 input[type="button"],
 button,
-.ba-button{
+.ba-button {
   display: inline-block;
 }
+
 input[type="submit"]:hover,
 input[type="button"]:hover,
 button:hover,
-.ba-button:hover{
+.ba-button:hover {
 
 }
 
@@ -50,6 +52,7 @@ textarea:focus,
 select:focus {
 
 }
+
 textarea {
 
 }
