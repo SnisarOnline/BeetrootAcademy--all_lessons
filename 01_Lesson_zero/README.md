@@ -26,4 +26,4 @@
 
 ###### Video:
 + [Война текстовых редакторов: редактор кода vs IDE, Александра Шинкевич](https://youtu.be/OhLIhyCrNGE?list=RDCMUCY35dlJe-V5J_IqzU-XksAg)
-
++ [DevTools](https://youtu.be/PDP9NNKtEuA)

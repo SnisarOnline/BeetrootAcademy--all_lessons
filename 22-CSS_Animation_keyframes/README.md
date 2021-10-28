@@ -15,7 +15,7 @@
 + will-change [w3](https://drafts.csswg.org/css-will-change/)
 + [animate.css](https://animate.style/)
 + [svg](https://css-tricks.com/svg-line-animation-works/)
-+ DevTools tab-Performance [1](https://youtu.be/pq5Qykc06Aw) [2](https://youtu.be/kBHUEFYawTk) [3](https://youtu.be/PDP9NNKtEuA)
++ [DevTools](https://youtu.be/PDP9NNKtEuA); [tab-Performance](https://youtu.be/pq5Qykc06Aw); [По ту сторону баррикад](https://youtu.be/kBHUEFYawTk) 
 
 
 ---------
