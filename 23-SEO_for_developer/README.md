@@ -26,7 +26,7 @@
 	+ [Open_Graph](https://ruogp.me/)
 	+ DublinCore = [official](https://dublincore.org/) + [w3.org](https://www.w3.org/wiki/DublinCore)
 
-+ Рендеринг в Интернете = https://developers.google.com/web/updates/2019/02/rendering-on-the-web
++ [Рендеринг в Интернете](https://developers.google.com/web/updates/2019/02/rendering-on-the-web)
 
 + Тестирование metrix
 	- [validator.w3](https://validator.w3.org/)

@@ -13,7 +13,7 @@
 
 ## Useful links:
 
-> git commands
+###### git commands:
 + [git clone](https://git-scm.com/docs/git-clone)
 + [git status](https://git-scm.com/docs/git-status)
 + [git add .](https://git-scm.com/docs/git-add)

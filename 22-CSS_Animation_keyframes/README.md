@@ -1,16 +1,21 @@
-﻿# CSS animation
-> CSS Анимация
+﻿# CSS keyframes animation
+> keyframes Анимация
 
 
-## Lesson plan: 
+## Lesson plan:
++ Для чего нужна Анимация.
++ Отличия Transition от Animation
++ Как используется CSS Animation
++ SVG + CSS Animation
++ Библиотеки
 
 
 ## Useful links:
-
-
-
-### Что бы запустить авто обновление страници нужно 
-```npm run start ```
++ [css3-animation](https://html5book.ru/css3-animation/)
++ will-change [w3](https://drafts.csswg.org/css-will-change/)
++ [animate.css](https://animate.style/)
++ [svg](https://css-tricks.com/svg-line-animation-works/)
++ DevTools tab-Performance [1](https://youtu.be/pq5Qykc06Aw) [2](https://youtu.be/kBHUEFYawTk) [3](https://youtu.be/PDP9NNKtEuA)
 
 
 ---------
