@@ -21,4 +21,6 @@ Lesson plan :
 + [Фронтопс? Серьёзно? Анна Селезнёва](https://youtu.be/yWPAW59e1AU?list=RDCMUCY35dlJe-V5J_IqzU-XksAg)
 + [Семантика для циников. Вадим Макеев](https://youtu.be/ssJsjGZE2sc)
 + [Людоедский интерфейс. Вадим Макеев](https://youtu.be/ssJsjGZE2sc)
-
++ [Фронтенд для новичка. Куда идти и что делать?](https://youtu.be/G9hMm77B1dk?list=RDCMUCY35dlJe-V5J_IqzU-XksAg)
++ [36. Вадим Макишвили](https://youtu.be/xPPCzryZK44)
++ [5 минут. Вадим Макишвили](https://youtu.be/iBHr8gKc5L8)
