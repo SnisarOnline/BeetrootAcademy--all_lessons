@@ -8,6 +8,7 @@ Lesson plan :
 + Где взять шрифты
 + Способы подключить шрифты
 + Какой способ лучше выбрать
++ Иконочный-шрифт
 
 
 ## Useful links:
@@ -15,7 +16,9 @@ Lesson plan :
 + [Как подключить и оптимизировать нестандартные шрифты](https://htmlacademy.ru/blog/boost/tutorial/fonts-loading)
 + [CSS-шрифты](https://html5book.ru/css-shrifty/)
 + [Понятие форматов шрифтов, и как выжать из них максимум для веб](https://webformyself.com/ponyatie-formatov-shriftov-i-kak-vyzhat-iz-nix-maksimum-dlya-veb/)
-
++ [Библиотеки иконок](https://habr.com/ru/company/edison/blog/481420/):
+    - [FontAwesome](https://fontawesome.com) + [Awesome icon library](https://fontawesome.com/v5.15/icons)
+    - [MaterialIcons](https://google.github.io/material-design-icons/) + [Material icon library](https://fonts.google.com/icons?selected=Material+Icons)
 
 ###### Video:
 + [_ ___ ______? Вадим Макеев](https://youtu.be/uI3Q5m9xkkw)

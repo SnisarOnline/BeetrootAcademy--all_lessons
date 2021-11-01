@@ -70,6 +70,7 @@ input[type=search] {
   -webkit-appearance: none;
   -moz-appearance: none;
   -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
 
@@ -264,7 +265,6 @@ html input[disabled] {
  */
 input[type=checkbox],
 input[type=radio] {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -283,6 +283,7 @@ input[type=radio] {
 input[type=search] {
   -webkit-appearance: textfield;
   /* 1 */
+  -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box;
@@ -410,7 +411,6 @@ h1 {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   /* 1 */
   height: 0;
@@ -448,7 +448,6 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
   /* 2 */
 }
@@ -596,7 +595,6 @@ fieldset {
  *    `fieldset` elements in all browsers.
  */
 legend {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   color: inherit;
@@ -631,7 +629,6 @@ textarea {
  */
 [type=checkbox],
 [type=radio] {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -799,14 +796,8 @@ body {
   background-image: url("../img/cosmos.jpeg");
   background-size: cover;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   height: 100vh;
 }
@@ -814,16 +805,13 @@ body {
 .main {
   display: inline-block;
   border: 1px solid var(--color-Lime);
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
 }
-
 .main .moon {
   width: 200px;
   z-index: 1;
 }
-
 .main .moon-shadow {
   /* ограничение области в которой должна появлятся тень */
   display: block;
@@ -838,7 +826,6 @@ body {
   overflow: hidden;
   /*спрячем лишние*/
 }
-
 .main .moon-shadow:after {
   content: "";
   /* Тень от земли */
@@ -851,39 +838,20 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   /* Движение */
-  -webkit-animation: 10s linear 0s infinite orbita;
   animation: 10s linear 0s infinite orbita;
 }
-
-@-webkit-keyframes orbita {
-  0% {
-    -webkit-transform: translate(-150%, -50%);
-    transform: translate(-150%, -50%);
-  }
-  50% {
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-  }
-  100% {
-    -webkit-transform: translate(50%, -50%);
-    transform: translate(50%, -50%);
-  }
-}
-
 @keyframes orbita {
   0% {
-    -webkit-transform: translate(-150%, -50%);
     transform: translate(-150%, -50%);
   }
   50% {
-    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
   100% {
-    -webkit-transform: translate(50%, -50%);
     transform: translate(50%, -50%);
   }
 }
+
+/*# sourceMappingURL=styles.css.map */

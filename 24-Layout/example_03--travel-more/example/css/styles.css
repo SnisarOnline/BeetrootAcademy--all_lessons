@@ -804,14 +804,12 @@ header__logo / header__icon / header__menu  --- Елементы блока "hea
   flex-direction: column;
   min-height: 100vh;
 }
-
 .page__header, .page__footer {
   /* елемент блока - у "елемента блока" могут быть стили влияюших на окружающие елементы внутри родительского блока.
   "елементом блока" - может быть другой блок.
    */
   background-color: var(--color-Indigo);
 }
-
 .page__main {
   /* елемент блока */
   flex-grow: 1;
@@ -830,7 +828,6 @@ header__logo / header__icon / header__menu  --- Елементы блока "hea
   top: 0;
   z-index: 9999;
 }
-
 .header__logo {
   /* елемент блока - у "елемента блока" могут быть стили влияюших на окружающие елементы внутри родительского блока.
     "елементом блока" - может быть другой блок.
@@ -840,7 +837,6 @@ header__logo / header__icon / header__menu  --- Елементы блока "hea
   display: flex;
   align-items: center;
 }
-
 .header__logo_img {
   height: 50px;
   width: 50px;
@@ -850,7 +846,6 @@ header__logo / header__icon / header__menu  --- Елементы блока "hea
   box-sizing: border-box;
   overflow: hidden;
 }
-
 .header__logo_text {
   font-family: "Ephesis", cursive;
   font-weight: bolder;
@@ -860,7 +855,6 @@ header__logo / header__icon / header__menu  --- Елементы блока "hea
   box-sizing: border-box;
   background-color: var(--color-White);
 }
-
 .header__nav {
   /* елемент блока */
   flex-grow: 1;
@@ -874,7 +868,6 @@ header__logo / header__icon / header__menu  --- Елементы блока "hea
   align-items: center;
   padding: 0 15px;
 }
-
 .nav__link {
   /* елемент блока */
   display: inline-block;
@@ -883,11 +876,9 @@ header__logo / header__icon / header__menu  --- Елементы блока "hea
   background-color: var(--color-White);
   margin: 0 2%;
 }
-
 .nav__link:first-child {
   margin-left: 0;
 }
-
 .nav__link:last-child {
   margin-right: 0;
 }
@@ -906,7 +897,6 @@ header__logo / header__icon / header__menu  --- Елементы блока "hea
   grid-template-areas: "main sidebar";
   padding: 0 5%;
 }
-
 .main__sidebar {
   /* елемент блока */
   grid-area: sidebar;
@@ -918,21 +908,18 @@ header__logo / header__icon / header__menu  --- Елементы блока "hea
   top: 115px;
   /* потому что у хедера высота тоже есть */
 }
-
 .main__content {
   /* елемент блока */
   grid-area: main;
   background-color: var(--color-White);
   flex-grow: 1;
 }
-
 .main__content > h3 {
   margin-top: 50px;
   text-align: center;
   font-size: 25px;
   border-top: double 10px #e2e2e2;
 }
-
 .main__content > section {
   padding: 20px;
   margin: 0 0 50px;
@@ -965,7 +952,6 @@ header__logo / header__icon / header__menu  --- Елементы блока "hea
   Функция minmax(min,max) определяет диапазон размеров
   */
 }
-
 .grid_example_1 div {
   background-color: #7a7a7a;
   padding: 5px;
@@ -983,31 +969,25 @@ header__logo / header__icon / header__menu  --- Елементы блока "hea
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 80px 1fr;
 }
-
 .grid_example_2 div {
   padding: 20px;
 }
-
 .grid_example_2 .yalow {
   grid-area: yalow;
   background-color: var(--color-Yellow);
 }
-
 .grid_example_2 .green {
   grid-area: green;
   background-color: var(--color-Green);
 }
-
 .grid_example_2 .red {
   grid-area: red;
   background-color: var(--color-Red);
 }
-
 .grid_example_2 .pink {
   grid-area: pink;
   background-color: var(--color-Pink);
 }
-
 .grid_example_2 .indigo {
   grid-area: indigo;
   background-color: var(--color-Indigo);
@@ -1019,7 +999,6 @@ header__logo / header__icon / header__menu  --- Елементы блока "hea
   grid-template-rows: repeat(4, 100px);
   grid-template-columns: repeat(3, 2fr);
 }
-
 .grid_example_3 div {
   border: dotted 2px green;
   display: flex;
@@ -1028,27 +1007,21 @@ header__logo / header__icon / header__menu  --- Елементы блока "hea
   align-content: center;
   text-align: center;
 }
-
 .grid_example_3 .post-1 {
   grid-area: post-1;
 }
-
 .grid_example_3 .post-2 {
   grid-area: post-2;
 }
-
 .grid_example_3 .post-3 {
   grid-area: post-3;
 }
-
 .grid_example_3 .post-4 {
   grid-area: post-4;
 }
-
 .grid_example_3 .post-5 {
   grid-area: post-5;
 }
-
 .grid_example_3 .post-6 {
   grid-area: post-6;
 }
