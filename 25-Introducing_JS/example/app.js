@@ -1,57 +1,35 @@
 "use strict";
-
-alert('Hello world! from app.js');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ================================================================== */
 /* ===================== Браузерное окружение  ====================== */
 /* ================================================================== */
-// console.log('window', window);
-
+console.log('window', window);
 
 /* ============= 1) BOM ============= */
-/*
+console.log('window.navigator', window.navigator);
 console.log('navigator', navigator);
+
+console.log('window.screen', window.screen);
 console.log('screen', screen);
+
+console.log('location', window.location);
 console.log('location', location);
 console.log('location.href', location.href);
 console.log('frames', frames);
 console.log('history', history);
-*/
 
 /* ============= 2) DOM ============= */
-// console.log('document', document);
-
-/*
+console.log('window.document', window.document);
+console.log('document', document);
 console.log('document.head', document.head);
 console.log('document.body', document.body);
-*/
 
+/* ===== Поиск елементов в DOM =====*/
+const buttonElement = document.body.querySelector('button');
+console.log('buttonElement', buttonElement );
 
 /* ============= 3) JavaScript ============= */
-/*
-const promptResult = prompt("Кто ты ?");
+const promptResult = window.prompt("Кто ты ?");
 console.log('promptResult :', promptResult);
-*/
-
-
 
 
 
@@ -59,13 +37,7 @@ console.log('promptResult :', promptResult);
 /* ================================================================== */
 /* =====================  Типы данных =============================== */
 /* ================================================================== */
-/*
-boolean, string, (number, BigInt), object, symbol, undefined, null
-*/
-
-// let a = 5;
-// const a = 5;
-
+// boolean, string, (number, BigInt), object, symbol, undefined, null
 
 // console.log('---------- Елементарные Типы Данных ----------');
 // console.log(typeof true)
@@ -80,6 +52,7 @@ boolean, string, (number, BigInt), object, symbol, undefined, null
 // console.log(typeof Math)
 // console.log(typeof Symbol('JS'))
 // console.log(typeof undefined)
+
 // исключения
 // console.log(typeof null) //
 // console.log(typeof [])
