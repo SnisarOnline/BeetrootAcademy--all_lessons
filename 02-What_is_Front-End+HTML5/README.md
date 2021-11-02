@@ -16,7 +16,7 @@ Lesson plan :
 + [DOM-дерево](https://learn.javascript.ru/dom-nodes)
 
 
-###### Video:
+###### YouTube :
 + [DevTools](https://youtu.be/PDP9NNKtEuA)
 + [Фронтопс? Серьёзно? Анна Селезнёва](https://youtu.be/yWPAW59e1AU?list=RDCMUCY35dlJe-V5J_IqzU-XksAg)
 + [Семантика для циников. Вадим Макеев](https://youtu.be/ssJsjGZE2sc)

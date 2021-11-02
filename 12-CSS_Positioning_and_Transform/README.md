@@ -16,6 +16,6 @@
 + [CSS правила](https://basicweb.ru/css/css_rules.php)
 + [CSS функции](https://basicweb.ru/css/css_functions.php)
 
-###### Video:
+###### YouTube :
 + [Неквадратный веб, Юлия Бухвалова](https://youtu.be/coq1N7JW6sQ?list=RDCMUCY35dlJe-V5J_IqzU-XksAg)
 

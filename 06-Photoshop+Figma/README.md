@@ -14,5 +14,5 @@
 + [flex-box](https://tproger.ru/translations/how-css-flexbox-works/)
 
 
-###### Video:
+###### YouTube :
 + [Модульные сетки в веб-дизайне](https://youtu.be/u2nFV4WJD3s)
