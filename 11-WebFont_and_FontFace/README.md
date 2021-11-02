@@ -1,7 +1,8 @@
 ﻿# WebFont and FontFace
 > Шрифты в CSS
 
-Lesson plan :
+
+## Lesson plan :
 + Что такое font-family
 + Для чего нужны шрифты 
 + Как их применяют

@@ -1,6 +1,7 @@
 ﻿# Photoshop + Figma
 > Работа с графическими редакторами(Photoshop/Figma)
 
+
 ## Lesson plan:
 
 

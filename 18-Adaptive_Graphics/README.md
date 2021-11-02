@@ -1,6 +1,7 @@
 ﻿# Adaptive Graphics 
 > Адаптивность картинок
 
+
 ## Lesson plan:
 
 
