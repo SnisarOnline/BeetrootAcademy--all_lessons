@@ -1,7 +1,8 @@
 // console.log(a);
 // console.log(b);
 
-// boolean, string, (number, BigInt), object, symbol, undefined, null,
+// boolean, string, (number, BigInt), symbol, undefined, null, object
+
 // console.log('---------- Елементарные Типы Данных ----------');
 // console.log(typeof true)
 // console.log(typeof 'Javascript') // "", ''
@@ -169,6 +170,7 @@ switch (b) {
 
 
 // Как сравнить объекты/масивы в Javascript
+/*
 const someObject_1 = {
     name: '1'
 };
@@ -178,3 +180,4 @@ const someObject_2 = {
 const stringObject_1 = JSON.stringify(someObject_1);
 const stringObject_2 = JSON.stringify(someObject_2);
 console.log(stringObject_1 === stringObject_2);
+*/

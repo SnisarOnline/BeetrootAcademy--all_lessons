@@ -9,8 +9,8 @@
 + Способы подключение js
 + [Внешние скрипты, порядок исполнения](https://learn.javascript.ru/external-script)
 + [Строгий режим — "use strict"](https://learn.javascript.ru/strict-mode)
-+ Переменные и основные типы данных
-+ Сравнение данных
++ Нейминг переменных и чистота кода
++ Основные типы данных
 
 
 ## Useful links:
@@ -21,3 +21,4 @@
 
 ###### Youtube
 + [JavaScript Document object model (DOM)](https://youtu.be/DuWyc76lYC4)
++ [TrueJS](https://www.youtube.com/playlist?list=PLM7wFzahDYnEcQh1G_fxFXBZ4O1tlVsDG)
