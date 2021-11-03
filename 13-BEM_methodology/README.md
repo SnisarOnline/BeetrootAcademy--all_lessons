@@ -14,3 +14,7 @@
 + [Соглашения по именованию CSS-сущностей и экономия времени](https://habr.com/ru/company/ruvds/blog/347194/)
 + [Слова, часто используемые в CSS-классах](https://github.com/yoksel/common-words)
 + [Как работать с CSS-препроцессорами и БЭМ](https://nicothin.pro/idiomatic-pre-CSS/)
+
+##### YouTube :
++ [Методология БЭМ за 17 минут](https://youtu.be/HihYQVuH64U)
++ []()
