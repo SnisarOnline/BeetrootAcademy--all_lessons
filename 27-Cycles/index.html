@@ -15,59 +15,130 @@
 <body>
 Консольная магия
 <hr>
+
 <script>
     /* ======== while ======== */
+    /*
     console.log(' ======== while ======== ');
-/*
-    let startWhile = 5 - 3;
+    let startWhile = 3 - 2;
     console.log('while-start : ', startWhile);
-    while (startWhile < 5) {
-        let isStop = window.confirm("Остановить цикл while ?");
+    while (startWhile < 5 && startWhile >= 0) {
 
-        debugger
-        if (isStop) {
-            break;
-        }
+        console.log('while-step : ', startWhile);
+        // if (startWhile === 4) {
+        //     continue;
+        // }
+
+        // let isStop = window.confirm("Остановить цикл while ?");
+        // if (isStop) {
+        //     break;
+        // }
 
         startWhile = startWhile + 1;
-        console.log('while-step : ', startWhile);
+        // ++startWhile;
+        // startWhile += 1;
     }
     console.log('while-end result : ', startWhile);
 */
 
-
-
-
     /* ======== do while ======== */
-    console.log(' ======== do while ======== ');
-/*
-    let startDoWhile = 5 - 3;
-    console.log('do_while-start : ', startDoWhile);
-    do{
-        let isStop = window.confirm("Остановить цикл do-while ?");
+    /*
+        console.log(' ======== do while ======== ');
+        let startDoWhile = 5 - 3;
+        console.log('do_while-start : ', startDoWhile);
+        do{
+            let isStop = window.confirm("Остановить цикл do-while ?");
+            debugger
+            if (isStop) {
+                break;
+            }
+
+            startDoWhile = startDoWhile + 1;
+            console.log('do_while-step', startDoWhile);
+        } while (startDoWhile < 5 );
+        console.log('do_while-end result : ', startDoWhile);
+    */
+    /*
+
+        /!* ======== for ======== *!/
+        console.log(' ======== for ======== ');
+        let startFor = 5 - 3;
+        console.log('for-start : ', startFor);
+        // todo: for
         debugger
-        if (isStop) {
-            break;
+        const culc = (ai) => {
+            debugger
+            return ++ai;
+        };
+
+        for (let i = 0; i < 3; culc(i)) {
+            debugger
+            console.log('for-step1 : ', i);
         }
+        console.log('for-end result : ', startFor);
+    */
 
-        startDoWhile = startDoWhile + 1;
-        console.log('do_while-step', startDoWhile);
-    } while (startDoWhile < 5 );
-    console.log('do_while-end result : ', startDoWhile);
-*/
+    /*
 
+        /!* ======== for ======== *!/
+        console.log(' ======== for ======== ');
+        let startFor = 0;
+        console.log('for-start : ', startFor);
+        debugger
+        for (startFor; startFor < 20 ; ++startFor) {
+            console.log('for-step : ', startFor);
+            if (startFor % 2) {
+                console.log('% step : ', startFor);
+            }
+        }
+        console.log('for-end result : ', startFor);
 
+    */
 
+    /*
+    /!* ======== for ======== *!/
+    const result = [];
+    const maxQuestionNumber = 3;
 
+    for (let i = 0; i < maxQuestionNumber; i++) {
+        let answer = prompt('введите цифру');
+        if (typeof Number(answer) === "number") {
+            result[i] = answer;
+        } else {
+            answer = prompt('всеже цифра');
+            result[i] = answer;
+        }
+    }
 
-    /* ======== for ======== */
-    console.log(' ======== for ======== ');
+    console.log('result', result);
+    */
+
 /*
-    let startFor = 5 - 3;
-    console.log('for-start : ', startFor);
-    // todo: for
-    console.log('for-end result : ', startFor);
+    let p1 = Number(prompt("Enter first number"));
+    let p2 = Number(prompt("Enter second number"));
+    let arr = [];
+    let minp = p1 < p2 ? p1 : p2;
+    let remnum = 0;
+    for (let i = 1; i <= minp; i++) {
+        if ((p1 % i) == 0 && (p2 % i) == 0) {
+            arr.push(i);
+        }
+    }
+    console.log('arr', arr);
+    console.log('max', Math.max(...arr));
 */
+
+
+    let p1 = prompt("Enter nmber 1");
+    let p2 = prompt("Enter nmber 2");
+    let result = null;
+    for (let index = p1; index <= p1 && index >= 0; index--) {
+        if(p1 % index == 0 && p2 % index == 0) {
+            result = index;
+            console.log('index : ', index);
+        }
+    }
+    console.log('result : ', result);
 
 </script>
 </body>
