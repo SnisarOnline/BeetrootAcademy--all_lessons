@@ -1,5 +1,5 @@
 ﻿# Functions
-> Functions JS
+> Functions
 
 
 ## Lesson plan:
