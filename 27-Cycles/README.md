@@ -12,11 +12,8 @@
 
 ## Useful links:
 + [Циклы while и for](https://learn.javascript.ru/while-for)
-+ [JavaScript: Большое целое Ну почему](https://habr.com/ru/post/439402/)
++ [Циклы JavaScript](https://html5book.ru/cikly-javascript/)
 
-
-###### Youtube
-+ [JavaScript Document object model (DOM)](https://youtu.be/DuWyc76lYC4)
 
 #### Вопросы :
 + какие параметры учитываются для сео 
