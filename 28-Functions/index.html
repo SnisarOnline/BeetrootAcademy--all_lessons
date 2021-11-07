@@ -11,7 +11,73 @@
 Консольная магия
 <hr>
 <script>
+    /* ================================================================================ */
+    /* ==================== Объявление, Виды и отличия функций ======================== */
+    // Function description / обьявление функции
+    function sayHi1() {
+        console.log(':: Function description');
+    }
 
+    // Function Expresion / функциональное выражение
+    const sayHi2 = function () {
+        console.log(':: Function Expresion');
+    };
+
+    // arrows Function / стрелочная функция
+    const sayHi3 = () => {
+        console.log(':: arrows Function');
+    };
+
+    // sayHi1();
+    // sayHi2();
+    // sayHi3();
+
+
+    /* ================================================================================ */
+    /* ========= Передаваемые параметры, параметры по умолчанию и arguments =========== */
+    /* ==========================  Остаточные параметры  ============================== */
+
+    // Function description / обьявление функции
+    function params1(a, b, ...c) {
+        console.log(':: Function description');
+        console.log('arg:', a, b, c);
+        console.log(arguments.length);
+        console.log(arguments);
+        console.log('================================================');
+    }
+
+    // Function Expresion / функциональное выражение
+    const params2 = function (a, b, c) {
+        console.log(':: Function Expresion');
+        console.log('arg:', a, b, c);
+        // console.log(arguments.length);
+        // console.log(arguments);
+        console.log('================================================');
+    };
+
+    // arrows Function / стрелочная функция
+    const params3 = (a, b, c) => {
+        console.log(':: Arrows Function');
+        console.log('arg:', a, b, c);
+        // console.log(arguments.length);
+        // console.log(arguments);
+        console.log('================================================');
+    };
+    const a = 'A';
+    const b = 'B';
+
+    params1(a,b,a,b,a,b,a,b);
+    // params2(a,b);
+    // params3(a,b);
+
+    /* ================================================================================ */
+    /* ================== Локальные переменные и Область видимости ==================== */
+
+    const obj = {
+        hi: function() {
+            return 'Всем привет!';
+        }
+    };
 </script>
 </body>
 </html>
