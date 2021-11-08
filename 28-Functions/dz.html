@@ -24,10 +24,69 @@
 
     /* ============== start  #2 ========================= *
     document.body.innerHTML = `
-        Задание #2
+        Задание #2 - Факториал числа.
         <br> Написать функцию, которая вычисляет факториал переданного ей числа.
+        <br>Факториалом числа называют произведение всех натуральных чисел до него включительно.
+        <br>Например, факториал числа 5 равен произведению 1 * 2 * 3 * 4 * 5 = 120.
+        <br> n! = 1 * 2 * … * n
+        <br> где n – это число, n! – факториал этого числа.
     `;
+
+    // Через цикл
+    let n = 5;
+    let whileFactorial = 1;
+    while (n > 1) {
+        console.log('while n', n);
+        whileFactorial = whileFactorial * n;
+        console.log('while whileFactorial', whileFactorial);
+        n = n - 1;
+    }
+    console.log('while result', whileFactorial);
+
+    // Через рекурсию @info: https://learn.javascript.ru/recursion
+    // И обрати внимание на вывод console.log
+    function factorial(n) {
+        let result = null;
+        console.log('n :', n);
+        if (n != 1) {
+            result = n * factorial(n - 1)
+        } else {
+            result = 1;
+        }
+        console.log('recursion result : ', result);
+
+        return result;
+        // return (n != 1) ? n * factorial(n - 1) : 1; // сокращенная форма записи
+    }
+    factorial(5);
     /* ============== end  #2 ========================== */
+
+    /* ============== start  #2.1 ========================= *
+    document.body.innerHTML = `
+        Задание #2.1 - Числа Фибоначчи
+        <br> Напишите функцию fib(n) которая возвращает n-е число Фибоначчи.
+        <br> Последовательность чисел Фибоначчи определяется формулой
+        <br> Fn = Fn-1 + Fn-2.
+        <br> То есть, следующее число получается как сумма двух предыдущих.
+        <br>Первые два числа равны 1. Затем 2(1+1), затем 3(1+2), 5(2+3) и так далее: 1, 1, 2, 3, 5, 8, 13, 21...
+    `;
+
+    function fib(n) {
+        if (n <= 1) {
+            return n
+        } else {
+            const a = n - 1;
+            const b = n - 2;
+            console.log('n', n);
+            console.log('a', a);
+            console.log('b', b);
+            console.log('-----');
+            return fib(a) + fib(b);
+        }
+    }
+
+    console.log(fib(7));
+    /* ============== end  #2.1 ========================== */
 
     /* ============== start  #3 ========================= *
     document.body.innerHTML = `
