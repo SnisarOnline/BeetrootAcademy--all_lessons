@@ -8,7 +8,6 @@
     <title>Function</title>
 </head>
 <body>
-<button id="btn">Консольная магия</button>
 <hr>
 
 <p>/* =============== Объявление, Виды и отличия функций ==================================================== */</p>
@@ -33,7 +32,7 @@
 
     // Method definitions / Определение метода
     const sayHi5 = {
-        sayHi: function() {
+        sayHi: function () {
             console.log(':: Method definitions');
         }
     };
@@ -48,19 +47,16 @@
 
 
 <p>/* =============== Передаваемые параметры, параметры по умолчанию и arguments =========================== */</p>
-<p>/* ===============  Остаточные параметры  =============================================================== */</p>
+<p>/* =============== Остаточные параметры =============================================================== */</p>
 <script>
     // Function Description / обьявление функции
-    function params1(a, b, c) {
-        console.log(':: Function Description');
-        console.log('arg:', a, b, c);
-        // console.log(arguments.length);
-        // console.log(arguments);
-        console.log('================================================================================================');
+    function params1(a, b) {
+        console.log(':: Function Description', c);
+        return a + b;
     }
 
     // Function Expresion / функциональное выражение
-    const params2 = function (a, b, c) {
+    const params2 = function (a, b, c = 2) {
         console.log(':: Function Expresion');
         console.log('arg:', a, b, c);
         // console.log(arguments.length);
@@ -69,99 +65,132 @@
     };
 
     // Arrows function / стрелочная функция
-    const params3 = (a, b, c) => {
+    const params3 = (a, b, c = []) => {
         console.log(':: Arrows Function');
         console.log('arg:', a, b, c);
         // console.log(arguments.length);
         // console.log(arguments);
-        console.log('================================================================================================');
+        console.log('============================================================================');
     };
 
     // Function constructor / Конструктор Функции
-    let params4 = new Function('a','b','c', `
+    let params4 = new Function('a', 'b', 'c = 222', `
         console.log(':: Function constructor');
         console.log('arg:', a, b, c);
         // console.log(arguments.length);
         // console.log(arguments);
-        console.log('================================================================================================');
+        console.log('============================================================================');
     `);
 
     // Method definitions / Определение метода
     const params5 = {
-        sayHi: function(a, b, c) {
+        sayHi: function (a, b, c = {}) {
             console.log(':: Method definitions');
             console.log('arg:', a, b, c);
-            // console.log(arguments.length);
-            // console.log(arguments);
-            console.log('================================================================================================');
+            console.log(arguments.length);
+            console.log(arguments);
+            console.log('============================================================================');
         }
     };
 
-    const transferredParameters1 = 1;
-    const transferredParameters2 = 2;
+    const transferredParameters1 = {};
+    const transferredParameters2 = [];
+    const transferredParameters3 = '999';
 
-    // params1(transferredParameters1,transferredParameters2);
-    // params2(transferredParameters1,transferredParameters2);
-    // params3(transferredParameters1,transferredParameters2);
-    // params4(transferredParameters1,transferredParameters2);
-    // params5.sayHi(transferredParameters1,transferredParameters2);
+
+    // for (let i = 0; i < 3; i++) {
+    //     params1(2, i, 2+i, 8);
+    // }
+    // params2(transferredParameters1,transferredParameters2, transferredParameters3);
+    // params3(transferredParameters1,transferredParameters2, transferredParameters3);
+    // params4(transferredParameters1,transferredParameters2, transferredParameters3);
+    // params5.sayHi(transferredParameters1,transferredParameters2, transferredParameters3);
 </script>
 
 
 
 <p>/* =============== Локальные, Внешние переменные и Возвращаемое значение ================================ */</p>
 <script>
-    const localVariable1 = 1;
-
 
     // Function Description / обьявление функции
-    function functionDescription() {
-        const localVariable1 = 'local Description';
-        console.log(':: Function description', localVariable1);
+    function functionDescription(a, operation, b) {
+        console.log(':: Function Description ');
     }
+
+    functionDescription(2, '+', 5);
 
 
     // Function Expresion / функциональное выражение
-    const functionExpresion = function () {
-        const localVariable1 = 'local Expresion';
-        console.log(':: Function Expresion', localVariable1);
+    const functionExpresion = function (a, b) {
+        console.log(':: Function Expresion ');
+        return b ** a;
     };
-
-
-
-    // functionDescription();
-    // console.log(returnResult1);
-    // functionExpresion();
-    // console.log(returnResult2);
+    const returnResult2 = functionExpresion(2, 5);
+    const ssss = returnResult2 / 2;
+    // console.log('ssss', ssss);
 
 
 </script>
 
 
 <p>/* =============== Функция высшего порядка или Функция обратного вызова или «callback hell» ============== */</p>
+
+<button id="btn">Консольная магия</button>
+
 <div id="section" style=" width: 150px; height: 150px; background: gray; margin: 20px"></div>
 <script>
 
-    document.getElementById('btn').addEventListener('click', function(event) {
+    document.getElementById('btn').addEventListener('click', function (event) {
         console.log('click event', event);
     });
 
 
-    document.getElementById('section').addEventListener('mousemove', function(event) {
+    document.getElementById('section').addEventListener('mousemove', function (event) {
         console.log('mousemove event', event);
     });
 
 
-    window.addEventListener('scroll', function(event) {
+    window.addEventListener('scroll', function (event) {
         let scrollY = window.scrollY; // @info: https://developer.mozilla.org/ru/docs/Web/API/Window/scrollY
         let pageYOffset = window.pageYOffset; // @info: https://developer.mozilla.org/ru/docs/Web/API/Window/pageYOffset
         // window.pageYOffset is not supported below IE 9.
+
 
         console.log('event', event);
         console.log('scroll_position scrollY : ', scrollY);
         console.log('scroll_position pageYOffset : ', pageYOffset);
     });
 
+</script>
+
+
+<script>
+    function pow(x = 2, n = 3) {
+        // вызов #1
+        if (n == 1) { // 3 ==! 1
+            return x; // 2
+        } else {
+            return x = 2 * pow(x = 2, n = 3 - 1); // ждем результат для умножения
+
+            /* вызов #2
+                if (n == 1) { // 2 ==! 1
+                    return x; // 2
+                } else {
+                    return x=2 * pow(x=2, n=2 - 1);
+
+                    /!* вызов // #3
+                    if (n == 1) {
+                        return x; //2
+                    } else {
+                        return x * pow(x, n - 1);
+                    }
+                    *!/
+                }
+            */
+        }
+    }
+
+    alert(pow(2, 3)); // 8
 
 </script>
 
