@@ -19,7 +19,8 @@
 
 
 ###### YouTube :
-+ [DevTools](https://youtu.be/PDP9NNKtEuA)
++ [DevTools за 30 минут](https://youtu.be/PDP9NNKtEuA)
++ [Всё, о DevTools](https://youtu.be/KLW8wjJ6SqM)
 + [Фронтопс? Серьёзно? Анна Селезнёва](https://youtu.be/yWPAW59e1AU?list=RDCMUCY35dlJe-V5J_IqzU-XksAg)
 + [Семантика для циников. Вадим Макеев](https://youtu.be/ssJsjGZE2sc)
 + [Людоедский интерфейс. Вадим Макеев](https://youtu.be/ssJsjGZE2sc)
