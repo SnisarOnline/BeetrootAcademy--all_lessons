@@ -7,7 +7,9 @@
 
 
 ## Useful links:
-+ []()
++[]()
++[Свойства узлов: тип, тег и содержимое](https://learn.javascript.ru/basic-dom-node-properties)
++ [Навигация по DOM-элементам](https://learn.javascript.ru/traversing-dom)
 
 
 ###### Youtube
