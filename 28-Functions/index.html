@@ -12,6 +12,8 @@
 
 <p>/* =============== Объявление, Виды и отличия функций ==================================================== */</p>
 <script>
+    // @Info https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Functions
+
     // Function Description / обьявление функции
     function sayHi1() {
         console.log(':: Function Description');
@@ -74,6 +76,9 @@
     };
 
     // Function constructor / Конструктор Функции
+    // что такое конструктор - это специальный метод, служащий для создания и инициализации объектов
+    // 1) @info https://developer.mozilla.org/ru/docs/Glossary/Constructor
+    // 2) @info https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes/constructor
     let params4 = new Function('a', 'b', 'c = 222', `
         console.log(':: Function constructor');
         console.log('arg:', a, b, c);
