@@ -33,6 +33,7 @@
 + [figma](https://www.figma.com/)
 + [w3.specification](https://html.spec.whatwg.org/multipage/)
 + [w3.validator](https://validator.w3.org/)
++ [Обзор Chrome DevTools.](hhttps://htmlacademy.ru/blog/boost/tools/how-to-devtools)
 
 ###### YouTube :
 + [Война текстовых редакторов: редактор кода vs IDE, Александра Шинкевич](https://youtu.be/OhLIhyCrNGE?list=RDCMUCY35dlJe-V5J_IqzU-XksAg)
