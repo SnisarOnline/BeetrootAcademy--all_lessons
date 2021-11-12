@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,6 +8,214 @@
     <title>Object</title>
 </head>
 <body>
+<button id="btn">Консольная магия</button>
+<hr>
 
+<h2>Виды создания object</h2>
+<script>
+    // системный подход
+    let user1 = new Object({userName1: 'user1'}); // Конструктор Object создаёт объект-обёртку для переданного значения.
+    let str = new Object('user1');
+    let num = new Object(555);
+    let bo = new Object(true);
+    // console.log('user1', user1);
+    // console.log('str', str);
+    // console.log('typeof str', typeof str);
+    // console.log('num', num);
+    // console.log('typeof num', typeof  num);
+    // console.log('bo', bo);
+    // console.log('typeof bo', typeof  bo);
+
+
+
+    /********************************************************************************/
+    let user2 = {userName2: 'user2'}; // литеральный объект - быстрое создание
+    // console.log('user2', user2);
+
+
+
+    /********************************************************************************/
+    // через "Функцию с конструктором" можно создать множество однотипных объектов
+    // Заглавная буква в названии функции является всеобщим соглашением по именованию,
+    // она как бы подсказывает разработчику, что данная функция является функцией-конструктором, и её нужно вызывать через new.
+    // @info https://learn.javascript.ru/constructor-new#funktsiya-konstruktor
+    // @info https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#using_a_constructor_function
+    function User3(nameObject) {
+        this.userName3 = 'functionUser';
+        this.setName = nameObject;
+    }
+    let user3 = new User3(55555);
+    // console.log('user3', user3);
+
+    // constructor — специальный метод, необходимый для создания и инициализации объектов и функций
+    // let ob = {};
+    // console.log(ob.constructor === Object);
+    //
+    // let arr = [];
+    // console.log(arr.constructor === Array);
+    //
+    // let nu = new Number(3);
+    // console.log(nu.constructor === Number);
+
+
+    /********************************************************************************/
+    // @info https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/create
+    let user4 = Object.create(user3); // позволяет указывать произвольный prototype
+    // console.log('user4', user4);
+    // user4.setName = 'Object.create';
+    // console.log('user4.setName', user4.setName);
+    // console.log('user4.setName', user4.__proto__.setName);
+
+
+    /********************************************************************************/
+    // @info https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+    let user5 = Object.assign({userName5: 'user5'}, user1, user2, user3); // Создаёт новый объект копируя значений всех свойств
+    // console.log('user5', user5);
+</script>
+
+
+<h2>Работа с объектами</h2>
+<script>
+    let one = {};
+    let two = {};
+    // console.log('one === two ', one === two);
+
+
+    // обращение к свойствам обьекта
+    const key = 'e a t';
+    let test = {
+        age: 25,
+        'e a t': false,
+        ob: {},
+        'arr': ['st', 'arr'],
+        'how old are you': function () {
+            return this.age
+        },
+        'method': () => {
+            return this["how old are you"]();
+        },
+    };
+    // console.log('test.age ', test.age);
+    // console.log('test["e a t"] ', test['e a t']);
+    // console.log('test . e a t ', test.key);
+    // console.log('test [e a t] ', test[key]);
+
+    // удаление конкретного свойства
+    // delete test.age;
+
+    // проверка существования значения
+    // const isExist = "age" in test;
+    // console.log('isExist', isExist); // boolean
+    // console.log('test.age', test.age);
+    // console.log('test.arr', test.arr);
+
+
+    // перебор свойств циклом “for in”
+    for (let key in test) {
+        // console.log('all types : ', key , test[key]);
+        if (typeof test[key] === 'string') {
+            // console.log('only type string :' , key , test[key]);
+        }
+    }
+
+
+    // ошибка несуществуещего значения
+    // console.log('test.address.street',  test.address.street); // ошибка
+    // console.log('test?.address?.street',  test?.address?.street); // нет ошибки
+
+
+    // let height = 0;
+    // console.log(height || 100); // 100
+    // console.log(height ?? 100); // 0
+
+
+    /********************************************************************************/
+    // через "Функции конструктор"
+    // способ создание екземпляров обьектов - один раз описав какой будет создаватся обьект
+    function person(name, age, color, car) {
+        this.name = name;
+        this.age = age;
+        this.color = color;
+        this.ability = 'бегать';
+        if (car) {
+            this.car = car;
+        }
+    }
+
+    // class и "Функция конструктор" - одно и тоже
+    // class - ето синтаксический сахор
+    // @info https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Classes
+    class personClass {
+        constructor(name, age, color, car) {
+            // constructor — специальный метод, необходимый для создания и инициализации объектов и функций
+            this.ability = 'Ходить по потолку';
+            this.name = name;
+            this.age = age;
+            this.color = color;
+            this.car = car;
+        }
+    }
+
+    const liza = new person('liza', 20, 'black');
+    const igor = new person('igor', 60, 'black', true);
+    // console.log('object liza', liza);
+    // console.log('object igor', igor);
+    // console.log('liza.car', liza.car);
+    // console.log('igor.car', igor.car);
+
+    const lizaClass = new personClass('lizaClass', 40, 'black');
+    const igorClass = new personClass('igorClass', 80, 'black', true);
+    // console.log('lizaClass', lizaClass);
+    // console.log('igorClass', igorClass);
+</script>
+
+
+<h2>копирование простых типов данных и обьектов</h2>
+<script>
+    let st = 'обычная строка';
+    let st2 = st;
+    st2 = '@новая ^необычная^ строка@';
+    // console.log('st', st);
+    // console.log('st2', st2);
+
+    let man = {
+        name: 'виталик',
+        children: {
+            name: 'liza',
+        }
+    };
+    let cloneMan = man; // копируется ссылка на область хранения обьекта в паммяти
+    let cloneMan1 = JSON.parse(JSON.stringify(man)); // разрыв ссылки между обьектами
+    let cloneMan2 = Object.assign({}, man);  // Создаёт новый объект копируя значений всех свойств
+    cloneMan.name = "вика";
+
+    // console.log('man', man);
+    // console.log('cloneMan', cloneMan);
+    // console.log('одинаковые ссылки ? ', cloneMan === man );
+</script>
+
+
+<h2>прототипы и прототипное наследование</h2>
+<script>
+    let animal = {eats: true};
+    let rabbit = {jumps: true};
+    rabbit.__proto__ = animal;
+
+    // console.log('rabbit jumps', rabbit.jumps);
+    // console.log('rabbit eats', rabbit.eats);
+
+    /********************************************************************************/
+    let Car = function (model, color, motor, speed) {
+        this.model = model;
+        this.color = color;
+        this.motor = motor;
+        this.speed = speed;
+    };
+
+    const mazda = new Car('MAZDA MX-5 RF', 'red', 'v5', '250');
+    const mercedes = new Car('C-CLASS SEDAN', 'silver', 'v3', '190');
+    const tavriaNova = new Car('Люкс', 'green', '1.5', '120');
+
+</script>
 </body>
 </html>
