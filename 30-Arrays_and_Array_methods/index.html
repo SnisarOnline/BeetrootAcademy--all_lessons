@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array и Array methods</title>
+</head>
+<body>
+Консольная магия
+<hr>
+
+<p>/* =============== Объявление, Виды базовая работа ==================================================== */</p>
+<script>
+    const fruits = ["Яблоко", "Апельсин", "Слива"];
+    const newArr = new Array("Яблоко", "Апельсин", "Слива");
+    console.log('fruits', fruits);
+    console.log('newArr', newArr);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // const clone =  fruits;
+    // clone[0] = 'груша';
+    // console.log('clone', clone);
+    // console.log('fruits', fruits);
+
+</script>
+
+<p>/* =============== поиск в масиве ==================================================== */</p>
+<script>
+    //  arr.indexOf, arr.lastIndexOf и arr.includes
+    const testSearch = ['первый', 'второй', 'третий', 'четвертый', 'пятый'];
+</script>
+
+<p>/* =============== копирование масивов ==================================================== */</p>
+<script>
+  // push(...items)добавляет items в конец массива.
+  // pop() удаляет элемент в конце массива и возвращает его.
+  // shift() удаляет элемент в начале массива и возвращает его.
+  // unshift(...items) добавляет items в начало массива.
+
+
+  // slice
+  // @info https://learn.javascript.ru/array-methods#slice
+  // Он возвращает новый массив, в который копирует элементы, начиная с индекса start и до end (не включая end).
+  // Оба индекса start и end могут быть отрицательными. В таком случае отсчёт будет осуществляться с конца массива.
+  let testSlice = ["t", "e", "s", "t"];
+  // console.log('slice 1/3 = ', testSlice.slice(1, 3) );
+  // console.log('slice -2 = ', testSlice.slice(-2) );
+
+
+  // concat
+  // @info https://learn.javascript.ru/array-methods#concat
+  // Метод arr.concat создаёт новый массив, в который копирует данные из других массивов и дополнительные значения.
+  let testConcat = ["t", "e", "s", "t"];
+  // console.log( 'testConcat 3/4 = ', testConcat.concat([3, 4]) );
+  // console.log( 'testConcat 3/4 5,6 = ', testConcat.concat([3, 4], 5, 6) );
+  // console.log( 'testConcat 3/4 5/6 = ', testConcat.concat([3, 4], [5, 6]) );
+
+
+
+  // splice
+  // @info https://learn.javascript.ru/array-methods#splice
+  // Метод arr.splice(str) – Умеет всё: добавлять, удалять и заменять элементы.
+  // начинает с index, считает количество для удаления deleteCount элементов и вставляет elem1, ..., elemN на их место. Возвращает массив из удалённых элементов.
+  let testSplice = ["Я", "изучаю", "JavaScript", "прямо", "сейчас"];
+  // удалить 2 первых элемента
+  let removed1 = testSplice.splice(0, 2);
+  let removed2 = testSplice.splice(2, 2);
+  let removed3 = testSplice.splice(3, 1);
+  let insert1 = testSplice.splice(0, 1, 'новый', 'елемент');
+  let insert2 = testSplice.splice(3, 0, 'добавил', 'новые', 'елементы');
+
+
+</script>
+
+<p>/* =============== перебор масивов ==================================================== */</p>
+<script>
+    // анектод про пароль @Info http://www.mrwolf.ru/Humor/Anekdoty/3582
+    const testBruteForce = ['1', 'Гребаная', 'Розовая', 'Роза'];
+
+    testBruteForce.forEach( function(item, index, arr){} );
+    testBruteForce.forEach( (item, index, arr) => {});
+    testBruteForce.map( (item, index, arr) => {});
+    for(let item of testBruteForce) {}
+
+
+</script>
+</body>
+</html>
