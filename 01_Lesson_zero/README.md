@@ -21,11 +21,13 @@
     - в случае если чтото непонятно или вызывает сомнения тогда Подготавливаем пример и вопрос ДО урока!
     - также хорошей практикой считается предварительный поиск в гугле а потом уже спрашиваем на уроке.
      Чтобы вы научились искать решение  проблемы самостоятельно. А я помогу определить
-      насколько ето решение актуалььно и правильно.
-8) незабываем проходить опроссы в ЛМС
+     насколько ето решение актуалььно и правильно.
+8) незабываем проходить опроссы в ЛМ
 
 
 ## Useful links:
++ [Debug CSS](https://chrome.google.com/webstore/detail/debug-css/igiofjnckcagmjgdoaakafngegecjnkj)
++ [Outliner CSS](https://chrome.google.com/webstore/detail/outliner-css/epodomlablfiehjgajhlhbdhidlkokaj)
 + [htmlbook.ru](http://htmlbook.ru/html)
 + [learn.javascript.ru](https://learn.javascript.ru/first-steps)
 + [metanit.com](https://metanit.com/web/javascript/)

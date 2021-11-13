@@ -14,26 +14,35 @@
 <p>/* =============== Объявление, Виды базовая работа ==================================================== */</p>
 <script>
     const fruits = ["Яблоко", "Апельсин", "Слива"];
-    const newArr = new Array("Яблоко", "Апельсин", "Слива");
-    console.log('fruits', fruits);
-    console.log('newArr', newArr);
+    const newArr = new Array();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // console.log('fruits', fruits);
+    //
     // const clone =  fruits;
     // clone[0] = 'груша';
     // console.log('clone', clone);
+    // console.log('fruits', fruits);
+    // const cloneArr1 = [...fruits];
+    // const cloneArr2 = JSON.parse(JSON.stringify(fruits));
+
+    // fruits[10] = '3333';
+    // fruits[15] = null;
+    // fruits[20] = true;
+    // fruits[22] = {
+    //     name: 'маша'
+    // };
+
+    // fruits[23] = [0,1,2,3,4,5];
+    // fruits[24] = [1,2,3,4,5, [1,2, [1,2,3] ] ];
+
+    // console.log('fruits', fruits.length);
+    // console.log('fruits[23] = ', fruits[23].length);
+    // console.log('fruits[24][5] = ', fruits[24][5]);
+    // console.log('fruits[24][5][1] = ', fruits[24][5][1].length);
+
+
+    // fruits.length = 0;
+    // delete fruits[2];
     // console.log('fruits', fruits);
 
 </script>
@@ -41,22 +50,39 @@
 <p>/* =============== поиск в масиве ==================================================== */</p>
 <script>
     //  arr.indexOf, arr.lastIndexOf и arr.includes
-    const testSearch = ['первый', 'второй', 'третий', 'четвертый', 'пятый'];
+    // const testSearch = ['первый', 'второй', 'третий', 'четвертый', 'пятый'];
+    // const keyElement = testSearch.indexOf('третий');
+
+    // console.log( testSearch[3] );
+    // console.log( testSearch.indexOf('второй') );
+    // console.log( testSearch.lastIndexOf('третий') );
+    // console.log( testSearch.includes('третasdий') );
+
+    // const arr = [1,2, testSearch];
+    // console.log(arr);
+    // arr[2][1] = 'sssss';
+    // console.log('arr', arr);
+    // console.log('arr[2]', arr[2].length);
 </script>
 
 <p>/* =============== копирование масивов ==================================================== */</p>
 <script>
+  // const testSearch = ['первый', 'второй', 'третий', 'четвертый', 'пятый'];
   // push(...items)добавляет items в конец массива.
   // pop() удаляет элемент в конце массива и возвращает его.
   // shift() удаляет элемент в начале массива и возвращает его.
   // unshift(...items) добавляет items в начало массива.
 
+  // testSearch.unshift('ssss');
+  // console.log('add', testSearch);
+
 
   // slice
   // @info https://learn.javascript.ru/array-methods#slice
-  // Он возвращает новый массив, в который копирует элементы, начиная с индекса start и до end (не включая end).
+  // Он возвращает новый массив, в который копирует элементы, начиная с
+  // индекса start и до end (не включая end).
   // Оба индекса start и end могут быть отрицательными. В таком случае отсчёт будет осуществляться с конца массива.
-  let testSlice = ["t", "e", "s", "t"];
+  // let testSlice = ["t", "e", "s", "t", 'rr'];
   // console.log('slice 1/3 = ', testSlice.slice(1, 3) );
   // console.log('slice -2 = ', testSlice.slice(-2) );
 
@@ -64,7 +90,7 @@
   // concat
   // @info https://learn.javascript.ru/array-methods#concat
   // Метод arr.concat создаёт новый массив, в который копирует данные из других массивов и дополнительные значения.
-  let testConcat = ["t", "e", "s", "t"];
+  // let testConcat = ["t", "e", "s", "t"];
   // console.log( 'testConcat 3/4 = ', testConcat.concat([3, 4]) );
   // console.log( 'testConcat 3/4 5,6 = ', testConcat.concat([3, 4], 5, 6) );
   // console.log( 'testConcat 3/4 5/6 = ', testConcat.concat([3, 4], [5, 6]) );
@@ -77,24 +103,131 @@
   // начинает с index, считает количество для удаления deleteCount элементов и вставляет elem1, ..., elemN на их место. Возвращает массив из удалённых элементов.
   let testSplice = ["Я", "изучаю", "JavaScript", "прямо", "сейчас"];
   // удалить 2 первых элемента
-  let removed1 = testSplice.splice(0, 2);
-  let removed2 = testSplice.splice(2, 2);
-  let removed3 = testSplice.splice(3, 1);
-  let insert1 = testSplice.splice(0, 1, 'новый', 'елемент');
-  let insert2 = testSplice.splice(3, 0, 'добавил', 'новые', 'елементы');
+  // let removed1 = testSplice.splice(3, 2);
+  //   console.log('removed1', removed1);
+  //   console.log('testSplice', testSplice);
+  // let removed2 = testSplice.splice(8, 50);
+  // let removed3 = testSplice.splice(3, 1);
+
+  // let insert1 = testSplice.splice(-1, 3, ['new arr']);
+  // console.log('insert1', insert1);
+  // console.log('testSplice', testSplice);
 
 
+
+    // let insert2 = testSplice.splice(-3, 0, 'добавил', 'новые', 'елементы');
+    // console.log('insert2', insert2);
+    // console.log('testSplice', testSplice);
+
+    // var monthString = 'Янв,Фев,Мар,\'Апр\',Май,Июн,Июл,Авг,Сен,Окт,Ноя,Дек';
+    // console.log(monthString.split(','));
 </script>
+
+
+
+
 
 <p>/* =============== перебор масивов ==================================================== */</p>
 <script>
     // анектод про пароль @Info http://www.mrwolf.ru/Humor/Anekdoty/3582
     const testBruteForce = ['1', 'Гребаная', 'Розовая', 'Роза'];
+    // console.log('testBruteForce : ', testBruteForce);
 
-    testBruteForce.forEach( function(item, index, arr){} );
-    testBruteForce.forEach( (item, index, arr) => {});
-    testBruteForce.map( (item, index, arr) => {});
-    for(let item of testBruteForce) {}
+    // testBruteForce.forEach( function(item, index, arr){
+    //     // console.log('item : ', item);
+    //     // console.log('index : ', index);
+    //     // console.log('arr[index] : ', arr[index]);
+    // } );
+    // testBruteForce.forEach( (item) => {
+    //     // console.log('item : ', item);
+    //     // console.log('index : ', index);
+    //     // console.log('arr[index] : ', arr[index]);
+    // });
+    //
+    // const arrFunc = (item, index, arr) => {
+    //     if (index === 3) {
+    //         arr[index] = 'маша';
+    //     }
+    // };
+    // const returnValueForEach = testBruteForce.forEach( arrFunc );
+    // console.log(returnValueForEach);
+    // console.log('testBruteForce : ', testBruteForce);
+
+    // const returnValueMap1 = testBruteForce.map( (item, index, arr) => {
+    //     console.log(item);
+    //     debugger;
+    //     return `маша ${index + 1}`;
+    // });
+    // console.log('returnValueMap : ', returnValueMap1);
+    // console.log('testBruteForce : ', testBruteForce);
+
+/*
+    const testArr = [
+        {
+            name: 'маша',
+            tel: [11111111, 2222222],
+        },{
+            name: 'петя',
+            tel: [22222222, 11111],
+        },{
+            name: 'рома',
+            tel: 33333333,
+        }
+    ];
+    const returnValueMap2 = testArr.map( (item, index, array) => {
+        return item.tel;
+    });
+    console.log('testArr : ', testArr);
+    console.log('returnValueMap2 : ', returnValueMap2);
+*/
+
+
+/*
+    const testBruteForce = [1, 2, 3, 4];
+    console.log('testBruteForce : ', testBruteForce);
+    let result = testBruteForce.reduce(function(previousValue, currentItem, index, arr) {
+        debugger
+        if (currentItem%2 === 0){
+            previousValue.even += currentItem;
+        } else {
+            previousValue.odd += currentItem;
+        }
+
+        debugger;
+        return previousValue
+    }, {
+        even: 0,
+        odd: 0
+    });
+    console.log('result = ', result);
+    console.log('testBruteForce after : ', testBruteForce);
+    */
+/*
+
+    let sum = null;
+    testBruteForce.forEach( function(item, index, arr){
+        sum += item;
+        console.log('item : ', item);
+    } );
+    console.log(sum);
+*/
+
+
+
+    const testBruteForceArr = [1, 2, 3, 4];
+    const testBruteForceObj = {
+        name: 'маша',
+        tel: 111111,
+        email: 'ssssssssss'
+    };
+
+    for(let value of testBruteForceArr) {
+        console.log('value', value);
+    }
+
+    for(let key in testBruteForceObj) {
+        console.log('key', key);
+    }
 
 
 </script>

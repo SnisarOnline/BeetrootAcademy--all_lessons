@@ -1,12 +1,12 @@
 /**
  * Вопроссы по js
  */
-
-
-/**
- * document.createElement
- */
-var element = document.createElement(tagName, [options]);
+ 
+/*
+const foo = [1,2,3];
+const [n] = foo;
+console.log(n);
+*/
 
 
 /**
@@ -19,9 +19,41 @@ console.log(secondObject);
 
 
 /**
+ * document.createElement
+ */
+var element = document.createElement(tagName, [options]);
+
+
+
+/*
+ * Лексическая облась видимости
+ */
+var v = 1;
+var f1 = function() {
+	console.log('Что будет распечатанно ?', v);
+}
+var f2 = function() {
+	var v = 2;
+	f1();
+}
+f2();
+
+
+
+
+/**
  * ЕвентЛуп
  * https://youtu.be/lrdaRbJctaA?t=2569
  */
+ // v1
+console.log('I');
+setTimeout(function () {
+	console.log('love');
+}, 0)
+console.log('JavaScript');
+ 
+
+ // v2
 for (var i = 0; i < 10; i++) {
   setTimeout(function () {
     console.log('что выведет ?', i);
