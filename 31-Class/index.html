@@ -10,7 +10,141 @@
 <body>
 Консольная магия
 <hr>
+
+<p>/* =============== Объявление и виды классов =============================== */</p>
 <script>
+    // v1
+    class Declaration {
+        constructor(name) {
+            this.name = name;
+        }
+    }
+    // console.log('typeof Declaration', typeof Declaration);
+
+    // const objDeclaration = new Declaration('Declaration Class');
+    // console.log('created Declaration : ', objDeclaration);
+
+
+
+
+    // v2
+    let Expression = class {
+        constructor(name) {
+            this.name = name;
+        }
+    };
+    // console.log('typeof Expression', typeof Expression);
+
+    // const objExpression = new Expression('Expression class');
+    // console.log('created Expression : ', objExpression);
+
+
+
+
+
+    // console.log('is constructor ?', Declaration === Declaration.prototype.constructor);
+    // console.log('is constructor ?', Declaration === objDeclaration.__proto__.constructor);
+    // console.log('is constructor ?', Expression === objExpression.__proto__.constructor);
+</script>
+
+
+<p>/* =============== Базовая работа ========================================= */</p>
+<script>
+    class Client {
+        constructor() {}
+
+        login(email, pass) {
+            if (email && pass) {
+                this.isLogin = !!email;
+            }
+            return this.isLogin;
+        }
+
+        logOut() {
+            this.isLogin = null;
+            return `You is logOut!`;
+        }
+    }
+
+    const ourClient = new Client('Petr', 655435);
+</script>
+
+
+<p>/* =============== Разница между Function и class ========================== */</p>
+<script>
+    // @info https://learn.javascript.ru/class#ne-prosto-sintaksicheskiy-sahar
+    /* важные отличия:
+    1) В отличие от обычных функций, конструктор класса не может быть вызван без new:
+        функция, созданная с помощью class имеет [[IsClassConstructor]]: true
+    2) Методы класса являются неперечислимыми. Определение класса устанавливает флаг enumerable в false для всех методов в "prototype".
+    3) Классы всегда используют use strict режим.
+    */
+
+    // @info https://learn.javascript.ru/class#chto-takoe-klass
+    // класс – это разновидность функции.
+    class UserClass {
+        constructor(name) {
+            this.name = name;
+        }
+        someClassMethod1() {}
+        someClassMethod2() {}
+    }
+    UserClass.prototype.someClassMethod3 = function() {
+      console.log('someClassMethod3 : ', this.name);
+    };
+
+    const objClass = new UserClass('Vano');
+    // console.log('objClass', objClass);
+    // console.log('objClass.__proto__', objClass.__proto__);
+    // console.log('objClass', UserClass === objClass.__proto__.constructor);
+
+
+
+
+
+    const UserFunction = function (name) {
+        this.name = name;
+        this.someFuncMethod1 = function () {};
+        this.someFuncMethod2 = () => {};
+    };
+    UserFunction.prototype.someFuncMethod3 = function() {
+        console.log('someFuncMethod3 : ', this.name);
+    };
+
+    const objFunction = new UserFunction('Petro');
+    // console.log('objFunction', objFunction);
+    // console.log('objFunction.__proto__', objFunction.__proto__);
+    // console.log('objFunction', UserFunction === objFunction.__proto__.constructor);
+</script>
+
+
+
+<p>/* =============== Наследование и Переопределение методов ================== */</p>
+<script>
+    // @info https://learn.javascript.ru/class-inheritance
+
+    class Human {
+        constructor(name) {
+            this.name = name;
+        }
+        whatIsYourName() {
+            return `My is ${this.name}`;
+        }
+    }
+
+    class User extends Human{
+        // @info https://learn.javascript.ru/class-inheritance#pereopredelenie-metodov
+        constructor(name, authorized) {
+            super(name);
+            this.authorized = authorized ;
+        }
+    }
+
+    const guest = new User('Vano', false);
+    // console.log('guest', guest);
+    // console.log(guest.whatIsYourName());
+
+
 
 </script>
 </body>

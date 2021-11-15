@@ -20,33 +20,38 @@
 
     // console.log('fruits', fruits);
     //
-    // const clone =  fruits;
+    // console.log('fruits before', fruits);
+    // const clone = fruits;
     // clone[0] = 'груша';
     // console.log('clone', clone);
-    // console.log('fruits', fruits);
-    // const cloneArr1 = [...fruits];
-    // const cloneArr2 = JSON.parse(JSON.stringify(fruits));
-
+    // console.log('fruits after', fruits);
+    //
+    // способы копирования массива
+    // const cloneArr1 = [...fruits]; // Spread, позволяет “вытаскивать” перебираемые элементы из своего контейнера.
+    // const cloneArr2 = fruits.slice(); // Если не указывать параметры, то массив будет копироваться целиком.
+    // const cloneArr2 = JSON.parse(JSON.stringify(fruits)); // Лучший способ клонировать многомерный массив или объект
+    //
+    //
+    // как получить/заменить/добавить елемент массива.
     // fruits[10] = '3333';
     // fruits[15] = null;
     // fruits[20] = true;
     // fruits[22] = {
     //     name: 'маша'
     // };
-
+    //
     // fruits[23] = [0,1,2,3,4,5];
     // fruits[24] = [1,2,3,4,5, [1,2, [1,2,3] ] ];
-
+    //
     // console.log('fruits', fruits.length);
     // console.log('fruits[23] = ', fruits[23].length);
     // console.log('fruits[24][5] = ', fruits[24][5]);
     // console.log('fruits[24][5][1] = ', fruits[24][5][1].length);
-
-
-    // fruits.length = 0;
-    // delete fruits[2];
-    // console.log('fruits', fruits);
-
+    //
+    //
+    // fruits.length = 0; // очистеть весь массив
+    // delete fruits[2]; // неправильное удаление
+    // console.log('fruits deleted ::', fruits);
 </script>
 
 <p>/* =============== поиск в масиве ==================================================== */</p>
@@ -54,12 +59,12 @@
     //  arr.indexOf, arr.lastIndexOf и arr.includes
     // const testSearch = ['первый', 'второй', 'третий', 'четвертый', 'пятый'];
     // const keyElement = testSearch.indexOf('третий');
-
+    //
     // console.log( testSearch[3] );
     // console.log( testSearch.indexOf('второй') );
     // console.log( testSearch.lastIndexOf('третий') );
     // console.log( testSearch.includes('третasdий') );
-
+    //
     // const arr = [1,2, testSearch];
     // console.log(arr);
     // arr[2][1] = 'sssss';
