@@ -19,11 +19,8 @@
             this.name = name;
         }
     }
-    // console.log('typeof Declaration', typeof Declaration);
-
     // const objDeclaration = new Declaration('Declaration Class');
     // console.log('created Declaration : ', objDeclaration);
-
 
 
 
@@ -33,8 +30,6 @@
             this.name = name;
         }
     };
-    // console.log('typeof Expression', typeof Expression);
-
     // const objExpression = new Expression('Expression class');
     // console.log('created Expression : ', objExpression);
 
@@ -51,7 +46,11 @@
 <p>/* =============== Базовая работа ========================================= */</p>
 <script>
     class Client {
-        constructor() {}
+        constructor(name, email, pass) {
+            this.name = name;
+            this.email = email;
+            this.pass = pass;
+        }
 
         login(email, pass) {
             if (email && pass) {
@@ -66,7 +65,10 @@
         }
     }
 
-    const ourClient = new Client('Petr', 655435);
+    const ourClient = new Client('Petr', 'email', 655435);
+    // console.log('ourClient', ourClient);
+    // console.log( ourClient.login('email', 'edeewf') );
+    // console.log( ourClient.logOut() );
 </script>
 
 
@@ -86,7 +88,9 @@
         constructor(name) {
             this.name = name;
         }
-        someClassMethod1() {}
+        someClassMethod1() {
+            return this.name;
+        }
         someClassMethod2() {}
     }
     UserClass.prototype.someClassMethod3 = function() {
@@ -95,11 +99,7 @@
 
     const objClass = new UserClass('Vano');
     // console.log('objClass', objClass);
-    // console.log('objClass.__proto__', objClass.__proto__);
-    // console.log('objClass', UserClass === objClass.__proto__.constructor);
-
-
-
+    // console.log('objClass met', objClass.someClassMethod1());
 
 
     const UserFunction = function (name) {
@@ -124,6 +124,15 @@
     // @info https://learn.javascript.ru/class-inheritance
 
     class Human {
+        static __age = 350000000;
+
+        get age() {
+            this.__age
+        }
+        set age(numbers) {
+            this.__age = numbers;
+        }
+
         constructor(name) {
             this.name = name;
         }
@@ -132,7 +141,7 @@
         }
     }
 
-    class User extends Human{
+    class User extends Human {
         // @info https://learn.javascript.ru/class-inheritance#pereopredelenie-metodov
         constructor(name, authorized) {
             super(name);
@@ -140,8 +149,10 @@
         }
     }
 
-    const guest = new User('Vano', false);
-    // console.log('guest', guest);
+    const guest = new User('Vano', true);
+    console.log('guest', guest);
+    console.log('guest', guest.whatIsYourName());
+    console.log('guest age', guest.age);
     // console.log(guest.whatIsYourName());
 
 
