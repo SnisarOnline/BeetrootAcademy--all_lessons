@@ -8,6 +8,62 @@
     <title>Object dz</title>
 </head>
 <body>
+<script>
 
+/* ============== start  #5 ========================= */
+document.body.innerHTML = `
+    Задание #5
+    <br>
+`;
+/**
+ * Совершенное число
+ * @info https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%B2%D0%B5%D1%80%D1%88%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5_%D1%87%D0%B8%D1%81%D0%BB%D0%BE
+ * @info https://youtu.be/GaIjXH9sSM4
+ * @param {Number} insertNumber
+ * @callback Number
+ **/
+function isPerfectNumber(insertNumber) {
+    if (typeof num !== "number"  && !isNaN(insertNumber)) {
+        return  `${num} - ето точно не число!`
+    }
+
+    /**
+     * Вычисляем делители числа
+     * Тоесть введенное чило должно делится без остатка на 2
+     * @param {Number} someNum
+     * @callback Array<Number> - список всех чисел которые смогли поделить на 2 без остатка
+     **/
+    const getDivisors = (someNum) => {
+        const resultDivisors = [];
+        for (let i = 1; i < someNum; i++) {
+            if(someNum % i === 0 ) {
+                resultDivisors.push(i);
+            }
+        }
+        return resultDivisors;
+    };
+
+    /**
+     * вычеслим сумму масива чисел
+     * @param {Array<number>} arrDivisors - масив делителей переданного числа
+     * @callback Number - вернем суму масива чисел.
+     **/
+    function getSum(arrDivisors) {
+        // return arrDivisors.reduce( (previousValue, currentItem, index, arr) => previousValue + currentItem)
+        let result = null;
+        for (let i = 0; i < arrDivisors.length; i++) {
+            result = result + arrDivisors[i];
+        }
+        return result;
+    }
+
+    if (insertNumber === getSum(getDivisors(insertNumber))) {
+        return 'И таки Да, Ето совершенное число';
+    } else {
+        return 'Оооо нет, Ето не совершенное число!';
+    }
+}
+/* ============== end  #5 ========================== */
+</script>
 </body>
 </html>

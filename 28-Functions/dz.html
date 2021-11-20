@@ -57,28 +57,42 @@
         <br> где n – это число, n! – факториал этого числа.
     `;
 
-    // Через цикл
-    let n = 5;
-    let whileFactorial = 1;
-    while (n > 1) {
-        console.log('while n', n);
-        whileFactorial = whileFactorial * n;
-        console.log('while whileFactorial', whileFactorial);
-        n = n - 1;
+    // Через цикл V1
+    function factorialWhile(userNumber){
+        let whileFactorial = 1;
+        while (userNumber > 1) {
+            whileFactorial = whileFactorial * userNumber;
+            userNumber = userNumber - 1;
+        }
+        console.log('while result', whileFactorial);
+        return whileFactorial;
     }
-    console.log('while result', whileFactorial);
+    factorialWhile(5);
 
+    // Через цикл V2
+    function factorialFor(userNumber){
+        let factorialNumber = 0;
+        let n = 1;
+        for (let i = 1; i < userNumber +1; i++){
+            let j = i;
+            n = (n) * (j++);
+            factorialNumber = n ;
+            // console.log(`#${i} F: ${factorialNumber}`);
+        }
+        console.log('for result',factorialNumber);
+        return factorialNumber;
+    }
+    factorialFor(5);
 
     /!**
      * Через рекурсию @info: https://learn.javascript.ru/recursion
      * И обрати внимание на вывод console.log
-     * @param {Number} n -
+     * @param {Number} userNumber -
      **!/
-    function factorial(n) {
+    function factorial(userNumber) {
         let result = null;
-        console.log('n :', n);
-        if (n != 1) {
-            result = n * factorial(n - 1)
+        if (userNumber != 1) {
+            result = userNumber * factorial(userNumber - 1)
         } else {
             result = 1;
         }
@@ -188,8 +202,8 @@
      * @callback Number
      **!/
     function isPerfectNumber(insertNumber) {
-      if (typeof num !== "number"  && !isNaN(insertNumber)) {
-        return  `${num} - ето точно не число!`
+      if (typeof insertNumber !== "number"  && !isNaN(insertNumber)) {
+        return  `${insertNumber} - ето точно не число!`
       }
 
       /!**
@@ -229,6 +243,18 @@
       }
     }
 
+    function isPerfectNumberShort(insertNumber) {
+        let sumDivisors = 0;
+        // 1) Вычисляем делители числа
+        for (let i = 1; i < insertNumber; i++) {
+            if ( insertNumber % i === 0) {
+                // 2) вычеслим сумму чисел
+                sumDivisors = sumDivisors + i;
+            }
+        }
+        return sumDivisors === insertNumber; // сравнение и результатом будет булиан
+    }
+
     while (true) {
       const num = Number(prompt(`подсказка Совершенные числа ето = 6;28;496;8128
       Дай число!`));
@@ -255,6 +281,14 @@
         <br> и выводит только те числа из диапазона, которые являются совершенными.
         <br> Используйте написанную ранее функцию, чтобы узнавать, совершенное число или нет.
     `;
+    function perfectNumberForRange(firstN, lastN) {
+        for (let i = firstN; i <= lastN; i++) {
+            if (isPerfectNumberShort(i)) {
+                console.log(i)
+            }
+        }
+    }
+    perfectNumberForRange(1, 1000);
     /* ============== end  #6 ========================== */
 
     /* ============== start  #7 ========================= *

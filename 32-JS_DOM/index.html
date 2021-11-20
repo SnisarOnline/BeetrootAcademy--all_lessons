@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS-DOM</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        header{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #c0c1e0;
+        }
+        header .logo,
+        header .menu {
+            outline: 1px solid #0afff3;
+        }
+        header .menu a {
+            padding: 0 50px;
+            margin: 0 10px;
+        }
+        header .menu a:hover{
+            background: #d7d7d7;
+        }
+    </style>
+</head>
+<body><!--
+header>(figure.logo>img.logo_img[src='#' alt='logo_img']+figcaption{Amaretto})+nav.menu>a.item[href='#']{a $}*5
+-->
+<header id="headerId">
+    <figure class="logo">
+        <img src="#" alt="logo_img" class="logo_img">
+        <figcaption>Amaretto</figcaption>
+    </figure>
+    <nav class="menu">
+        <a href="#" class="item">a 1</a>
+        <a href="#" class="item">a 2</a>
+        <a href="#" class="item">a 3</a>
+        <a href="#" class="item">a 4</a>
+        <a href="#" class="item">a 5</a>
+    </nav>
+</header>
+
+
+<p> ======= Точка входа ======= </p>
+<script>
+    console.log('точка входа ', document);
+    const htmlElement =  document.documentElement;
+    const headElement =  document.head;
+    const bodyElementt =  document.body;
+
+    // console.log('htmlElement',  htmlElement);
+    // console.log('headElement', headElement);
+    // console.log('bodyElementt', bodyElementt);
+
+
+    // перезапись
+    // htmlElement.innerText = `
+    //    <h1>header h1</h1>
+    //     <p>Lorem ipsum dolor sit amet.</p>
+    // `;
+    // const header = "<h1 style='background: #000;'>header h1</h1>";
+    // const p = "<p>Lorem ipsum dolor sit amet.</p>";
+    // htmlElement.innerHTML = `
+    //     ${header}
+    //     ${p}
+    // `;
+</script>
+
+
+<p>======= Навигация по ДОМу ======= </p>
+<script>
+    // @info https://learn.javascript.ru/dom-navigation#deti-childnodes-firstchild-lastchild
+    const bodyElement = document.body;
+    const firstChildNode = bodyElement.firstChild; // ChildNode - узелл
+    const lastChildNode = bodyElement.lastChild; // ChildNode - узелл
+
+    // console.log('firstChildNode', firstChildNode);
+    // console.log('lastChildNode', lastChildNode);
+    // console.log('childNodes', bodyElement.hasChildNodes()); // Для быстрой проверки наличия дочерних узлов
+
+
+    /*
+    @info https://learn.javascript.ru/dom-navigation#dom-kollektsii
+    коллекция – особый перебираемый объект-псевдомассив
+    Методы массивов не будут работать, потому что коллекция – это не массив:
+    */
+    // const childNodes = document.body.childNodes; // Колекция childNodes - список всех узлов
+    // console.log('childNodes', childNodes);
+    //
+    // Перебор обьекта
+    // for (let node of childNodes) {
+    //     console.log('obj node', node); // покажет все узлы из коллекции
+    // }
+    //
+    // Получить масив можем
+    // Array.from(childNodes).forEach( (item) => {
+    //     console.log('arr node', item);
+    // });
+
+
+    // @info https://learn.javascript.ru/dom-navigation#navigatsiya-tolko-po-elementam
+    // Соседи – это Node-узлы, у которых один и тот же родитель
+    const parentNode = document.body.parentNode;
+    const nextSibling = document.body.nextSibling;
+    const previousSibling = document.body.previousSibling;
+    // console.log('parentNode', parentNode);
+    // console.log('nextSibling', nextSibling);
+    // console.log('previousSibling', previousSibling);
+
+
+
+
+
+
+    // @info https://learn.javascript.ru/dom-navigation#navigatsiya-tolko-po-elementam
+
+    // первый и последний элемент
+    const firstElementChild = document.body.firstElementChild;
+    const lastElementChild = document.body.lastElementChild;
+    // console.log('firstElementChild', firstElementChild);
+    // console.log('lastElementChild', lastElementChild);
+    //
+    // Соседние элементы
+    // const parentElement = document.body.parentElement;
+    // const nextElementSibling = document.body.nextElementSibling;
+    // const previousElementSibling = document.body.previousElementSibling;
+    // console.log('parentElement', parentElement);
+    // console.log('nextElementSibling', nextElementSibling);
+    // console.log('previousElementSibling', previousElementSibling);
+
+</script>
+
+
+<p>======= Поиск: getElement*, querySelector* =======</p>
+<script>
+    // @info https://learn.javascript.ru/searching-elements-dom
+    const itemLink = document.body.querySelectorAll('.menu.item'); // Node
+    const itemId = document.body.querySelectorAll('#headerId .menu'); // Node
+    // console.log('item Link', itemLink);
+    // console.log('item Id', itemId);
+
+    // const elementP = document.body.querySelector('p');
+    // console.log('elementP', elementP.innerText);
+
+    const elementID = document.getElementById('headerId');
+    // console.log('elementID.innerText', elementID.innerText);
+    // console.log('elementID.outerHTML', elementID.outerHTML);
+
+    const elementClass = document.getElementsByClassName('item');
+    // console.log('elementClass', elementClass);
+    // console.log('elementClass', Array.from(elementClass));
+</script>
+
+
+<p>======= _____ =======</p>
+<script>
+    // v1
+    const item = document.body.querySelectorAll('.menu .item')[1]; // ObjNode
+    // console.log('item ::: ', item.innerText);
+
+    // v2
+    const elementItemAll = document.querySelectorAll('.item:nth-child(2)'); // ObjNode
+    // console.log('elementItemAll ::: ', elementItemAll);
+
+    // v3
+    const elementItemSelector = document.querySelector('a.item:nth-child(2)'); // ObjNode
+    // console.log('elementItemSelector ::: ', elementItemSelector);
+
+    // v4
+    const elementMenuClass = document.querySelector('nav');
+    // console.log('elementMenuClass', elementMenuClass.children[1].innerHTML);
+    // console.log('elementMenuClass', elementMenuClass.childNodes[3]);
+    // console.log('elementMenuClass.firstChild', elementMenuClass.firstChild.nextSibling.nextSibling.nextSibling.innerHTML);
+
+    // v5
+    const menuClass = document.getElementsByClassName('menu'); // HTMLCollection-Obj
+    // console.log('elementMenuClass', menuClass);
+    // console.log('elementMenuClass item', menuClass.item(20));
+    // console.log('elementMenuClass children', menuClass.item(0).children);
+    // console.log('elementMenuClass .item(2)', menuClass[20].children.item(2));
+</script>
+
+</body>
+</html>
