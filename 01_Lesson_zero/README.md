@@ -39,5 +39,8 @@
 
 ###### YouTube :
 + [Война текстовых редакторов: редактор кода vs IDE, Александра Шинкевич](https://youtu.be/OhLIhyCrNGE?list=RDCMUCY35dlJe-V5J_IqzU-XksAg)
++ Sublime Text
+  - [Обзор редактора](https://youtu.be/LrM1r23bBxs?list=PLxZpOFEb1t7NgO5idJg93_VAzFjeTbsFg)
+  - [options](https://www.youtube.com/playlist?list=PLxZpOFEb1t7O8vgE6WtH01P2bAzB4czRY)
 + [DevTools за 30 минут](https://youtu.be/PDP9NNKtEuA)
 + [Всё, о DevTools](https://youtu.be/KLW8wjJ6SqM)

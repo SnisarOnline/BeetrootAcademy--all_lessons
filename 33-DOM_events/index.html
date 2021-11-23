@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document_events</title>
+</head>
+<body>
+
+<p>Что такое события, и откуда они в дом</p>
+<input value="Нажми меня - Клик" onclick="alert('Клик!')" type="button">
+
+<script>
+	function countRabbits() {
+		let count = null;
+		for(let i=1; i<=3; i++) {
+			count++;
+		}
+		console.log('count', count );
+	}
+</script>
+<input type="button" onclick="countRabbits()" value="Считать кроликов!">
+
+<input type="button" value="Кролик" id="event1">
+<script>
+	document.getElementById('event1').onclick = function () {
+		alert('нажатие');
+	}
+
+	document.getElementById('event1').onclick = function () {
+		alert('нажатие');
+	}
+
+	document.getElementById('event1').addEventListener('click', (event) => {
+		console.log('event', event);
+	})
+</script>
+
+
+<p>Зачем они</p>
+<script></script>
+
+<p>Как слушать или следить</p>
+<script></script>
+
+<p></p>
+<script></script>
+
+<p></p>
+<script></script>
+	
+</body>
+</html>
