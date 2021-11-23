@@ -1,52 +1,87 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document_events</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM_events</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #c0c1e0;
+        }
+
+        header .logo,
+        header .menu {
+            outline: 1px solid #0afff3;
+        }
+
+        header .menu button {
+            padding: 0 50px;
+            margin: 0 25px;
+        }
+
+        header .menu button:hover {
+            background: #d7d7d7;
+        }
+
+        .rrrrrrrrrrrrr{
+            color: red;
+        }
+    </style>
 </head>
 <body>
+<!--
+header>(figure.logo>img.logo_img[src='#' alt='logo_img']+figcaption{Amaretto})+nav.menu>button.item{b $}*5
+-->
+<header id="headerId">
+    <figure class="logo">
+        <img src="#" alt="logo_img" class="logo_img">
+        <figcaption>Amaretto</figcaption>
+    </figure>
+    <nav class="menu">
+        <button class="item">b 1</button>
+        <button class="item">b 2</button>
+        <button class="item">b 3</button>
+        <button class="item">b 4</button>
+        <button class="item">b 5</button>
+    </nav>
+</header>
 
-<p>Что такое события, и откуда они в дом</p>
-<input value="Нажми меня - Клик" onclick="alert('Клик!')" type="button">
-
+<h2>откуда браузерные события</h2>
 <script>
-	function countRabbits() {
-		let count = null;
-		for(let i=1; i<=3; i++) {
-			count++;
-		}
-		console.log('count', count );
-	}
+  function findElement(...arr) {
+    arr.map((tag, index) => {
+      return document.querySelector('button.item').addEventListener('click', function (event) {
+        console.log(`========= start ${index} ===`);
+        console.log(`========== tag ${tag} ===`);
+        console.log('this', this);
+        this.style.transition = '5px';
+        this.style.borderColor = 'black';
+        this.style.borderStyle = 'solid';
+        this.classList.add('rrrrrrrrrrrrr');
+        console.log(`========== end ${index} ===`);
+        const isAccept = confirm('Разрешить выделение выше ?');
+        console.log('isAccept', isAccept);
+        if (!isAccept) {
+          event.stopPropagation();
+        }
+      })
+    })
+  }
+
+  // findElement('html', 'body', 'header#headerId','figure.logo', 'figcaption', 'nav.menu', 'button.item');
+  // window.addEventListener('scroll', function() {
+  //   console.log(pageYOffset + 'px');
+  // });
 </script>
-<input type="button" onclick="countRabbits()" value="Считать кроликов!">
-
-<input type="button" value="Кролик" id="event1">
-<script>
-	document.getElementById('event1').onclick = function () {
-		alert('нажатие');
-	}
-
-	document.getElementById('event1').onclick = function () {
-		alert('нажатие');
-	}
-
-	document.getElementById('event1').addEventListener('click', (event) => {
-		console.log('event', event);
-	})
-</script>
-
-
-<p>Зачем они</p>
-<script></script>
-
-<p>Как слушать или следить</p>
-<script></script>
-
-<p></p>
-<script></script>
-
-<p></p>
-<script></script>
-	
 </body>
 </html>

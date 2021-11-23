@@ -43,25 +43,26 @@
     let p1 = Number(prompt("Enter first number"));
     let p2 = Number(prompt("Enter second number"));
     let arr = [];
-    let minp = p1 < p2 ? p1 : p2;
+    let minp = p1 < p2 ? p1 : p2; // Выбираем меньшое число для итерации.
     for (let i = 1; i <= minp; i++) {
-        if ((p1 % i) == 0 && (p2 % i) == 0) {
+        if ((p1 % i) == 0 && (p2 % i) == 0) { // пройдет только общий делитель 2х чисел
             arr.push(i);
         }
     }
-    console.log('result task #2 : ', Math.max(...arr));
+    console.log('result #1 max : ', Math.max(...arr));
 
 
     let v1 = prompt("Enter number 1");
     let v2 = prompt("Enter number 2");
+    const startIteration = v1 > v2 ? v1 : v2;
     let result = null;
-    for (let index = v1; index <= v1 && index >= 0; index--) {
+    for (let index = startIteration; index >= 0; index--) {
         if (v1 % index === 0 && v2 % index === 0) {
             result = index;
             console.log('index : ', index);
         }
     }
-    console.log('result task #2 : ', result);
+    console.log('result #2 min : ', result);
     /* ============== end  #2 ==========================*/
 
     /* ============== start  #3 ========================== *
