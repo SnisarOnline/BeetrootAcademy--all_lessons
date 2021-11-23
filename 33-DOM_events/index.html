@@ -33,13 +33,13 @@
             background: #d7d7d7;
         }
 
-        .rrrrrrrrrrrrr{
+        .text_color {
             color: red;
         }
     </style>
 </head>
 <body>
-<!--
+<!-- Emmet:
 header>(figure.logo>img.logo_img[src='#' alt='logo_img']+figcaption{Amaretto})+nav.menu>button.item{b $}*5
 -->
 <header id="headerId">
@@ -56,32 +56,90 @@ header>(figure.logo>img.logo_img[src='#' alt='logo_img']+figcaption{Amaretto})+n
     </nav>
 </header>
 
-<h2>откуда браузерные события</h2>
-<script>
-  function findElement(...arr) {
-    arr.map((tag, index) => {
-      return document.querySelector('button.item').addEventListener('click', function (event) {
-        console.log(`========= start ${index} ===`);
-        console.log(`========== tag ${tag} ===`);
-        console.log('this', this);
-        this.style.transition = '5px';
-        this.style.borderColor = 'black';
-        this.style.borderStyle = 'solid';
-        this.classList.add('rrrrrrrrrrrrr');
-        console.log(`========== end ${index} ===`);
-        const isAccept = confirm('Разрешить выделение выше ?');
-        console.log('isAccept', isAccept);
-        if (!isAccept) {
-          event.stopPropagation();
-        }
-      })
-    })
-  }
+<h2>Что такое события, и откуда они в дом</h2>
 
-  // findElement('html', 'body', 'header#headerId','figure.logo', 'figcaption', 'nav.menu', 'button.item');
-  // window.addEventListener('scroll', function() {
-  //   console.log(pageYOffset + 'px');
-  // });
+<h2>Как добавлять браузерные события и отличие разных способов</h2>
+<input type="button" name="button1" class="button1" id="button1" value="Кнопка 1" onclick="alert('Клик! Кнопка_1')">
+<input type="button" name="button2" class="button2" id="button2" value="Кнопка 2">
+<input type="button" name="button3" class="button3" id="button3" value="Кнопка 3">
+<script>
+    // v1
+    //  onclick="alert('Клик! Кнопка_1')
+
+    // v2
+    // .onclick
+    const eventFn = function (whoFind) {
+        console.log('button2', whoFind);
+    };
+    document.getElementById('button2').onclick = eventFn;// :  HTMLElement | null;
+
+    //v3
+    //  addEventListener('nameEvent', function, ...arguments)
+    document.getElementById('button3').addEventListener('click', function () {
+        console.log('button3 "Function Declaration"');
+    });
+    document.getElementById('button3').addEventListener('click', () => {
+        console.log('button3 "Function Arrows"');
+    });
+
+    // window.addEventListener('scroll', function() {
+    //     console.log(pageYOffset + 'px');
+    // });
+</script>
+
+<h2>Параметр события pointerEvent или event</h2>
+<p>Поведение this в FunctionDeclaration и ArrowsFunction </p>
+<p>Поведение this в FunctionDeclaration и ArrowsFunction </p>
+<script>
+    // v2
+    const eventFn2 = function (pointerEvent) {
+        console.log('eventFn2 button2', event);
+        console.log('eventFn2 button2', pointerEvent);
+    };
+    // document.getElementById('button2').onclick = eventFn2;// :  HTMLElement | null;
+    // document.getElementsByClassName('button2')[0].onclick = eventFn2; // : HTMLCollectionOf<Element>;
+    document.getElementsByName('button2')[0].onclick = eventFn2; // : NodeListOf<HTMLElement>
+
+    //v3
+    document.getElementById('button3').addEventListener('click', function (pointerEvent) {
+        console.log('Function Declaration this = ', this);
+        console.log(pointerEvent);
+    });
+    document.getElementById('button3').addEventListener('click', (pointerEvent) => {
+        console.log('Function Arrows this = ', this);
+        console.log(pointerEvent);
+    });
+
+    // нужно передавать туже функцию что и добавляли.
+    // другими словами сохраняем функцию в переменну
+    document.getElementById('button3').removeEventListener('click', (pointerEvent) => {});
+</script>
+
+
+<h2>Всплытие событий</h2>
+<script>
+    function findElement(...arr) {
+        arr.map((tagItem, index) => {
+            return document.querySelector(tagItem).addEventListener('click', function (pointerEvent) {
+                console.log(`================== start ${index} ===`);
+                console.log(`= tagItem: ${tagItem} =`);
+                console.log('this', this);
+                this.style.transition = '5px';
+                this.style.borderColor = 'red';
+                this.style.borderStyle = 'solid';
+                this.classList.add('text_color');
+                console.log(`================== end ${index} ===`);
+                console.log(``);
+                // const isAccept = confirm('Разрешить выделение выше ?');
+                // console.log('isAccept', isAccept);
+                // if (!isAccept) {
+                //     pointerEvent.stopPropagation();
+                // }
+            })
+        })
+    }
+
+    findElement('html', 'body', 'header#headerId','figure.logo', 'figcaption', 'nav.menu', 'button.item');
 </script>
 </body>
 </html>

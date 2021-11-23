@@ -3,11 +3,13 @@
 
 
 ## Lesson plan:
-+ Зачем
++ Зачем Gulp
++ [nodeJs/npm](https://nodejs.org/en/)
 + []()
 
 
 ## Useful links:
++ [npm для простых смертных](https://habr.com/ru/post/243335/)
 + [JsonSchema](https://cswr.github.io/JsonSchema/)
 
 
