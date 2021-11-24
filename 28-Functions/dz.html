@@ -13,7 +13,7 @@
 <a href="https://jsdoc.app/tags-param.html">@use JSDoc</a>
 <script>
 
-  /* ============== start  #1 ========================== */
+  /* ============== start  #1 ========================= */
   /*
   document.body.innerHTML = `
       Задание #1
@@ -44,7 +44,7 @@
   console.log('first === second ', checkOddEvenNumber(2,2));
   console.log('first !== second ', checkOddEvenNumber('2',2));
 */
-  /* ============== end  #1 ========================== */
+  /* ============== end  #1 =========================== */
 
   /* ============== start  #2 ========================= */
   /*
@@ -103,9 +103,9 @@
   }
   factorial(5);
   */
-  /* ============== end  #2 ========================== */
+  /* ============== end  #2 =========================== */
 
-  /* ============== start  #2.1 ========================= */
+  /* ============== start  #2.1 ======================= */
   /*
   document.body.innerHTML = `
       Задание #2.1 - Числа Фибоначчи
@@ -136,7 +136,7 @@
   }
   console.log(fib(7));
   */
-  /* ============== end  #2.1 ========================== */
+  /* ============== end  #2.1 ========================= */
 
   /* ============== start  #3 ========================= */
   /*
@@ -158,7 +158,8 @@
   console.log(concatValue(1,2,3,4));
   console.log(concatValue('aaa', 'bbb', 'ccc'));
   */
-  /* ============== end  #3 ========================== */
+  /* ============== end  #3 =========================== */
+
   /* ============== start  #4 ========================= */
   /*
   document.body.innerHTML = `
@@ -186,7 +187,7 @@
   console.log(areaOfRectangularShapes(20));
   console.log(areaOfRectangularShapes(20, null));
   */
-  /* ============== end  #4 ========================== */
+  /* ============== end  #4 =========================== */
 
   /* ============== start  #5 ========================= */
   /*
@@ -273,7 +274,7 @@
     }
   }
 */
-  /* ============== end  #5 ========================== */
+  /* ============== end  #5 =========================== */
 
   /* ============== start  #6 ========================= *
   document.body.innerHTML = `
@@ -292,7 +293,7 @@
   perfectNumberForRange(1, 1000);
   /* ============== end  #6 ========================== */
 
-  /* ============== start  #7 ========================= */
+  /* ============== start  #7 ========================= *
   document.body.innerHTML = `
         Задание #7
         <br>Написать функцию, которая принимает время (часы, минуты, секунды) и выводит его на экран в формате «чч:мм:сс».
@@ -342,19 +343,70 @@
 
   /* ============== end  #7 =========================== */
 
-  /* ============== start  #8 ========================= *
-  // @Info Data = https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Date
+  /* ============== start  #8 ========================= */
   document.body.innerHTML = `
       Задание #8
       <br>Написать функцию, которая принимает часы, минуты и секунды и возвращает это время в секундах.
   `;
+  let hover = 1;
+  let min = 20;
+  let sec = 10;
+
+  // v1
+  function toSecondsV1(h, m, s) {
+      return ( (parseInt(h) * 60) + parseInt(m) ) * 60 + parseInt(s);
+  }
+  console.log(`v1 В секундах ${ toSecondsV1(hover,min,sec) }.`);
+
+  function toSecondsV2(hoursValue, minutesValue, secondsValue) {
+      // @Info Data = https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Date
+      const startDate = new Date(2000,1,1);
+      const newSetDate = new Date(2000,1,1);
+      newSetDate.setHours(hoursValue, minutesValue, secondsValue);
+      const result = newSetDate.getTime() - startDate.getTime();
+      return result / 1000;
+  }
+  console.log(`v2 В секундах ${ toSecondsV2(hover,min,sec) }.`);
   /* ============== end  #8 =========================== */
 
-  /* ============== start  #9 ========================= *
+  /* ============== start  #9 ========================= */
   document.body.innerHTML = `
       Задание #9
-      <br>Написать функцию, которая принимает количество секунд, переводит их в часы, минуты и секунды и возвращает в виде строки «чч:мм:сс».
+      <br>Написать функцию, которая принимает количество секунд,
+       переводит их в ЧАСЫ, МИНУТЫ и СЕКУНДЫ
+       и возвращает в виде строки «чч:мм:сс».
   `;
+
+  function toDateV1(seconds) {
+      seconds = Number(seconds);
+      let d = Math.floor(seconds / 24);
+      let h = Math.floor(seconds / 3600);
+      let m = Math.floor(seconds % 3600 / 60);
+      let s = Math.floor(seconds % 3600 % 60);
+
+      let hDisplay = h > 0 ? h + (h == 1 ? " hour : " : " hours : ") : "00 : ";
+      let mDisplay = m > 0 ? m + (m == 1 ? " minute : " : " minutes : ") : "00 : ";
+      let sDisplay = s > 0 ? s + (s == 1 ? " second" : " seconds") : "00";
+      return hDisplay + mDisplay + sDisplay;
+  }
+  console.log(toDateV1( toSecondsV2(hover,min,sec) ));
+
+  // todo:
+  function toDateV2(initSeconds) {
+      const setDate = new Date();
+      setDate.setSeconds(initSeconds);
+      const now = new Date();
+      const seconds = Math.abs( (now.getTime() - setDate.getTime()) / 1000 );
+      console.log('seconds', seconds);
+
+      const minutes = Math.round(Math.abs(seconds / 60));
+      const hours = Math.round(Math.abs(minutes / 60));
+      const days = Math.round(Math.abs(hours / 24));
+      const months = Math.round(Math.abs(days / 30.416));
+      const years = Math.round(Math.abs(days / 365));
+      console.log(`${years} ${months} ${days} ${hours} ${minutes} ${seconds}`);
+  }
+  toDateV2( toSecondsV2(hover,min,sec) );
   /* ============== end  #9 =========================== */
 </script>
 </body>
