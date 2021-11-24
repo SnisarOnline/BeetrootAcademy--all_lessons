@@ -8,8 +8,8 @@
 
 
 ## Useful links:
++ [jquery](https://jquery.com/), [cdn](https://code.jquery.com/)
 + [С чего начинается написание кода на jQuery?](https://itchief.ru/javascript/jquery-getting-started)
-+ []()
 
 
 ###### Youtube :

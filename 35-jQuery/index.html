@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            background: #c0c1e0;
+        }
+
+        header h1 {
+            width: 100%;
+            flex: 1 1 auto;
+        }
+
+        header .menu button {
+            padding: 0 50px;
+            margin: 0 25px;
+        }
+
+        header .menu button:hover {
+            background: #d7d7d7;
+        }
+
+        .text_color {
+            color: red;
+        }
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="./app.js"></script>
+    <!-- Внешние скрипты, порядок исполнения @info https://learn.javascript.ru/external-script  -->
+    <!-- @info https://learn.javascript.ru/external-script#asinhronnye-skripty-defer-async -->
+    <!--    <script src="./app_1.js" async> браузер не останавливает обработку страницы </script>-->
+    <!--    <script src="./app_2.js" defer> не останавливает обработку страницы
+      НО браузер гарантирует, что относительный порядок скриптов с defer будет сохранён.
+       defer используют в тех случаях, когда 2.js зависит от 1.js,
+      </script>
+      -->
+
+</head>
+<body>
+
+<h1>header</h1>
+<header>
+    <figure class="logo" id="logo">
+        <img src="#" alt="logo_img" class="logo_img">
+        <figcaption>Amaretto</figcaption>
+    </figure>
+    <nav class="menu" data-name="menu">
+        <button class="item" data-id="button1">b 1</button>
+        <button class="item" data-id="button2">b 2</button>
+        <button class="item" data-id="button3" title="title3">b 3</button>
+        <button class="item" data-id="button4">b 4</button>
+        <button class="item" data-id="button5">b 5</button>
+    </nav>
+</header>
+
+<form name="aut">
+    <input type="email" name="emailName" id="emailId">
+    <input type="password" name="pass" id="passId">
+    <button type="submit">Ok</button>
+</form>
+
+<script>
+  jQuery(document).ready(function () {
+    console.log('html Готово!');
+  });
+  $(document).ready(function () {
+    console.log('html Готово!');
+  });
+
+  // const btn = $('.item').css({'color':'red'});
+  // console.log(btn);
+  // $('button').css({'backgroundColor':'blue', 'fontWeight':'bold'});
+  // $('#logo').css({'border':'1px solid red'});
+
+  /*
+  const menuData = $('nav').data('name');
+  console.log('menu : ', menuData);
+  const buttonData = $('button').data('id');
+  console.log('button', buttonData);
+  */
+
+  // const btn = $('.item[title]');
+  // btn.css({'border':'5px solid red'})
+
+  // $('button').addClass('asdasdasd');
+  // $('input[type="checkbox"]').attr("checked");
+
+  /*$("header")
+    .append(
+      "<div id='object1'>Lorem ipsum dolor sit amet.</div>"
+    );*/
+
+  /*
+  $('form button').on('click', (event) => {
+    event.preventDefault();
+    // console.log('event : ', event);
+    const map = {};
+    $('form input').each(function() {
+      map[$(this).attr("name")] = $(this).val();
+    });
+    console.log('map : ', map);
+  });
+  */
+
+</script>
+</body>
+</html>
