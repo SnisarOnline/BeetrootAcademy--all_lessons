@@ -20,6 +20,8 @@
     - [Промисы, async/await](https://learn.javascript.ru/async)
 + [{JSON} Placeholder](https://jsonplaceholder.typicode.com/)
 + [try...catch..finally](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/try...catch)
++ [Status Codes](https://restfulapi.net/http-status-codes/)
+
 
 ###### Youtube :
 + []()

@@ -5,7 +5,6 @@ function someAppFunction() {
 }
 
 
-/*
 function loadScript(src, callback) {
   let script = document.createElement('script');
   script.src = src;
@@ -30,5 +29,4 @@ loadScript('./app_1.js', function (error, script) {
     someAppFunction(); // теперь всё работает
   }
 });
-*/
 
