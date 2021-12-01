@@ -16,3 +16,4 @@
 
 ###### Youtube
 + [JavaScript Document object model (DOM)](https://youtu.be/DuWyc76lYC4)
++ [Деструктурирующее присваивание в JavaScript](https://youtu.be/segRDC22WJA)
