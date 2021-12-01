@@ -3,19 +3,25 @@
 
 
 ## Lesson plan:
-+ Как получить данные от сервера [{JSON} Placeholder](https://jsonplaceholder.typicode.com/)
++ [Введение: колбэки](https://learn.javascript.ru/callbacks)
++ [Введение: Promise](https://learn.javascript.ru/promise-basics)
 + [Fetch](https://developer.mozilla.org/ru/docs/Web/API/Fetch_API/Using_Fetch): запросы на другие сайты
     - [Error-crossorigin]( https://learn.javascript.ru/fetch-crossorigin)
-+ Промисы, async/await
++ Получение данных от сервера [{JSON} Placeholder](https://jsonplaceholder.typicode.com/)
+
 
 
 ## Useful links:
 + [Введение](https://developer.mozilla.org/ru/docs/Web/Guide/AJAX) в AJAX
 + Формат [JSON ru](https://learn.javascript.ru/json) / [JsonSchema](https://cswr.github.io/JsonSchema/)
 + home [jquery](https://jquery.com/), [cdn](https://code.jquery.com/)
-+ [Промисы, async/await](https://learn.javascript.ru/async)
-    - [Promise](https://learn.javascript.ru/promise-basics)
-+ []()
++ [Promise](https://learn.javascript.ru/promise-basics)
+    - [Promise API](https://learn.javascript.ru/promise-api)
+    - [Промисы, async/await](https://learn.javascript.ru/async)
++ [{JSON} Placeholder](https://jsonplaceholder.typicode.com/)
++ [try...catch..finally](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/try...catch)
++ [Status Codes](https://restfulapi.net/http-status-codes/)
+
 
 ###### Youtube :
 + []()

@@ -16,4 +16,7 @@
 
 
 #### Вопросы :
-+ сколько видов функций ?
++ Скоько видов функций ?
+    > function Declaration 
+    > function Expresion 
+    > Arrow function

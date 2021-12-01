@@ -7,9 +7,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>jQuery: Before After Image Viewer Example</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./before-after-image-viewer/dist/beforeafter.jquery-1.0.0.min.js"></script>
 </head>
 <body>
 
+<div class="beforeAfter">
+  <img src="https://lh3.googleusercontent.com/proxy/DYL5f8VYq4XuLwYZjolRRzzTq7nirY-ypQCagj8W3mzsU13-Soa1tZKl_w4lMQZkozbA0A8jqKyL_06QRuUp04sR37L67Qkq3WvyHoc5Mc7H" />
+  <img src="https://www.lifeacode.com/wp-content/uploads/2019/03/html-1.jpg" />
+</div>
 
+<script >
+  $(function(){
+    $('.beforeAfter').beforeAfter({
+      movable:true,
+      clickMove:true,
+      opacity: 0.3,
+    });
+  });
+
+</script>
 </body>
 </html>
