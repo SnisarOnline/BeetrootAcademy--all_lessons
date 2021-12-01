@@ -3,6 +3,7 @@ alert('app_4 загружен');
 function someAppFunction() {
   alert('someAppFunction_4 запушенна');
 }
+/*
 
 
 function loadScript(src, callback) {
@@ -30,3 +31,4 @@ loadScript('./app_1.js', function (error, script) {
   }
 });
 
+*/
