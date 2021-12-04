@@ -24,4 +24,4 @@
 
 
 ###### Youtube :
-+ []()
++ [Структура и типы HTTP запроса](https://youtu.be/URg_Q8dclzg)

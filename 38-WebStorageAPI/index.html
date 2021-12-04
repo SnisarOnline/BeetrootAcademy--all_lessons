@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>WebStorageAPI</title>
+</head>
+<body>
+
+<h2>Серверные запросы на Placeholder</h2>
+<p>Использование <a href="https://developer.mozilla.org/ru/docs/Web/API/Fetch_API/Using_Fetch">Fetch</a></p>
+<script>
+  /*
+  const log = {
+    name: 'lorem',
+    pass: ''
+  };
+  // Повторение
+  const domain = 'https://jsonplaceholder.typicode.com/';
+  fetch(domain + 'posts/15', {
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(log),
+  })
+    .then((response) => {
+      console.log('response', response);
+      return response.json();
+    })
+    .then(
+      (success) => {
+        console.log('success', success);
+      },
+      (error) => {
+        console.log('Ошибка', error);
+      }
+    )
+    .catch((error) => {
+      console.log('Ошибка', error);
+    })
+  .finally(() => {
+    console.log('cool');
+  })
+  */
+</script>
+
+
+
+
+
+
+
+
+<br><br><br><br><br><hr><hr><br><br><br><br><br>
+
+
+<h2><a href="https://developer.mozilla.org/ru/docs/Web/API/Window/localStorage">localStorage</a></h2>
+<script>
+  const user = {
+     name: 'asdasdasd',
+     pass: {
+       barer: 'val',
+       password: '1234567890',
+       color: undefined
+     }
+  };
+  localStorage.setItem('key', JSON.stringify(user));
+
+  const getKey = localStorage.getItem('key');
+  console.log('getKey ::: ', JSON.parse(getKey));
+  // localStorage.clear();
+</script>
+
+
+<p>Пример работа с LOCAL-STORAGE</p>
+<section style="width: 100%; border: 1px dashed #000;">
+  <textarea id="testId" rows="10" cols="45" name="test" style="margin: 10px">test</textarea>
+  <button type="submit" onclick="setNewWidth()" style="background: green; padding: 15px" > set New Width</button>
+  <button type="submit" onclick="addOldWidth()" style="background: red; padding: 15px" > app Old Width</button>
+</section>
+<script>
+  /*
+  class SyncLocalStorage {
+    constructor(nameToSave) {
+      if (!nameToSave) {
+        throw new ReferenceError('name not defined');
+      }
+      this.nameToSave = nameToSave;
+    }
+
+    getConfig() {
+      let result = {};
+      try {
+        const str = localStorage.getItem(this.nameToSave);
+        if (str) {
+          result = JSON.parse(str);
+        }
+      } catch (e) {
+        console.error('SyncStorage : ', e);
+      }
+      return result;
+    }
+
+    getValue(key) {
+      const config = this.getConfig();
+      return config[key];
+    }
+
+    addValue(key, value) {
+      const config = this.getConfig();
+      config[key] = value;
+      localStorage.setItem(this.nameToSave, JSON.stringify(config));
+    }
+
+    deleteValue(key) {
+      const config = this.getConfig();
+      Reflect.deleteProperty(config, key); // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Reflect
+      localStorage.setItem(this.nameToSave, JSON.stringify(config));
+    }
+  }
+
+  const storageConfig = new SyncLocalStorage('LocalStorage_config');
+  const testElement = document.getElementById('testId'); // HTMLElement
+
+  function setNewWidth() {
+    // https://developer.mozilla.org/ru/docs/Web/API/HTMLElement/offsetWidth
+    const newWidth = testElement.offsetWidth;
+    const newHeight = testElement.offsetHeight;
+    storageConfig.addValue('widthBlock', newWidth);
+    storageConfig.addValue('heightBlock', newHeight);
+  }
+  function addOldWidth() {
+    const savedWidth = storageConfig.getValue('widthBlock');
+    const savedHeight = storageConfig.getValue('heightBlock');
+    testElement.style.width = `${savedWidth}px`;
+    testElement.style.height = `${savedHeight}px`;
+  }
+  */
+</script>
+
+
+
+
+
+<br><br><br><br><br><hr><hr><br><br><br><br><br>
+
+
+<h2><a href="https://developer.mozilla.org/ru/docs/Web/API/Window/sessionStorage">sessionStorage</a></h2>
+<p>единственное различие заключается в том, что все данные, сохранённые в localStorage не имеют определённого времени жизни, а данные в sessionStorage очищаются в момент окончания сессии текущий страницы. </p>
+<section style="width: 100%; border: 1px dashed #000;">
+  <textarea id="testId2" rows="10" cols="45" name="test" style="margin: 10px">test</textarea>
+  <button type="submit" onclick="setNewWidth2()" style="background: green; padding: 15px" > set New Width</button>
+  <button type="submit" onclick="addOldWidth2()" style="background: red; padding: 15px" > app Old Width</button>
+</section>
+<script>
+  /*
+  class SyncSessionStorage {
+    storage = sessionStorage;
+    constructor(nameToSave) {
+      if (!nameToSave) {
+        throw new ReferenceError('name not defined');
+      }
+      this.nameToSave = nameToSave;
+    }
+
+    getConfig() {
+      let result = {};
+      try {
+        const str = this.storage.getItem(this.nameToSave);
+        if (str) {
+          result = JSON.parse(str);
+        }
+      } catch (e) {
+        console.error('SyncStorage : ', e);
+      }
+      return result;
+    }
+
+    getValue(key) {
+      const config = this.getConfig();
+      return config[key];
+    }
+
+    addValue(key, value) {
+      const config = this.getConfig();
+      config[key] = value;
+      this.storage.setItem(this.nameToSave, JSON.stringify(config));
+    }
+
+    deleteValue(key) {
+      const config = this.getConfig();
+      Reflect.deleteProperty(config, key); // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Reflect
+      this.storage.setItem(this.nameToSave, JSON.stringify(config));
+    }
+  }
+
+  const storageConfig2 = new SyncSessionStorage('SessionStorage_config');
+  const testElement2 = document.getElementById('testId2'); // HTMLElement
+
+  function setNewWidth2() {
+    // https://developer.mozilla.org/ru/docs/Web/API/HTMLElement/offsetWidth
+    const newWidth = testElement2.offsetWidth;
+    const newHeight = testElement2.offsetHeight;
+    storageConfig2.addValue('widthBlock', newWidth);
+    storageConfig2.addValue('heightBlock', newHeight);
+  }
+  function addOldWidth2() {
+    const savedWidth = storageConfig2.getValue('widthBlock');
+    const savedHeight = storageConfig2.getValue('heightBlock');
+    testElement2.style.width = `${savedWidth}px`;
+    testElement2.style.height = `${savedHeight}px`;
+  }
+  */
+</script>
+
+
+
+
+
+
+<br><br><br><br><br><hr><hr><br><br><br><br><br>
+
+
+<h2><a href="https://learn.javascript.ru/cookie">Cookies</a></h2>
+<script>
+  if (navigator.cookieEnabled === true){
+    console.log('navigator', navigator);
+    console.log('Все норм Cookies включены');
+  } else {
+    alert("Cookies отключены!");
+  }
+
+  const dat = new Date(0);
+  console.log('getTime :: ', dat.toString());
+  // max-age - время жизни куки в секундах
+  // expires - задает дату окончания
+  document.cookie = "name=user;max-age=1859307610319";
+
+</script>
+
+
+</body>
+</html>
