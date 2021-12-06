@@ -23,7 +23,7 @@ module.exports = function (options) {
   return function (callback) {
 
     return multipipe(
-      gulp.src(options.watch.fonts + '**/*.{otf}'), // Указываем где искать
+      gulp.src(options.watch.fonts + '**/*.otf'), // Указываем где искать
       debug({title: "Нашли otf: "}), // количество для отладки
       fonter({
         format: ['ttf']
@@ -32,19 +32,19 @@ module.exports = function (options) {
       debug({title: "Записали ttf : "}),  // количество для отладки
 
 
-      gulp.src(options.watch.fonts + '**/*.{ttf}'), // Указываем где искать
+      gulp.src(options.watch.fonts + '**/*.ttf'), // Указываем где искать
       debug({title: "Нашли ttf: "}), // количество для отладки
       ttf2woff(),
       gulp.dest(options.build.fonts), // Куда записываем
       debug({title: "Записали woff : "}),  // количество для отладки
 
-      gulp.src(options.watch.fonts + '**/*.{ttf}'), // Указываем где искать
+      gulp.src(options.watch.fonts + '**/*.ttf'), // Указываем где искать
       debug({title: "Нашли : "}), // количество для отладки
       ttf2woff2(),
       gulp.dest(options.build.fonts),   // Куда записываем
       debug({title: "Записали woff2: "}),  // количество для отладки
 
-      options.browserSync.stream(), // Обновление страници у browserSync
+      options.browserSync.stream(), // Обновление страници у browserSync todo: переписать без етой строки
     ).on('error', notify.onError(function (err) {
       return {
         title: 'fonts / Css',
