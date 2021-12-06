@@ -156,21 +156,14 @@ function reloader(callback) {
 //       (задача без заглушки)
 //--------------
 gulp.task('watch', function() {
-
   browserSync.init({
       server: 'prod'
   });
-
   gulp.watch(html_dev, gulp.series('1_html', reloader));
-
   gulp.watch( img_dev, gulp.series('4_img_mini', reloader));
-
   gulp.watch( styl_dev_Watch, gulp.series('5_fonts', reloader));
-
   gulp.watch( styl_dev_Watch, gulp.series('6_styl_css', reloader));
-
   gulp.watch(js_dev, gulp.series('7_js', reloader));
-
 });
 
 gulp.task('prod', gulp.series('1_html','4_img_mini','5_fonts','6_styl_css', '7_js') );

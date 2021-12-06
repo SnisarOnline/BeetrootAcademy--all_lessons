@@ -15,7 +15,7 @@ const browserSync = require('browser-sync').create(); // https://browsersync.io/
 //----------------------------------------------
 //  variables projects
 const full_path_url = "/home/user/Project/BeetrootAcademy--all_lessons/34-Gulp"; // linux console $pwd
-const site_name = `${full_path_url}/gulp_project_name`;
+const site_name = `.`;
 const src = "src";
 const build = "build";
 const version = "v.0.0.1";
