@@ -66,7 +66,6 @@ module.exports = function (options) {
 //         (задача без заглушки)
 //-----
 gulp.task('img', function() {
-
   return  multipipe(
     gulp.src(imgDir),         // Указываем где искать all_files
     debug({title:"Нашли : "}),    // для отладки, сколько нашли

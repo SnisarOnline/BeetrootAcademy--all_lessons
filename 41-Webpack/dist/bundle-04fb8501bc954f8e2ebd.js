@@ -1,0 +1,1 @@
+(()=>{"use strict";document.body.innerText="Some text after build project",console.log("hello world"),console.log("розовые розы")})();
