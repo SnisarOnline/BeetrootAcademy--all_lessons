@@ -1,13 +1,32 @@
 <template>
   <div class="functional">
-    <h1>Text</h1>
+    <functional_2 />
+
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+
+    <h1><a href="https://ru.vuejs.org/v2/guide/syntax.html">Синтаксис шаблонов</a></h1>
+    <hr>
+    <br>
+
+    <h2>Text</h2>
     <p>{{ message }}</p>
     <p v-text="message">Lorem ipsum dolor.</p>
     <p v-once><b>once</b> {{ message }} - без реактивной привязки</p>
     <p>reverse text = "{{ message.split('').reverse().join('') }}"</p>
 
     <hr>
-    <h1>calc</h1>
+    <h2>calc</h2>
     <p>{{ 2 + 2 }}</p>
     <p>{{ message + 2 }}</p>
     <p>{{ testNumber + 2 }}</p>
@@ -21,26 +40,36 @@
 
 
     <hr>
-    <h1>Computed : </h1>
+    <h2>Computed : </h2>
     <p>{{ computedReversedMessage }}</p>
     <p>{{ computedUserHtml }}</p>
     <p v-html="computedUserHtml"></p> <!-- можно но ненужно -->
 
     <hr>
-    <h1>Methods : </h1>
+    <h2>Methods : </h2>
     <p>{{ methodsUserHtml() }}</p>
     <p v-html="methodsUserHtml()"></p> <!-- можно но ненужно -->
 
     <hr>
-    <h1>Event : </h1>
+    <h2><a href="https://ru.vuejs.org/v2/guide/events.html">Event : </a> </h2>
     <button v-on:click="methodsIncNumber()">{{ testNumber }}</button>
     <button @click="methodsIncNumber()">{{ testNumber }}</button>
+
+    <hr>
+    <hr>
+    <hr>
+
   </div>
 </template>
 
 <script>
+import functional_2 from './functional_2.vue'
+
 export default {
   name: "functional",
+  components: {
+    functional_2
+  },
   data: () => ({
     message: 'Привет',
     testNumber: 20,
@@ -60,7 +89,7 @@ export default {
       return this.message.split('').reverse().join('');
     },
     computedUserHtml: function () {
-      console.log('computedUserHtml - вызывается 1 раз при создании шаблона');
+      // console.log('computedUserHtml - вызывается 1 раз при создании шаблона');
       return `
           <p><b>Name:</b> ${this.user.name}</p>
           <p><b>tel:</b> ${this.user.tel}</p>
@@ -70,9 +99,10 @@ export default {
     }
   },
   methods: {
+    // в основном для вззаимодействия с пользователем (Кнопки, события)
     // вычисляемые свойства кэшируются, основываясь на своих реактивных зависимостях.
     methodsUserHtml: function () {
-      console.log('methodsUserHtml - вызывается каждый раз при изменении шаблона');
+      // console.log('methodsUserHtml - вызывается каждый раз при изменении шаблона');
       return `
           <p><b>Name:</b> ${this.user.name}</p>
           <p><b>tel:</b> ${this.user.tel}</p>
@@ -81,7 +111,7 @@ export default {
       `;
     },
     methodsIncNumber: function () {
-      console.log('event + ', this.testNumber);
+      // console.log('event + ', this.testNumber);
       this.testNumber++;
     }
   },
