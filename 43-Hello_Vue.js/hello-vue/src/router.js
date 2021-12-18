@@ -14,6 +14,15 @@ const routes = [
     path: '/base-functional',
     name: 'Base functional',
     component: () => import('./views/base-functional/functional') // динамическая загрузка компонета
+  },
+  {
+    path: '/form',
+    name: 'simple form',
+    component: () => import('./views/form/form.vue') // динамическая загрузка компонета
+  },
+  {
+    path: '*',
+    redirect: '/form',
   }
 ]
 
