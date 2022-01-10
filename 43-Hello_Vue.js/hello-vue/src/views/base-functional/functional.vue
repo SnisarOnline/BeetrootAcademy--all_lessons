@@ -1,20 +1,5 @@
 <template>
   <div class="functional">
-    <functional_2 />
-
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-
     <h1><a href="https://ru.vuejs.org/v2/guide/syntax.html">Синтаксис шаблонов</a></h1>
     <hr>
     <br>
@@ -58,6 +43,19 @@
     <hr>
     <hr>
     <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <functional_2 v-bind:propertyData="user"></functional_2>
 
   </div>
 </template>

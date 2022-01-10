@@ -67,9 +67,13 @@
     <span ref="testRef222"> testRef style </span>
     <button v-on:click="setNewStyle">setNewStyle</button>
 
+
+    <p>get property from parent {{propertyData }}</p>
+
     <hr>
     <h2><a href="https://ru.vuejs.org/v2/guide/forms.html">Работа с формами</a> </h2>
 <!-- new component  + Vuelidate-->
+
 
   </section>
 </template>
@@ -110,6 +114,7 @@ export default {
       }
     }
   },
+  props: ['propertyData'],
   methods: {
     upNumber: function () {
       this.countNumber++
