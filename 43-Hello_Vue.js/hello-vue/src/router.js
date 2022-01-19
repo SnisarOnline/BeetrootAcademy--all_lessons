@@ -21,6 +21,11 @@ const routes = [
     component: () => import('./views/form/form.vue') // динамическая загрузка компонета
   },
   {
+    path: '/MyComponent',
+    name: 'Slider',
+    component: () => import('./views/slider/slick.vue') // динамическая загрузка компонета
+  },
+  {
     path: '*',
     redirect: '/form',
   }

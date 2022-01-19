@@ -4,6 +4,7 @@
       <router-link to="/">Home</router-link>
       |<router-link to="/base-functional">Base functional</router-link>
       |<router-link to="/form">Form</router-link>
+      |<router-link to="/MyComponent">MyComponent</router-link>
     </div>
 
      <router-view/>
